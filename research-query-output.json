@@ -1,0 +1,198 @@
+{
+  "title": "Research Plan for Comprehensive Data Analytics System",
+  "description": "Strategic research questions for responding to the City of Charleston's RFP for a Comprehensive Data Analytics System",
+  "categories": [
+    {
+      "heading": "Agency Background & Strategic Alignment",
+      "subheading": "A. Agency Mission & Vision",
+      "findings": []
+    },
+    {
+      "heading": "Agency Background & Strategic Alignment",
+      "subheading": "B. Current Initiatives & Priorities",
+      "findings": []
+    },
+    {
+      "heading": "Business Drivers & Problem Statement",
+      "subheading": "A. Overarching Pain Points",
+      "findings": []
+    },
+    {
+      "heading": "Business Drivers & Problem Statement",
+      "subheading": "C. Stated Goals vs. Implied Needs",
+      "findings": []
+    },
+    {
+      "heading": "Financial Research",
+      "subheading": "A. Budget Allocated for the Project",
+      "findings": []
+    },
+    {
+      "heading": "Technical Research",
+      "subheading": "B. Current Tools/Technologies in Use",
+      "findings": []
+    },
+    {
+      "heading": "Competitive Intelligence",
+      "subheading": "A. Who Else Might Bid",
+      "findings": []
+    },
+    {
+      "heading": "Procurement Process & Decision Criteria",
+      "subheading": "A. Evaluation Methodology",
+      "findings": []
+    }
+  ],
+  "raw_results": [
+    {
+      "query": "[Agency Background & Strategic Alignment > A. Agency Mission & Vision] What are the long-term strategic goals of the City of Charleston Police Department (CPD) and how does the data analytics system align with these goals?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Agency Background & Strategic Alignment > A. Agency Mission & Vision] How does the CPD's mission influence its approach to data management and analytics?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Agency Background & Strategic Alignment > A. Agency Mission & Vision] What role does community engagement play in the CPD\u2019s strategic vision, and how can the data analytics system support this engagement?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Agency Background & Strategic Alignment > B. Current Initiatives & Priorities] What current initiatives is the CPD undertaking that could impact the implementation of a new data analytics system?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Agency Background & Strategic Alignment > B. Current Initiatives & Priorities] How does the CPD prioritize its projects, and what factors are considered in these priorities?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Agency Background & Strategic Alignment > B. Current Initiatives & Priorities] What are the specific technological needs of the CPD as they relate to their ongoing projects and objectives?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Business Drivers & Problem Statement > A. Overarching Pain Points] What specific pain points has the CPD identified in their current data management practices?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Business Drivers & Problem Statement > A. Overarching Pain Points] How frequently do delays in data processing impact decision-making within the CPD?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Business Drivers & Problem Statement > A. Overarching Pain Points] Are there any regulatory or compliance pressures that could be influencing the CPD's need for a new data analytics solution?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Business Drivers & Problem Statement > C. Stated Goals vs. Implied Needs] What are the specific implications of achieving the stated goals for the CPD's operational efficiency?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Business Drivers & Problem Statement > C. Stated Goals vs. Implied Needs] How can the proposed data analytics system facilitate not only the explicit needs but also any implicit needs such as user training and system scalability?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Business Drivers & Problem Statement > C. Stated Goals vs. Implied Needs] What qualitative benefits does the CPD hope to achieve beyond the quantitative metrics outlined in the RFP?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Financial Research > A. Budget Allocated for the Project] What is the total budget allocated by the City of Charleston for this data analytics project, and how does it compare to past projects?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Financial Research > A. Budget Allocated for the Project] Are there specific funding sources or grants that the CPD is relying on for this project that have stipulations or requirements?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Financial Research > A. Budget Allocated for the Project] What is the budget breakdown for similar projects implemented by the CPD in the past?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Technical Research > B. Current Tools/Technologies in Use] What existing data management systems is the CPD currently using, and what are their limitations?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Technical Research > B. Current Tools/Technologies in Use] How do the current tools used by the CPD integrate (or fail to integrate) with the proposed data analytics system?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Technical Research > B. Current Tools/Technologies in Use] What training or transition challenges have been encountered with current technologies that could inform the implementation of a new system?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Competitive Intelligence > A. Who Else Might Bid] Which vendors have previously worked with the CPD on similar projects, and what has been their performance history?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Competitive Intelligence > A. Who Else Might Bid] What competitive advantages do other potential bidders have that could influence the CPD's decision-making?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Competitive Intelligence > A. Who Else Might Bid] How does the CPD perceive the strengths and weaknesses of other vendors in the data analytics space?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Procurement Process & Decision Criteria > A. Evaluation Methodology] What specific criteria will the CPD use to evaluate proposals beyond the four factors listed in the RFP?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Procurement Process & Decision Criteria > A. Evaluation Methodology] How will the CPD handle any conflicts of interest during the evaluation process?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    },
+    {
+      "query": "[Procurement Process & Decision Criteria > A. Evaluation Methodology] Are there particular preferences for vendor qualifications or experience that the CPD might prioritize in their evaluation?",
+      "error": "open-deepresearch backend not available",
+      "status": "failed",
+      "backend": "open-deepresearch"
+    }
+  ],
+  "meta": {
+    "backend": "open-deepresearch",
+    "query_count": 24,
+    "success_count": 0,
+    "failure_count": 24
+  }
+}

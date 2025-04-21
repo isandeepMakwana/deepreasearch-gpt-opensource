@@ -1,0 +1,1296 @@
+The City of Charleston
+Procurement Division
+75 Calhoun Street, Suite 3500
+Charleston, South Carolina 29401
+P) 843-724-7312 F) 843-720-3872
+www.charleston-sc.gov
+Proposal Number: 24-P028R Proposals will be received until: November 5, 2024 @ 1:00pm
+Proposal Title: Comprehensive Data Analytics System
+Mailing Date: October 3, 2024 Direct Inquiries to: Robin B. Robinson
+Vendor Name: FEIN/SS#:
+Vendor Address:
+City – State – Zip:
+Telephone Number: Fax Number:
+Minority or Women Owned Business:
+Are you a certified Minority or Women-Owned business in the State of South Carolina? If so, please provide a copy of your certificate with your response.
+ Yes  No
+Authorized Signature: _____________________________ Title: __________________________
+Date: _________________________
+I certify that this bid is made without prior understanding, agreement, or connection with any corporation, firm, or person submitting a bid
+for the same materials, supplies, equipment or services and is in all respects fair and without collusion or fraud. I agree to abide by all
+conditions of this bid and certify that I am authorized to sign this bid for the bidder. This signed page must be included with bid
+submission.
+1. 2. IMPORTANT
+This solicitation seeks proposals responding to the Scope of Work for Comprehensive Data
+Analytics System. This solicitation does not commit the City of Charleston to award a
+contract, to pay any costs incurred in the preparation of applications submitted, or to procure
+or contract for the services. The City reserves the right to accept or reject any, all or any part
+of any proposal received as a result of this Solicitation, or to cancel in part or in its entirety
+this Solicitation if it is in the best interest of the City to do so. The City shall be the sole
+judge as to whether proposals submitted meet all requirements contained in this solicitation.
+The City of Charleston, South Carolina has received funds from the Bureau of Justice
+Assistance, and are bidding these items utilizing the 2023 Smart Policing Initiative.
+Offeror may mail, or hand-deliver response to the Procurement Division. Do Not Fax in the
+proposal response. Please show the solicitation number on the outside of any mailing
+package. The City of Charleston assumes no responsibility for unmarked or improperly
+marked envelopes. If directing any other correspondence to the Procurement Division not
+related to the solicitation, please do not include the solicitation number on the envelope. If
+the Bidder chooses not to respond to this solicitation, it is recommended to return the “No
+Proposal Response Form” to our office.
+3. DEADLINE FOR SUBMISSION OF OFFER: Any proposal or offer received after the
+Procurement Director or his designee has declared that the time set for opening has arrived,
+shall be rejected unless the offer has been delivered to the designated purchasing office or the
+governmental bodies’ mail room which services that purchasing office prior to the proposal
+opening.
+4. Questions regarding this solicitation must be submitted in writing to Robin B. Robinson
+no later than 1:00pm on October 17, 2024. Questions may either be faxed to 843-720-
+3872 or emailed to Robin B. Robinson, robinsonr@charleston-sc.gov.
+1
+GENERAL INFORMATION
+INTRODUCTION
+The City of Charleston Police Department (CPD) is seeking proposals from qualified vendors to
+provide a comprehensive data analytics system. This system will support our need for basic data
+collection, robust data analysis, reporting, and visualization capabilities. The objective is to enhance
+decision-making, optimize operations, and drive strategic initiatives through advanced data
+analytics.
+PROCUREMENT PROCESS
+The RFP (Request for Proposal) is not a bid. In the event the City elects to negotiate a contract
+with the successful Vendor, any contract shall contain, at a minimum, the term and conditions (or
+substantially the same term and conditions) as hereinafter stated. The City reserves the right, in its
+sole discretion, to reject all submissions, reissue a subsequent RFP, terminate, restructure or amend
+this procurement process at any time. The final selection and contract negotiation rests solely with
+the City.
+QUESTIONS
+Every effort has been made to insure that all information needed by the Offeror is included herein;
+however, questions are allowed and encouraged to clear up any information as described herein, etc.
+The City will not accept telephone calls or visits regarding this RFP. All questions shall be in
+writing and addressed to: Vera White, City of Charleston, Procurement Division, 75 Calhoun
+Street, Suite 3500, Charleston, South Carolina 29401, or email to: robinsonr@charleston-
+sc.gov. Written Questions may also be faxed to: 843-720-3872. All questions must be received
+before 1:00pm on October 17, 2024. No interpretation shall be binding upon the City unless in
+writing from the City’s Corporate Counsel.
+ORAL STATEMENTS
+No oral statement of any person shall modify or otherwise change, or affect the terms, conditions or
+specifications stated in the resulting contract. The City of Charleston shall not be legally bound by
+any amendment or interpretation that is not in writing.
+NON-ENDORSEMENT
+If a Proposal is accepted, the successful Offeror shall not issue any news releases or other statements
+pertaining to the award or servicing of the agreement that state or imply the City’s endorsement of
+the successful Offeror’s product or services.
+PROPRIETARY INFORMATION
+If an Offeror does not desire proprietary information in the Proposal to be disclosed, the Offeror
+shall identify all proprietary information in the Proposal. This identification will be done by
+individually marking each page with the words “Proprietary Information” or “Confidential” on
+which such proprietary information is found. If the Offeror fails to identify proprietary information,
+it agrees that by submission of its Proposal that those sections shall be deemed non-proprietary and
+made available upon request through the Freedom of Information Act.
+2
+UNAUTHORIZED COMMUNICATIONS
+Respondents’ contact regarding this RFP with employees or officials of the City of Charleston will
+result in disqualification from this procurement process. Any oral communications are considered
+unofficial and non-binding with regard to this RFP. The only authorized contacts for this
+procurement are any designated Procurement staff.
+CONTRACTOR SOLELY RESPONSIBLE FOR PERFORMANCE
+Vendor shall be responsible for the performance of the services required by the contract. Vendor is
+an independent contractor and does not act as the City’s agent or employee.
+DISQUALIFICATION OF OFFERORS
+Offerors may be disqualified for any of the following reasons:
+ Reason to believe collusion exists among the Offerors
+ The Offeror is involved in any litigation against the City
+ The Offeror is in arrears on any existing contract or has defaulted on a previous contract
+with the City
+ Lack of financial stability
+ Failure to perform under previous or present contracts with the City
+ Is currently debarred by the State of South Carolina Procurement Services
+SUSPENSION AND DEBARMENT
+The Offeror certifies, by submission of this proposal, that neither it nor its principals are presently
+debarred, suspended, proposed for debarment, declared ineligible, or voluntarily excluded from
+participation in this transaction by any federal, state or local agency. Where the Offeror is unable to
+certify to any of the statements in this certification, such Offeror shall attach an explanation to this
+proposal.
+CONTRACT NEGOTIATIONS
+The City will rank, based upon the evaluation criteria, all responsible and responsive Vendors. The
+City will begin negotiations with the top ranked Vendors and will continue with negotiation down
+the ranking until a satisfactory contract with the City is finalized, if any. The terms and conditions
+of the contract will be no less advantageous than the provisions of this RFP or the Vendor’s
+proposal. The City reserves the right to make a partial award or to split the award at its sole
+discretion.
+CONTRACT TERMS
+The initial term of the Agreement shall be for one year. The City reserves the right to extend the
+Agreement if the City determines the extension is in its best interest; said extension will be on an
+annual basis and shall not exceed four (4) additional one (1) year periods.
+VENDOR’S DUTY TO INSPECT & ADVISE AND DECLARE ALL COSTS
+Each Vendor shall become fully acquainted with the City’s requirements and the scope of
+commodities and/or services to be provided. Vendor shall have a duty to request any information
+from the City as it deems necessary to prepare the RFP. No change order will be granted or
+additional compensation permitted if based upon information the Vendor knew or should have
+known as part of the Vendor’s duty to become acquainted with the City’s circumstances and
+requirements.
+3
+RECEIPT OF PROPOSALS
+Proposals must be submitted to and received by the City no later than the date and time specified
+within this RFP. Offerors mailing proposals should allow a sufficient mail delivery period to insure
+timely receipt (November 5, 2024 @ 1:00pm) of their proposal by the City. Proposals received after
+the scheduled due date and time will not be considered. Proposals must be completed and delivered
+in sufficient time to avoid disqualification for lateness due to difficulties in delivery. The time and
+date stamp clock in the City Procurement Division is the official clock for determining whether
+submittals are submitted on time. The City of Charleston is not responsible for delays in the delivery
+of mail by the U.S. Postal Service or private couriers. It is the responsibility solely of the Offerors to
+ensure that its proposal reaches the City of Charleston Procurement Division, by the designated date
+and time. Proposals received after the scheduled due date and time will not be considered.
+Late Proposal documents will not be accepted under any circumstances.
+PROPOSAL SUBMITTAL REQUIREMENTS
+To assure similarity in proposal presentation and allow the Selection Committee to easily compare
+competing proposals, Offerors shall include, in the order described, the material indicated below. It
+is not the intent of the City of Charleston to constrain Offerors with regard to content, but to assure
+that the specific requirements set for in this RFP are addressed in a uniform manner amenable to
+Evaluation and Selection Committee review. Offerors may include additional information sections
+or appendices if desired, to present additional pertinent information. Offerors should submit
+information in a concise and responsive manner for every requirement. Non-responsive or
+incomplete submittals or inability to meet City requirements set forth may lead to disqualification of
+the Offeror’s submittal.
+Only information presented in the Proposal will be used to evaluate the submittals. Responses
+shall be completed in accordance with the requirements in the RFP. Statements made by an
+Offeror shall be without ambiguity, and with adequate elaboration, where necessary, for clear
+understanding.
+Specific Requirements
+Proposals should be as thorough and detailed as possible so that the City may properly evaluate the
+Offeror's capabilities to provide the required services. Offerors are required to submit the following
+items as a complete proposal:
+ Complete response to RFP, signed, completed and submitted as required with a
+detailed outline of the firm’s ability of providing the services requested.
+ A detailed outline and description of proposed program administration and services.
+ A narrative summary of all the deviations from the specifications. The detailed explanation
+and description of price quotation deviations should be submitted as required in the RFP.
+ Sealed package marked on the outside with the Offeror's name, address, and the solicitation
+number.
+ All submittal forms.
+4
+PROPOSAL FORMAT
+Proposals are to be prepared in a manner design to provide the Selection Committee with a
+straightforward presentation of the capability to satisfy the requirements of this RFP.
+All documentation submitted with the proposal shall be in a single volume. Documentation must be
+on 8 ½ x 11 pages.
+Include the following items:
+o RFP Cover Page listing title of project, RFP number, date of submittal, and name of company
+o List of lead contact(s) for the City
+o List of Qualifications and References: provide at least (4) similar projects past three years.
+Provide references with accurate and up-to-date contact information. *Reference form is
+provided.
+o W/MBE Good Faith Effort Form and appropriate Affidavit
+o Acknowledgement of any issued Addenda
+o Proposal must be signed by an official authorized by the vendor’s company to contractually bind
+the vendor.
+RESPONSE FORMAT AND ORGANIZATION
+To assure similarity in proposal presentation and allow the evaluation team to easily compare
+competing proposals, Offerors shall include, in the order described, the material indicated below. It
+is not the intent of the City to constrain Offerors with regard to content, but to assure that the specific
+requirements set forth in this RFP are addressed in a uniform manner amenable to Evaluation and
+Selection Committee review. Offerors may include additional sections or appendices if desired, to
+present additional pertinent information. Offerors should submit information in a concise and
+responsive manner for every requirement and every question. Non-responsive or incomplete
+answers to information requests and/or City requirements may lead to disqualification of the
+Offeror’s submittal.
+PROPOSAL PREPARATION
+Proposals should provide a straightforward and concise description of the consultant’s capabilities to
+satisfy the requirements of the RFP. It should explain the work to be performed, how the work will
+be accomplished and the results expected.
+All qualifications should be complete and carefully worded and should convey all of the information
+requested by the City. If errors or exceptions are found in the response, or if the response fails to
+conform to the requirements of the RFP, the City will be the sole judge as to whether the variance is
+significant enough to reject the submitted proposal.
+REQUIRED FORMS AND SIGNATURE PAGES
+Offerors shall include as an appendix, all ancillary forms required in this Request for Proposal
+(RFP). Required forms include, but are not limited to the following:
+ RFP Cover Page
+ Certificate of Familiarity
+ W/MBE Good Faith Effort Form and appropriate Affidavit
+ Any Addenda
+5
+COMPLETION OF REPONSES
+Only information presented in the Proposal will be used to evaluate the truck that best fits the needs
+of the City.
+Responses shall be completed in accordance with the requirements of this RFP. Statements made by
+an Offeror shall be without ambiguity, and with adequate elaboration, where necessary, for clear
+understanding.
+QUANTITY AND IDENTIFICATION OF PROPOSALS SUBMITTED
+Each vendor must submit the following:
+o One (1) original un-bound, single-sided Proposal labeled as “ORIGINAL”
+o Four (4) bound, double-sided Proposals
+o One (1) electronic copy on a flash drive. Please have submittal on flash drive divided
+into two documents: 1) the proposal; and 2) the cost.
+o The Vendor must mark on the envelope or box containing the proposal the follow
+information: “24-P028R Comprehensive Data Analytics System”
+o Note the RFP identification number on the outside of the envelope or box
+o All Proposals, including original, copies and the flash drive, shall be submitted together in
+one envelope or box
+o Proposals must be submitted by mail or hand delivered to City of Charleston, Procurement
+Division, 75 Calhoun Street, Ste. 3500, Charleston, SC 29401, ATTN: 24-P028R
+No more than one proposal may be submitted by any Vendor.
+PROPOSAL EVALUATION PROCESS
+An Evaluation and Selection Committee will be established to evaluate the Proposals and select a
+proposal which represents the best value to the City. The Evaluation and Selection Committee will
+be comprised of City personnel and any other persons as designated by the City. This Committee
+will determine the responsiveness and acceptability of each proposal. The Evaluation and Selection
+Committee may request additional information from Offerors.
+The City will conduct a comprehensive, fair and impartial evaluation of all Proposals received in
+response to this RFP. Each Proposal received will first be analyzed to determine overall
+responsiveness and completeness to this RFP. Each Proposal will then be evaluated based on each
+of the criteria as outlined in Proposal Evaluation Criteria Factors, and after which identified as either
+reasonably qualified or unqualified. A Proposal may be declared unqualified if it clearly fails to
+demonstrate, in any of the listed areas, a standard that the City believes necessary to meet the
+requirements set forth in this RFP.
+Following their review of all submitted Proposals, the Selection Committee may select a shortlist of
+the highest ranked reasonably-qualified Offerors. Shortlisted Offerors will be invited to present their
+Proposal to the Evaluation and Selection Committee.
+After the proposals are evaluated, the City will determine whether formal presentations and
+interviews are necessary, and if so, which vendors may be invited to make a formal presentation
+and/or sit for a panel interview. The City may choose not to require formal presentations or
+6
+interviews. The City may choose to contact officials from other jurisdictions regarding the vendor,
+their prior work experience and their ability to successfully complete the scope of services. The City
+may request clarification or additional information from a specific vendor in order to assist in the
+City's evaluation of a proposal. Finally, the City may require changes in the scope of services as
+deemed necessary by the City, before execution of the contract.
+PROPOSAL EVALUATION CRITERIA FACTORS
+The following weighted criteria will be used to evaluate the Proposals for purposes of selecting the
+Offeror(s) to negotiate with or to shortlist.
+Criteria Factors
+ Technical capabilities and solution fit
+ Vendor’s experience and expertise
+ Project plan and implementation approach
+ Itemized Cost and overall value
+It is the Offeror’s responsibility to effectively communicate their qualifications, services, and
+products to the City by thoroughly responding to each requirement contained in this RFP.
+7
+Comprehensive Data Analytics System Specifications
+1. Introduction
+The City of Charleston Police Department (CPD) is seeking proposals from qualified vendors to
+provide a comprehensive data analytics system. This system will support our need for basic data
+collection, robust data analysis, reporting, and visualization capabilities. The objective is to enhance
+decision-making, optimize operations, and drive strategic initiatives through advanced data
+analytics.
+2. Background
+This project is made possible by funding from U.S. Department of Justice, Bureau of Justice
+Assistance (see attached grant solicitation). The goal of the project is to allow the CPD to collect and
+visualize existing data from several, linked electronic sources in a user-friendly system that supports
+and presents the agency’s problem-oriented policing efforts for both internal and external users.
+Current deficiencies in CPD’s data collection and storage systems limit its ability to realize the
+technological objectives of this grant-funded project. The CPD has many disparate datasets due to
+state and local requirements that have created data silos. To overcome the analytical hurdles, the
+CPD has implemented system and procedural changes to bridge the gap between datasets and link
+them together. The department’s current challenge is performing consistent and swift data cleaning
+and preparation, as well as product creation for both departmental and public stakeholders. These
+processes are extremely labor-intensive and time-consuming, creating latency, the potential for
+variability, and a gap in access to data for stakeholders outside of its analytical unit. The goal is to
+leverage this grant to create a comprehensive workflow that would incorporate data modeling to
+assist with cleaning, product creation, and the publishing of dashboards and reports. This will allow
+for further automation, better consistency, greater access, and increase the CPD personnel’s
+capacity to spend more time analyzing data in-depth rather than simply compiling them.
+3. Project Scope
+The scope of this project includes the design, implementation, and support of a data analytics system
+that meets the following requirements:
+ Data Collection
+ Data Integration
+ Data Storage and Management
+ Data Processing and Analysis
+ Data Visualization
+ Reporting
+ User Access and Security
+ Training and Support
+4. Key Requirements
+4.1 Data Collection
+ Ability to capture data, via a web-form, into a database for future analysis.
+8
+4.2 Data Integration
+ Capability to integrate data from multiple sources (e.g., databases, cloud services, third-party
+applications).
+ Support for real-time data ingestion and batch processing.
+ Capability to ingest flat files.
+4.3 Data Storage and Management
+ Scalable storage solutions to handle increasing volumes of data.
+ Efficient data retrieval and management capabilities.
+ Data replication for reporting/analysis.
+ Full administrative access for CPD admins.
+ On premises or cloud host (CJIS Certified) acceptable.
+4.4 Data Processing and Analysis
+ Advanced analytics tools (e.g., statistical analysis, geospatial analysis, machine learning).
+ Ability to assist with data quality.
+ Support for custom analytics models and scripts (e.g., Python, R).
+ Support for data naturalization between legacy and next-generation systems.
+4.5 Data Visualization
+ Web based access. No software client necessary for end user.
+ Interactive and customizable dashboards.
+ Variety of visualization options (e.g., charts, graphs, maps).
+ Advanced geo-spatial representation.
+ Support for ArcGIS layers.
+4.6 Reporting
+ Automated report generation and scheduling.
+ Customizable report templates.
+ Ability to publish to an access controlled web portal.
+ Ability to automate emailing of generated reports.
+4.7 User Access and Security
+ Role-based access control. (Active directory and non-active directory account support)
+ Data encryption and compliance with relevant data protection regulations.
+4.8 Training and Support
+ Comprehensive training for end-users and administrators.
+ Ongoing technical support and system maintenance.
+5. Proposal Requirements
+Vendors should include the following information in their proposals:
+5.1 Executive Summary
+ Overview of the proposed solution.
+ Summary of key benefits and unique features.
+9
+5.2 Company Profile
+ Company history and background.
+ Relevant experience and case studies.
+5.3 Technical Approach
+ Detailed description of the proposed system architecture.
+ Explanation of data integration, storage, processing, and visualization capabilities.
+ Security measures and compliance standards.
+5.4 Project Plan
+ Implementation timeline with key milestones.
+ Project management approach and methodologies.
+5.5 Cost Proposal
+support).
+ Detailed pricing breakdown (e.g., software licenses, implementation services, training,
+ Total cost of ownership over a specified period (e.g., 3-5 years).
+5.6 References
+projects.
+ Contact information for at least four clients who can provide references regarding similar
+10
+Proposal Number: 24-P028R Proposals will be received until: November 5, 2024 @ 1:00pm
+Proposal Title: Comprehensive Data Analytics System
+Mailing Date: October 3, 2024 Direct Inquiries to: Robin B. Robinson
+CERTIFICATE OF FAMILIARITY
+The undersigned, having fully familiarized himself with the information contained within this entire
+solicitation and applicable amendments, submits the attached proposal, and other applicable
+information to the City, which I verify to be true and correct to the best of my knowledge. I further
+certify that this proposal response is made without prior understanding, agreement, or connection
+with any corporation, firm or person submitting a proposal for the same materials, supplies,
+equipment or services in all respects, fair and without collusion or fraud. I agree to proposal by all
+conditions of this solicitation and certify that I am authorized to sign this proposal. I further certify
+all prices submitted shall remain effective for a minimum period of ninety (90) days, unless
+otherwise stated.
+________________________________ ________________________________
+Company Name Authorized Signature
+As registered with the IRS
+______________________________________ ______________________________________
+Correspondence Address Printed Name
+______________________________________ ______________________________________
+City, State, Zip Title
+______________________________________ ______________________________________
+Email Telephone Number/Toll Free Also (If Available)
+_____________________________________ ______________________________________
+Remittance Address Fax Number
+_____________________________________ ______________________________________
+City, State, Zip Date
+_____________________________________ ______________________________________
+Federal Tax ID (FEIN)/SS Number SC Sales Tax Number
+Minority or Women-Owned Business:
+Are you a certified Minority or Women-Owned business in the State of SC?
+ Yes  No
+If so, please provide a copy of your certificate with your response.
+11
+NO PROPOSAL RESPONSE FORM
+Proposal Number: 24-P028R Proposals will be received until: November 5, 2024 @ 1:00pm
+Proposal Title: Comprehensive Data Analytics System
+Mailing Date: October 3, 2024 Direct Inquiries to: Robin B. Robinson
+Vendor Name: FEIN/SS#:
+Vendor Address:
+City – State – Zip:
+Telephone Number: Fax Number:
+Minority or Women Owned Business:
+Are you a certified Minority or Women-Owned business in the State of South Carolina? If so, please provide a copy of your certificate with your response.
+ Yes  No
+Authorized Signature: _____________________________ Title: __________________________
+Date: _________________________
+I certify that this bid is made without prior understanding, agreement, or connection with any corporation, firm, or person submitting a bid
+for the same materials, supplies, equipment or services and is in all respects fair and without collusion or fraud. I agree to abide by all
+conditions of this bid and certify that I am authorized to sign this bid for the bidder. This signed page must sent in if not sending in a
+submission.
+To submit a “No Proposal” response for this project, this form must be completed for your
+company to remain on our Offeror’s list for commodities/services referenced. If you do not respond,
+your name may be removed from the Offeror’s list.
+Please check statement(s) applicable to your “No Proposal” response
+ Specifications are restrictive; i.e. geared toward one brand or manufacturer only (explain
+below).
+ Specifications are ambiguous (explain below).
+ We are unable to meet specifications.
+ Insufficient time to respond to the solicitation.
+ Our schedule would not permit us to perform.
+ We are unable to meet bond requirements.
+ We are unable to meet insurance requirements.
+ We do not offer this product or service.
+ Remove us from your vendor list for this commodity/service.
+ Other (specify below).
+Comments:
+________________________________________________________________
+__________________________________________________________________________
+__________________________________________________________________________
+12
+References
+Offerors must supply a minimum of four (4) references for which they have provided the same or
+similar services being requested in the Scope of Work. If the references have not used similar
+services, please outline the services that your company has provided to these clients.
+Name: ____________________________________________________
+Address: __________________________________________________
+__________________________________________________
+Phone/Fax:
+________________________________________________
+Email: ____________________________________________________
+Name: ____________________________________________________
+Address: __________________________________________________
+__________________________________________________
+Phone/Fax: ________________________________________________
+Email: ____________________________________________________
+Name: ____________________________________________________
+Address: __________________________________________________
+__________________________________________________
+Phone/Fax: ________________________________________________
+Email: ____________________________________________________
+Name: ____________________________________________________
+Address: __________________________________________________
+__________________________________________________
+Phone/Fax: ________________________________________________
+Email: ____________________________________________________
+Name: ____________________________________________________
+Address: __________________________________________________
+__________________________________________________
+Phone/Fax: ________________________________________________
+Email: ____________________________________________________
+13
+MWBE Compliance Provisions and Instructions
+Minority/Women Business Enterprise Program Forms
+This Project is covered under the City of Charleston’s Minority/Women Business Enterprise (MWBE)
+Program, administered by Ruth Jordan, MBE Manager, 2 George Street, Suite 3600, Charleston SC, 29401,
+(843) 724-7434.
+The City has established goals for both Minority Business Enterprises (MBE) and Women Business
+Enterprises (WBE). An MBE is a small business owned and controlled by a minority. A WBE is a small
+business owned and controlled by a woman. The minority or woman must own fifty-one percent (51%) of the
+business and they must control the management and daily operations of the business in order to qualify.
+Charleston City Council has adopted a policy setting 20% MWBE participation as the goal for this project. In
+order to meet this goal, the MBE/WBE subcontractors must have a Certificate of Eligibility on file with the
+City’s Minority Business Enterprise Office or a reciprocal certification at the time of execution of the
+contract. All bidders must document the extent of their effort to meet this goal by completing the MWBE
+Compliance Affidavits below.
+A list of certified minority and women-owned firms can be found on the City of Charleston’s web site
+www.charleston-sc.gov under “BIDLINE” link or by contacting Ruth Jordan, MBE Manager, 2 George
+Street, Suite 3600, Charleston SC, 29401, (843) 724-7434, jordanr@charleston-sc.gov.
+COMPLIANCE REQUIREMENTS:
+The Bidder shall provide, with their bid form submittal, the following Affidavits properly executed which
+signify that the Bidder understands and agrees to abide by the City’s MWBE Compliance Provisions. All
+Bidders must provide either (a) Affidavits A and B or (b) Affidavit C. If a Bidder provides Affidavit C, the
+Bidder does not need to provide Affidavits A or C.
+□ Affidavit A - Listing of the Good Faith Effort to Identify & Secure Minority and Women-owned
+Business Participation.
+AND
+□ Affidavit B – Work to be Performed by Minority and/or Women-owned Firms
+OR
+□ Affidavit C – Intent to Perform Contract with Own Workforce, in making this certification the Bidder
+states that the Bidder does not customarily subcontract elements of this type of Project and will perform
+all elements of the work with his/her own current work forces.
+Failure to comply with any of the statements, certifications, or intentions stated in the affidavits, or the
+MBE/WBE compliance provisions shall constitute a breach of the Contract. Any such breach may result in
+termination of the Contract in accordance with the termination provisions contained in the Contract. It shall
+be solely at the option of the City of Charleston whether to terminate the contract for breach. In addition to
+terminating the Contract, the bidder may be prohibited from participation in future solicitations as determined
+by the City of Charleston.
+Name of Company: ___________________________________________________________________
+____________________________________ ____________________________________
+Signature Date
+____________________________________ ____________________________________
+Print Name Title
+_____________________________________
+Witness
+14
+AFFIDAVIT A
+Page 1 of 2
+City of Charleston, South Carolina Listing of the Good Faith Effort
+Affidavit of
+(Name of Bidder)
+I have made a good faith effort to comply with the City of Charleston’s MWBE compliance provisions under the
+following checked areas:
+(A minimum of 6 areas must be checked in order to have achieved a “good faith effort”)
+o 1. Contacted MWBE businesses that reasonably could have been expected to submit a quote and that were known to
+the Bidder, or available on Federal, State or local government maintained lists, at least 10 business days before the
+submittal date and notified them of the nature and scope of the work to be performed. Complete Affidavit A, Page 2.
+o 2. Followed up with contacted MWBE subsequent to the initial contact and at least 72 hours prior to submittal
+deadline/bid opening either by phone, facsimile or in person.
+o 3. Made the construction plans, specifications, and requirements available for review by prospective MWBE
+businesses, or providing these documents to them at least 10 business days before the submittal deadline/bid opening.
+o 4. Itemized elements of the work or combined elements of the work into economically feasible units to facilitate
+MWBE participation.
+o 5. Attended any pre-solicitation meetings scheduled by the City.
+o 6. Provided MWBE assistance with getting required bonding or insurance requirements or provided alternatives to
+bonding or insurance.
+o 7. Negotiated in good faith with interested MWBEs and did not reject them as unqualified without sound reasons
+based on their capabilities. (Any rejection of a minority or woman-owned business based on lack of qualifications
+shall include reasons for rejection documented in writing.)
+o 8. Provided MWBEs assistance with securing needed equipment, loan capital, lines of credit, or joint pay agreements
+to secure loans, supplies, or letters of credit, including waiving credit that is ordinarily required. Assisted MWBEs in
+obtaining the same unit pricing with the Bidder’s suppliers in order to help such businesses in establishing credit.
+o 9. Provided training or mentoring to at least two (2) MWBEs within 120 days prior to submittal deadline/bid opening.
+The training or mentoring program should be in conjunction with local trade groups, technical schools or community
+organizations that provide recruitment, education or skill levels.
+o 10. Negotiated joint venture, partnership or other similar arrangements with MWBEs in order to increase opportunities
+for MWBE participation.
+o 11. Provided quick pay agreements and policies to enable MWBE contractors and suppliers to meet cash-flow
+demands.
+I hereby agree to enter into a formal agreement with the firms listed in Affidavit B Work to be performed by Minority
+Firms conditional upon execution of a contract with the Owner. Failure to abide by this provision will constitute a breach
+of the contract.
+I hereby certify that I have read and agree to the terms of the Minority / Women-Owned Business Enterprise Program, and
+I am the Bidder or I am authorized to bind the Bidder to the commitment herein set forth.
+Date: Name of Authorized Officer (Print/Type):
+Signature:
+Title:
+15
+AFFIDAVIT A
+Page 2 of 2
+City of Charleston, South Carolina Minority/Women-Owned Business Participation Efforts
+(Use as many sheets as necessary)
+I, professional services.
+, hereby certify that on this project we contacted the
+following minority/women-owned business enterprises as subcontractors, vendors, suppliers, or providers of
+1. Minority Firm Name and Contact Minority Firm Address
+Minority Firm Telephone Number
+Minority Firm Fax Number
+DBE Certification Number
+Minority Group Type
+ (African American)
+ (Asian American)
+ (American Indian)
+ (Women)
+ (Hispanic)
+ (Other)
+ Follow up Verification
+2. Minority Firm Name and Contact Minority Firm Address
+Minority Firm Telephone Number
+Minority Firm Fax Number
+DBE Certification Number
+Minority Group Type
+ (African American)
+ (Asian American)
+ (American Indian)
+ (Women)
+ (Hispanic)
+ (Other)
+ Follow up Verification
+3. Minority Firm Name and Contact Minority Firm Address
+Minority Firm Telephone Number
+Minority Firm Fax Number
+DBE Certification Number
+Minority Group Type
+ (African American)
+ (Asian American)
+ (American Indian)
+ (Women)
+ (Hispanic)
+ (Other)
+ Follow up Verification
+4. Minority Firm Name and Contact Minority Firm Address
+Minority Firm Telephone Number
+Minority Firm Fax Number
+DBE Certification Number
+Minority Group Type
+ (African American)
+ (Asian American)
+ (American Indian)
+ (Women)
+ (Hispanic)
+ (Other)
+ Follow up Verification
+I certify, under penalties of perjury, that I have examined the information in this affidavit, and to the best of my
+knowledge and belief, this information is true, correct and complete.
+Date: Name of Authorized Officer (Print/Type):
+Sworn to before me this ____ day of _______________, 20__.
+Notary Public for the State of ___________________________
+My Commission Expires: ______________________________ Title:
+Print Name: _________________________________________ Notary Seal:
+Phone Number: ______________________________________
+Address: ___________________________________________
+Signature:
+16
+AFFIDAVIT B
+City of Charleston, South Carolina
+Work to be Performed by Minority/Women-Owned Businesses
+. I hereby certify that on the
+Affidavit of (Name of Bidder)
+__________________________________________________, Total Project Amount $
+(Project Name)
+I will make a good faith effort to expend a minimum of % of the total dollar amount of the Contract
+with minority/women-owned business enterprises. Minority/women-owned businesses will be employed as
+subcontractors, vendors, suppliers, or providers of professional services. Such work will be subcontracted to
+the following businesses listed below:
+(Attach additional sheets if needed)
+Name and Phone Number *Minority Code Work Description Dollar Value
+$
+$
+$
+$
+$
+$
+$
+Total MBE Participation: % $
+* Minority categories: African American (B); Hispanic (H); Asian American (A), American Indian (I);
+Woman Owned (W); Other (D)
+I will enter into a formal Contract with the above minority/women-owned business enterprises for the work
+listed in the above schedule conditional upon execution of a Contract with the Owner.
+I certify that I have read the terms of this commitment and I am the Bidder or authorized to bind the Bidder to
+the commitment set forth herein. I certify, under penalties of perjury, that I have examined the information in
+this affidavit, and to the best of my knowledge and belief, this information is true, correct and complete.
+Date: Name of Authorized Officer (Print/Type):
+Signature:
+Title:
+Sworn to before me this ____ day of _______________, 20__. My Commission Expires: ______________________________ Print Name: _________________________________________
+Phone Number: ______________________________________
+Address: ___________________________________________
+Notary Public for the State of ___________________________
+Notary Seal:
+17
+AFFIDAVIT C
+City of Charleston, South Carolina
+Intent to Perform Contract with Own Workforce.
+Affidavit of
+(Name of Bidder)
+I hereby certify that it is our intent to perform 100% of the work required for the
+contract.
+(Name of Project)
+In making this certification, the Bidder states that the Bidder does not customarily subcontract elements of
+this type Project, and normally performs and has the capability to perform and will perform all the
+elements of the work on this Project with his/her own current work forces, and
+The Bidder agrees to provide any additional information or documentation requested by the Owner in
+support of the above statement.
+I hereby certify that I have read this certification and I am the Bidder or I am authorized to bind the
+Bidder to the commitments contained herein. I certify, under penalties of perjury, that I have examined
+the information in this affidavit, and to the best of my knowledge and belief, this information is true,
+correct and complete.
+Date: Name of Authorized Officer (Print/Type):
+Signature:
+Title:
+Sworn to before me this ____ day of _______________, 20__. Notary Public for the State of ___________________________
+My Commission Expires: ______________________________
+Print Name: _________________________________________
+Phone Number: ______________________________________
+Address: ___________________________________________
+___________________________________________
+Notary Seal:
+18
+INSURANCE REQUIREMENTS
+Contractors working for the City of Charleston are required to procure and maintain for the
+duration of their contract with the City insurance against claims for injuries to persons or
+damages to property, which may arise from or in connection with work performed by the
+Contractor, his agents, representatives, employees or Subcontractors. The cost of such insurance
+shall be the responsibility of the Contractor.
+A. B. C. The Contractor shall carry liability insurance with a reliable company licensed to do
+business in South Carolina. Coverage shall be at least broad as:
+1. Insurance Services Office Commercial General Liability Coverage Form
+(“occurrence”) CG 00 01 10 93.
+2. Insurance Services Office Business Auto Coverage Form
+CA 00 01 6 92 covering automobile liability, code 1 “any auto”.
+Contractor shall carry workers’ compensation as required by the State of South Carolina
+and Employers Liability insurance (including applicable occupation disease provisions
+and all state endorsements.)
+Contractor shall maintain limits no less than the following:
+1. GENERAL LIABILITY: $1,000,000 combined single limit per occurrence for
+bodily injury, property damage, and personal injury with a $2,000,000 general
+aggregate limit.
+2. AUTOMOBILE LIABILITY: $1,000,000 combined single limit per accident
+for bodily injury and property damage.
+3. WORKERS’ COMPENSATION: Statutory limits are required by South
+Carolina state law and employer’s liability limits of $100,000 per accident.
+4. PROFESSIONAL LIABILITY: $1,000,000 per claim/$1,000,000 aggregate
+limit, with a deductible of $20,000.
+Contractor shall obtain and maintain a professional liability insurance policy
+covering the performance of the professional services specified in this agreement.
+Evidence of such insurance shall be satisfactory in form and content to the owner,
+the City. This coverage shall be maintained through the duration of this project
+and for a minimum of 1 year after substantial completion of the project as
+determined by the City.
+The Contractor and any of its subcontractors will cause the professional liability
+insurance required in this paragraph C.4:
+(a) to be excess insurance over any project professional liability policy, and
+19
+E. F. (b) to be primary insurance in the event the project insurance described in
+Paragraph E is canceled or not maintained, in the event the policy’s limits
+of liability are exhausted, or if the policy expires.
+D. Required policies are to contain, or be endorsed to contain, the following provisions:
+1. General Liability and Automobile Liability Coverages
+The City of Charleston, its officials, employees and volunteers are to be covered
+as additional insureds as respects: Liability arising out of activities performed by
+or on behalf of the Contractors; premises owned, occupied or used by the
+Contractor; or automobiles owned, leased, hired or borrowed by the Contractor.
+The coverage shall contain no special limitations on the scope of protection
+afforded to the City of Charleston, its officials, employees or volunteers. To
+accomplish this objective, the City of Charleston shall be named as an additional
+insured under the Contractor’s general liability policy by attaching Insurance
+Services Office Commercial General Liability Endorsement CG2010 10 93
+(Additional Insured - Owners, Lessees or Contractors - Form B) or its equivalent.
+Contractors’ insurance coverage shall be primary insurance as respects the City of
+Charleston, its officials, employees and volunteers. Any insurance or self-
+insurance maintained by the City of Charleston, its officials, employees, or
+volunteers shall be in excess of the Contractor’s insurance and shall not be
+required to contribute. To accomplish this objective, the following wording
+should be incorporated in the previously referenced additional insured
+endorsement.
+Other Insurance: This insurance is primary, and our obligations are not affected
+by any other insurance carried by the additional insured whether primary, excess,
+contingent or on any other basis.
+Any failure to comply with reporting provisions of the Contractor’s policies shall
+not affect coverage provided to the City of Charleston, its officials, employees or
+volunteers.
+2. Workers’ Compensation
+The Contractor shall agree to waive all rights of subrogation against the City of
+Charleston, its officials, employees and volunteers for losses arising from work
+performed by the Contractor for the City of Charleston.
+Any deductibles or self-insured retentions shall be the responsibility of the Contractor.
+Each insured policy required by the City of Charleston shall be endorsed to state that
+coverage shall not be suspended, voided, canceled by either party, reduced in coverage or
+in limits except after thirty (30) days prior written notice has been given to the City of
+Charleston.
+20
+G. H. I. All coverages for Subcontractors shall be subject to all the requirements stated herein.
+Insurance must be placed with an approved insurance company with current Best’s rating
+of A+, A, or A-. Exceptions to this requirement must be approved in writing by the City
+of Charleston.
+Contractor shall furnish the City of Charleston with Certificates of Insurance noting the
+endorsements. The Certificates and endorsements for each insurance policy are to be
+signed by a person authorized by that insurer to bind coverage on its behalf. All
+certificates and endorsements are to be received and approved by the City of Charleston,
+Procurement Division, before work commences. The City of Charleston reserves the right
+to require complete, certified copies of all required insurance policies, at any time.
+Required certificates should be mailed to:
+City of Charleston
+Procurement Division
+75 Calhoun Street, Ste. 3500
+Charleston, SC 29401
+21
+INSTRUCTIONS TO OFFERORS
+1. Number of Submittals required is stated in the General Information section of this Solicitation.
+Proposals must be mailed or hand-delivered. Responses received by fax or other electronic
+means (email, CD, etc.) will be rejected. Proposals must be submitted in a sealed envelope
+and must be addressed to the City of Charleston Procurement Division, 75 Calhoun Street,
+Suite 3500 Charleston, SC 29401. Failure to do so may result in a premature opening of, or
+failure to open such Proposal. Each sealed envelope containing a Proposal shall be marked on
+the outside with the Offeror’s complete Name, Address, Solicitation Number, Description of
+Services Requested by Solicitation (i.e., Elevator Maintenance, Road Construction), along with
+the Due Date and Time. If you do not choose to submit a proposal, please complete and return
+the enclosed “No Proposal” response form.
+A “No Proposal” qualifies as a response; however, it is the responsibility of the Vendor to notify
+the Procurement Office if you receive solicitations that do not apply. Failure to respond to three
+(3) solicitations during the calendar year may result in removal from Vendor’s List.
+All pages that require a Signature shall be included with the proposal. Failure to include
+these required pages may result in the proposal being deemed Non-Responsive.
+2. Offerors must clearly mark as “Confidential” each part of their proposal which they consider to
+be proprietary information that could be exempt from disclosure under the South Carolina
+Freedom of Information Act, S.C. Code Ann. §§ 30-4-10 to – 165 (2007 & Supp. 2015). See
+paragraph 45 for more details. The City reserves the right to determine whether this information
+should be exempt from disclosure and no legal action may be brought against the state or its
+agents for its determination in this regard.
+3. Proposals must be made in the official name of the individual, firm, company, partnership,
+corporation, joint venture or other legal entity under which the business is conducted (showing
+official business address) and must be signed in ink by a person duly authorized to legally bind
+the legal entity submitting the proposal.
+4. Proposals should be typewritten or computer-generated; however, if this is not possible, the hand
+writing must be legible. A Proposal shall include, but is not limited to, addresses of all legal
+entities which will participate in the proposed services. The type of organization of the Bidder,
+whether individual, firm, partnership, corporation, joint venture or other legal entity, shall be
+stated. Any affiliations, parent-subsidiary relationships, and corporate identities including the
+names of the principals of such legal entity must be fully disclosed and clearly explained.
+5. If an error is made before submitting the proposal, the error should be crossed out, corrections
+entered and initialed by the person signing the proposal. Erasures or use of typewriter correction
+fluid may be cause for rejection. No proposal shall be altered or amended after specified time for
+opening.
+6. Proposals may be withdrawn by written request received from the Offeror prior to the time set
+for opening of Proposals, but not thereafter.
+22
+7. Proposals should be prepared simply and economically. All data, materials, and documentation
+shall be available in a clear, concise form and reproducible upon request “at cost” for the City’s
+internal use. The City reserves the right to reproduce proposals for internal use in the evaluation
+process.
+8. All Proposals shall provide a straight forward, concise description of Offeror’s ability to satisfy
+the requirements of the Solicitation.
+9. All Addendum and Award Notices will be posted on our website: click on the Bidline link.
+www.charleston-sc.gov, then
+10. The terms and conditions in this Solicitation shall prevail unless otherwise modified by the City
+of Charleston in an Addendum to this Solicitation. The City of Charleston reserves the right to
+reject, in whole or in part, any proposal which does not comply with such terms and conditions.
+The City of Charleston reserves the right to retain all proposals submitted and to use any ideas in
+a proposal regardless of whether that proposal is selected. Submission of a proposal indicates
+acceptance by the Offeror of the conditions contained in this Solicitation, unless clearly and
+specifically noted in the proposal submitted and confirmed in any resulting contract between the
+City of Charleston and the Offeror selected.
+11. No substitutions shall be considered after the contract award except by Amendment.
+12. The City seeks qualified vendors to be responsible for completion of the work described herein
+and the City reserves the option to award portions of the project to multiple Offeror if such is to
+the advantage of the City. Therefore, any one proposal submitted by more than one company
+shall be deemed to be a proposal for a joint venture between or among the companies so
+submitting proposals unless the proposal clearly and unequivocally describes that only one firm
+proposes to act as principal and the other firm(s) contractual position is clearly defined. The
+companies submitting as a joint venture shall be held jointly and severally responsible for the
+entire project and shall not be permitted to limit their liability to the City.
+13. All proposals should be complete and carefully worded and shall convey all of the information
+requested by the City. If errors or exceptions are found in a proposal, or if the proposal fails to
+conform to the requirements of the Solicitation, the City shall be the sole judge as to whether that
+variance is significant enough to reject the proposal.
+14. The City reserves the right to request satisfactory evidence of their ability to furnish services in
+accordance with the terms and conditions listed herein. The City further reserves the right to
+make the final determination as to the Offeror’s ability to provide said services.
+15. The Offeror is solely responsible for all costs and expenses associated with the preparation of the
+proposal and of any supplementary presentation (including any oral presentation) requested by
+the City.
+16. GRATUITIES AND KICKBACKS
+Gratuities. It shall be unethical for any person to offer, give or agree to give any employee
+or former employee, or for any employee or former employee to solicit, demand, accept,
+or agree to accept from another person a gratuity or an offer of employment in connection
+with any decision, approval, disapproval, recommendation, preparation or any part of a
+23
+A) 
+B) program requirement or a purchase request, influencing the content of any specification
+or procurement standard, rendering of advice, investigation, auditing, or in any other
+advisory capacity in any proceeding or application, request for ruling, determination,
+claim or controversy, or other particular matter pertaining to any program requirement or
+a contract or subcontract, or to any solicitation or proposal therefore.
+Kickbacks. It shall be unethical for any payment, gratuity, or offer of employment to be
+made by or on behalf of a subcontractor under a contract to the prime contractor, or to
+hire any subcontractor or any person associated therewith, as an inducement for the
+award of a subcontract or order.
+17. OFFEROR REPRESENTATIONS
+Each Offeror by submitting a Proposal represents that:
+A) B) C) D) E) The Offeror has read and understands this Solicitation (including all Specifications and
+Attachments) and that its Proposal is made in accordance therewith.
+The Offeror has reviewed the Solicitation and has become familiar with the local
+conditions under which the Scope of Work is to be performed. The failure or omission of
+an Offeror to acquaint himself with existing conditions shall in no way relieve him of any
+obligation with respect to this proposal or any resulting contract.
+The Proposal is based on the terms, materials, services and obligations required by this
+Solicitation, without exception.
+The Offeror is qualified to provide the services and equipment required under this
+Solicitation and, if awarded the contract, shall do so in a professional, timely manner
+using successful Offeror's best skills and attention.
+The Offeror is guaranteeing that all goods and services will meet the requirements of the
+Solicitation during the contract period.
+18. COMPETITIVE PROCUREMENT
+It is the intent and purpose of the City of Charleston that this Solicitation permits competition. It
+shall be each Offeror’s responsibility to advise the City if any language, provision, or other
+requirement, or any combination thereof, inadvertently restricts or limits the satisfaction of the
+specifications stated in this Solicitation to a single source. Such notification must be submitted
+in writing, and must be received by the City of Charleston Procurement Division no later than
+the last date for written questions. Any such notification shall be reviewed by the City’s
+Procurement Director.
+19. ADDENDA/CHANGES
+Any additions, deletions, modifications, or changes made to this Solicitation shall be processed
+through the City’s Procurement Director. Any deviation from this procedure may result in the
+disqualification of the proposal or the cancellation of any contract resulting from this
+Solicitation. Requests for interpretation of this Solicitation and any other questions concerning
+the Solicitation shall be made in writing, and addressed to the City’s Procurement Director, 75
+Calhoun Street, Suite 3500, Charleston, South Carolina 29401. Questions may be transmitted by
+fax, but it shall be the responsibility of the sender to confirm receipt by the City. These requests
+must be submitted by the deadline for written questions. Responses to said requests shall be24
+made at the discretion of the City’s Procurement Director. When issued, such interpretations and
+answers to such questions shall be in the form of an addendum to the Solicitation which shall be
+posted on the City’s website, www.charleston-sc.gov. All such addenda shall become part of
+the Solicitation and each Offeror shall be bound by such addenda whether or not received by the
+Offeror. The City of Charleston shall not be legally bound by any amendment or interpretation
+that is not in writing.
+20. EVALUATION PROCESS
+During the evaluation process the City of Charleston reserves the right, where it may serve the
+City of Charleston’s best interest, to request additional information or clarification from
+Offerors, or to allow corrections of errors or omissions.
+21. AWARD OF CONTRACT
+A) B) C) D) E) F) Award of contract shall be made to the most responsive and responsible Offeror(s) whose
+Proposal, conforming to the Solicitation, is most advantageous to the City of Charleston,
+price and other factors considered.
+The City of Charleston may, when in the best interest of the City, reject any or all
+Proposals or waive technicalities or informalities in any Proposals received.
+The City of Charleston shall be the sole judge of the suitability of the items or services to
+be provided pursuant to this Solicitation.
+The City may choose to award to more than one vendor if it is in the best interest of the
+City.
+Final approval may rest with members of the City Council for the City of Charleston.
+All things considered equal, a tie proposal will be resolved by the flip of a coin.
+22. CONTRACT ADMINISTRATION
+23. Questions or problems arising after award of this contract shall be directed to the Contracts
+Coordinator by calling (843) 965-4184. Copies of all correspondence concerning this contract
+shall be sent to the Contracts’ Coordinator, 75 Calhoun Street, Suite 3500 Charleston, SC
+29401.
+NOTICE OF AWARD OF CONTRACT
+The successful Offeror shall be notified of acceptance of its Proposal by a written Notice of
+Award of Contract. Successful Offeror(s) shall not undertake any work, and City shall not be
+responsible for payment for any work whatsoever undertaken by the successful Offeror(s) prior
+to issuance of the Notice to Proceed.
+24. NOTICE TO PROCEED
+A Notice to Proceed shall be issued after the Contractor(s) has executed the contract and has
+submitted acceptable Insurance Certificate(s) and Endorsement(s) and Performance and Payment
+Bonds to the City as well as other submittals specified herein as required to be delivered before
+the Notice to Proceed is issued. The Contractor(s) shall not commence work until it has received
+a written Notice to Proceed from the City’s Director of Procurement.
+25
+25. OTHER CONTRACTS
+The City of Charleston may undertake or award other contracts for portions of the work or
+additional work, and the Contractor(s) shall fully cooperate with such other contractors and City
+of Charleston employees and carefully fit its own work to such work as may be directed by the
+City. The Contractor(s) shall not commit or permit any act which shall interfere with the
+performance of work by any other contractor or by City of Charleston employees.
+26. MODIFICATION
+The City’s Director of Procurement shall have the unilateral right to modify any contract
+resulting from this Solicitation, within the general scope of work, when said modification is in
+the best interest of the City. The right to issue change orders is not dependent upon the consent
+of the successful Offeror(s). At the direction of the Director of Procurement the successful
+Offeror is obligated to perform the revised contract. Contract fees or prices shall be equitably
+adjusted where an issued change order so demands. No claim by the successful Offeror(s) for an
+adjustment hereunder shall be allowed if asserted after final payment under aforesaid contract.
+27. INDEPENDENT CONTRACTOR
+Successful Offeror is an independent contractor and shall not be deemed the agent or employee
+of the City of Charleston for any purpose whatsoever.
+28. INSURANCE REQUIREMENTS
+Upon the consummation of the contract for the services being solicited in this Solicitation and
+receipt of the Notice of Award by the successful Offeror (the “Contractor”), the Contractor shall,
+at all times during the term of the contract, carry insurance as required by the insurance
+requirements outlined in the insurance attachment which is attached hereto and incorporated by
+reference. The City shall not issue a Notice to Proceed until the Contractor has submitted
+acceptable insurance certificates(s) or endorsement(s), which must be submitted within five (5)
+calendar days after receipt of the Notice of Award, and which reflect that the required coverages
+are in place and that all premiums have been paid. Refusal or failure to submit such certificate(s)
+or endorsement(s) shall constitute grounds for the City to revoke its notice of award, forfeit
+proposal security, and award the contract to another contractor. The City may contact the
+Contractor’s insurer(s) or insurer(s)' agent(s) directly at any time regarding its coverages,
+coverage amounts, or other such relevant and reasonable issues related to this contract. The
+Contractor(s) shall also require any sub-contractors to carry the same coverages in the same
+amounts. Faxed Insurance Certificate(s) and Endorsement(s) shall be accepted if received no
+later than the time of contract execution and the original documents are received within one (1)
+business day after receipt of the fax transmittals.
+29. INDEMNIFICATION
+The Contractor hereby expressly agrees to indemnify and hold the City harmless against any and
+all expenses and liabilities arising out of the performance or default of this Agreement as
+follows:
+The Contractor expressly agrees to the extent that there is a causal relationship between its
+negligent, reckless or intentionally wrongful action or inaction, or the negligent, reckless or
+intentionally wrongful action or inaction of any of its employees or Subcontractors or any
+person, firm, or corporation directly or indirectly employed by the Contractor, and any damage,
+liability, injury, loss or expense (whether in connection with bodily injury or death or property
+damage or loss) that is suffered by the City and its employees or by any member of the public, to26
+indemnify and save the City and its employees harmless against any and all liabilities, penalties,
+demands, claims, lawsuits, losses, damages, costs and expenses arising out of the performance or
+default of this Agreement. Such costs shall include defense, settlement, court costs and
+reasonable attorneys’ fees incurred by the City and its employees. This promise by the
+Contractor to indemnify the City shall include bodily injuries or death occurring to the City’s
+officers, officials, employees and any person directly or indirectly employed by the City, the
+City’s employees, the employees of any other independent contractors including Subcontractors,
+or to any member of the public. When the City submits notice, Contractor shall promptly defend
+any aforementioned action. This obligation shall survive the suspension or termination of this
+Agreement. The limits of insurance coverage required herein shall not serve to limit this
+indemnity obligation. The recovery of costs and fees shall extend to those incurred in the
+enforcement of this indemnity.
+30. OFFEROR’S QUALIFICATIONS
+The City reserves the right to request satisfactory evidence of any Offeror’s ability to furnish
+services in accordance with the terms and conditions listed herein. The City further reserves the
+right to make the final determination as to the Offeror’s ability to provide said services. We
+reserve the right to investigate the qualifications of any respondent under consideration, require
+confirmations of information furnished, and require additional evidence of qualifications to
+perform the work described in this Solicitation, contact references, and request an audited
+financial statement in order to determine a potential contractor’s capabilities.
+31. ASSIGNMENT
+The Contractor(s) shall not assign in whole or in part its duties under the contract without the
+prior written consent of the City of Charleston. The Contractor shall not assign any money due
+or to become due to it under this contract without the prior written consent of the City of
+Charleston.
+32. SUBCONTACTORS
+A) B) C) D) E) If any subcontractors shall be used for this project, the Contractor shall provide to the
+City’s Director of Procurement a list of names of any of the intended subcontractors, the
+subcontractor's applicable license number(s), and a description of the work to be done by
+each subcontractor, if requested.
+The Contractor(s) shall not substitute other subcontractors without the written consent of
+the City’s Director of Procurement.
+Contractor(s) shall be responsible for all services performed by a subcontractor.
+Responsibilities include, but are not limited to, compliance with any applicable licensing
+regulations.
+If at any time the City’s Director of Procurement determines that any subcontractor is
+incompetent or undesirable, he shall notify the Contractor(s) accordingly, and the
+Contractor(s) shall take immediate steps for cancellation of the subcontract and
+replacement thereof with a subcontract that is approved by the City of Charleston.
+Nothing contained in any contract resulting from this Solicitation shall create any
+contractual relationship between any subcontractor and the City of Charleston.
+27
+33. SUSPENSION OF WORK
+The City may order the Contractor in writing to suspend, delay, or interrupt all or any part of the
+Work for such period of time as the City may determine to be appropriate for the convenience of
+the City of Charleston, or for noncompliance with the contract requirements.
+34. TERMINATION
+A) B) 35. A) For Convenience: The City reserves the right to terminate the contract with the Contractor
+when it is in the best interest of the City, including, but not limited to non-appropriation
+of funds. If the contract is so terminated, the City shall provide the Contractor with a
+minimum of thirty (30) days written notice and shall compensate Contractor for all
+necessary and reasonable direct costs of performing the services actually accomplished as
+of the date of termination. No other costs shall be allowed for a termination for
+convenience. No damages shall be allowed for a termination for convenience.
+For Default: If the Contractor fails to comply with the terms of the contract the City shall
+notify the Contractor in writing of the specifics regarding such noncompliance. If the
+Contractor fails to begin to cure the noncompliance within five (5) days after the notice,
+the City may terminate the contract by written notice to the Contractor with a minimum
+of thirty (30) days thereafter and Contractor shall only be compensated for services
+actually completed prior to termination, contractor shall not be entitled to any costs or
+damages resulting from a termination under this section.
+MATERIAL AND WORKMANSHIP; WARRANTIES AND REPRESENTATIONS
+If equipment, materials and supplies are to be a part of the service provided, all equipment,
+materials, and supplies incorporated in the work covered by the Proposal and provided by
+the Contractor(s) are to be new and of the most suitable grade for the purpose intended.
+Unless otherwise specifically provided in this Solicitation, reference to any equipment,
+material, supply or patented process, by trade name, make or catalog number, shall not be
+construed as limiting competition. When requested, the Contractor(s) shall furnish to the
+City for approval the name of the manufacturer, the model number, and other identifying
+data and information respecting the performance, capacity, nature and rating of the
+machinery and mechanical and other equipment which the Contractor(s) contemplates
+incorporating in the work. When required by this Contract or when called for by the City
+the Contractor(s) shall provide full information concerning the material or supplies which he
+contemplates incorporating in the work. Machinery, equipment, material and supplies
+installed or used without the required prior approval shall be at the risk of subsequent
+rejection.
+By signing its proposal, the successful Offeror(s) shall be deemed to have represented that
+its staff is knowledgeable about and experienced in performing the work required in this
+Solicitation and warrants that it shall use best skill and attention to provide the above
+described work in a professional, timely manner.
+The City may, in writing, require the Contractor(s) to remove from the work any employee
+the City deems incompetent, careless or otherwise objectionable.
+B) C) 28
+36. COMPLIANCE WITH LEGAL REQUIREMENTS
+All applicable Federal, State and local laws, ordinances, and rules and regulations of any
+authorities shall be binding upon the Contractor(s) throughout the pendency of this Project. The
+Contractor(s) shall be responsible for compliance with any such law, ordinance, rule or
+regulation, and shall hold the City harmless and indemnify same in the event of non-compliance
+as set forth in the Contract.
+37. PERMITS AND LICENSES
+A) The Contractor(s) shall, without additional expense to the City of Charleston, be responsible
+for obtaining all necessary licenses and permits required by the State of South Carolina, or
+the City of Charleston or any other authority having jurisdiction.
+B) Contractors and subcontractors are responsible at all times for obtaining applicable work
+permits and licenses of any kind.
+38. DISPUTES
+Any bona fide dispute concerning the bid, proposal, request for qualifications or Agreement shall
+be resolved by the courts of the State of South Carolina. In the event any litigation is commenced
+with respect to any matter set forth in the aforementioned documents, the prevailing party shall
+be entitled to recover reasonable attorneys' fees and all other reasonable direct costs associated
+with such litigation from the non-prevailing party.
+39. STATE AND LOCAL TAXES
+A) Except as otherwise provided, contract prices shall include all applicable state and local
+taxes.
+B) If applicable, two percent (2%) income tax withholding shall be withheld from each and
+every payment pursuant to Sections 12-8-540 and 12-8-550 of the South Carolina Code of
+Laws (1976, as amended) for certain out-of-state contractors, and such sums shall be paid
+over to the South Carolina Department of Revenue (the "SCDOR"). When and if the City
+receives an executed SCDOR Form I-312, Nonresident Taxpayer Registration Affidavit -
+Income Tax Withholding, such withholding shall cease.
+C) Contractor shall calculate that portion of the contract which is subject to the nine percent
+(9%) South Carolina sales and/or use tax, which amount shall be itemized and shown on all
+invoices, and shall be paid to the SCDOR by Contractor. If Contractor is a non-South
+Carolina company, the City shall withhold said amount from all invoices and remit payment
+to the SCDOR, unless Contractor furnishes City with a valid South Carolina Use Tax
+Registration Certificate Number.
+D) Contractor shall indemnify and hold harmless the City for any loss, cost, or expense incurred
+by, levied upon or billed to the City as a result of Contractor's failure to pay any tax of any
+type due in connection with the contract.
+40. INCORPORATION BY REFERENCE
+The contents of this Solicitation, including all drawings, attachments, specifications, exhibits,
+certificates, any addenda, Contractor’s Proposal Response Form and Pricing List, and affidavits
+shall become part of the contract for this Project.
+29
+41. PRIME CONTRACTOR RESPONSIBILITIES
+The contractor shall be required to assume sole responsibility for the complete effort as required
+by this Solicitation. The City shall consider the contractor to be the sole point of contact with
+regard to contractual matters.
+42. OWNERSHIP OF MATERIAL
+Ownership of all data, material and documentation originated and prepared for the City pursuant
+to this contract shall belong exclusively to the City.
+43. DRUG-FREE WORKPLACE
+(Note: This clause applies to any resultant contract of $50,000 or more). The City of
+Charleston requires compliance with the South Carolina Drug Free Workplace Act. By
+submission of a signed proposal, you are certifying that you shall comply with this Act. See
+S.C. Code Section 44-107-30.
+44. FUNDING
+Offerors shall agree that funds expended for the purposes of the contract must be appropriated
+by the City of Charleston for each fiscal year included within the contract period. Therefore,
+the contract shall automatically terminate without penalty or termination costs if such funds are
+not appropriated. In the event that funds are not appropriated for the contract, the Offeror shall
+not prohibit or otherwise limit the City’s right to pursue and contract for alternate solutions and
+remedies as deemed necessary by the City for the conduct of its affairs. The requirements stated
+in this paragraph shall apply to any amendment or the execution of any option to extend the
+contract.
+45. SUBMITTING CONFIDENTIAL INFORMATION
+For every document Offeror submits in response to or with regard to this Solicitation that is
+confidential or protected from disclosure, Offeror must separately mark with the word
+"CONFIDENTIAL" or “PROTECTED” on every page, or portion thereof. By so designating
+Offeror contends the information is exempt from public disclosure pursuant to the South
+Carolina Freedom of Information Act, S.C. Code Ann. §§ 30-4-10 through 4-165 (2007 & Supp.
+2015) or other relevant law. For every document Offeror submits in response to or with regard to
+this Solicitation, Offeror must separately mark with the words "TRADE SECRET" on every
+page, or portion thereof, that Offeror contends contains a trade secret as that term is defined by
+the South Carolina Trade Secrets Act, S.C. Code Ann. §39-8-10, et seq. All markings must be
+conspicuous; use color, bold, underlining, or some other method in order to conspicuously
+distinguish the mark from the other text. Offeror shall not mark its entire Proposal (bid, proposal,
+quote, etc.) as confidential, trade secret, or otherwise protected! If a Proposal or any part thereof,
+is improperly marked as confidential or trade secret or protected, the City may, in its sole
+discretion, determine it non-responsive. If only portions of a page are subject to some protection,
+Offeror shall not be allowed to mark the entire page. By submitting a Proposal to this
+Solicitation, Offeror (1) agrees to the public disclosure of every page of every document
+regarding this Solicitation that was submitted at any time prior to entering into a contract
+(including, but not limited to, documents contained in a response, documents submitted to
+clarify a response, and documents submitted during negotiations), unless the page is
+conspicuously marked "TRADE SECRET" or "CONFIDENTIAL" or "PROTECTED,” (2)
+agrees that any information not marked, as required by these bidding instructions, as a "TRADE
+SECRET" is not a trade secret as defined by the Trade Secrets Act, and (3) agrees that,
+notwithstanding any claims or markings otherwise, any prices, commissions, discounts, or other30
+46. financial figures used to determine the award, as well as the final contract amount, may be
+subject to public disclosure. In determining whether to release documents, the City shall
+detrimentally rely on Offeror's marking of documents, as required by these bidding instructions,
+as being either "CONFIDENTIAL" or "TRADE SECRET" or "PROTECTED.” By submitting a
+Proposal, Offeror agrees to defend, indemnify and hold harmless the City of Charleston, its
+officers and employees, from every claim, demand, loss, expense, cost, damage or injury,
+including attorney’s fees, arising out of or resulting from the City withholding information that
+Offeror marked as “CONFIDENTIAL” or “TRADE SECRET” or "PROTECTED.”
+RECORDS RETENTION & RIGHT TO AUDIT
+The City shall have the right to audit the books and records of the Contractor as they pertain to
+this contract. Such books and records shall be maintained for a period of three (3) years from the
+date of final payment under the contract. The City may conduct, or have conducted,
+performance audits of the Contractor. The City may conduct, or have conducted, audits of
+specific requirements of this proposal as determined necessary by the City. Pertaining to all
+audits, the Contractor shall make available to the City access to its computer files containing the
+history of contract performance and all other documents related to the audit. Additionally, any
+software used by the Contractor shall be made available for auditing purposes at no cost to the
+City.
+47. COST
+Costs submitted with a Proposal shall be firm for a period of at least ninety (90) days from the
+closing date. All prices shall be firm-fixed type, unless stated otherwise.
+48. UNSUCCESSFUL OFFERORS
+49. Offerors not awarded a contract under this solicitation, may request return of their proposals
+within thirty (30) days after notification of award is mailed. All cost of returns shall be paid by
+the Offeror. If Federal Express, UPS, or other shipping number is not received with request, all
+materials shall be destroyed.
+PAYMENT FOR GOODS & SERVICES
+Payment for goods & services arising out of the contract resulting from this Solicitation and
+received by the City shall be processed within 30 days of receipt of a valid invoice.
+50. DISCUSSION/NEGOTIATION:
+By submission of a proposal, an Offeror agrees that during the period following issuance of a
+proposal and prior to final award of contract, the Offeror shall not discuss this Procurement with
+any party except members of the City’s Procurement Division or other parties specifically
+designated in this solicitation.
+51. NON-DISCRIMINATION
+The Contractor(s) shall not discriminate against any individuals based upon age, sex, race,
+disability, religion, sexual orientation or gender identity and shall abide by the requirements
+contained in Federal Executive Order Number 11246, as amended, including specifically the
+provisions of the equal opportunity clause. The City's Equal Employment Opportunity Plan
+Utilization Report is available on the city website on the Human Resources and Organization
+Development page at http://charleston-sc.gov/index.aspx?nid=246. To receive a paper copy of
+the report by mail, please contact Human Resources at (843) 724-7388. The successful Offeror
+will take affirmative action in complying with all Federal and State requirements concerning fair
+31
+employment and treatment of all employees, without regard or discrimination by reason of race,
+color, religion, sex, national origin or physical handicap.
+52. DEFAULT
+In case of default by the Contractor, the City reserves the right to purchase any or all items in
+default in the open market, charging the Contractor with any excessive costs. Should such
+charge be assessed, no subsequent response will be accepted from the defaulting Contractor until
+the assessed charge has been satisfied.
+53. FORCE MAJURE
+The Contractor shall not be liable for any excess costs if the failure to perform the contract
+arises out of causes beyond the control and without the fault or negligence of the contractor.
+Such causes may include, but are not restricted to acts of God or of the public enemy, acts of the
+Governments in either its sovereign or contractual capacity, fires, floods, epidemics, quarantine
+restrictions, strikes, freight embargoes, and unusually severe weather; but in every case the
+failure to perform must be beyond the control and without the fault or negligence of the
+contractor. If the failure to perform is caused by the default of a subcontractor, and if such
+default arises out of causes beyond the control of both the contractor and subcontractor, and
+without the fault or negligence of either of them, the contractor shall not be liable for any excess
+costs for failure to perform, unless the supplies or services to be furnished by the subcontractor
+were obtainable from other sources in sufficient time to permit the contractor to meet the
+required delivery schedule.
+54. EXCEPTIONS AND DEVIATIONS
+Any deviation from specifications indicated herein must be clearly pointed out; otherwise, it will
+be considered that items offered are in strict compliance with these specifications, and successful
+Offeror will be held accountable. Deviations must be explained by accompanied documentation
+identifying and justifying all exceptions and deviations. Unidentified deviations found during
+the evaluation of the response may be cause for rejection.
+55. PROMPT PAYMENT DISCOUNT TERMS
+Prompt payment discount terms will be calculated from the point of complete order acceptance
+for services and/or commodities ordered.
+56. REJECTION
+The City reserves the right to reject any proposal that contains prices for individual items or
+services that are unreasonable when compared with the same or other proposals if such action is
+in the best interest of the City.
+57. ARBITRATION
+Under no circumstances and with no exception will the City of Charleston act as Arbitrator
+between the Contractor and any Sub-Contractor.
+58. GUARANTEE AND WARRANTIES
+The Offeror shall state his normal warranty and any extended warranties where available.
+Excluding any manufacturer’s warranties and in addition to other warranties as provided by law
+or herein, all labor and materials are warranted to be free from defects for a minimum period of
+twenty-four (24) months after the date of final payment by the City.
+32
+59. PUBLICITY RELEASES
+Contractor agrees not to refer to any award of a contract in commercial advertising in such a
+manner as to state or imply that the products or services provided are endorsed or preferred by
+the user.
+60. AMENDMENTS
+All questions and written responses, interpretations, corrections or changes to the RFP will be
+made by Addendum. Addenda will be mailed or otherwise delivered to all Offerors who have
+notified the City Procurement Division of receipt of the proposal.
+61. WITHDRAWALS
+Proposals may be withdrawn by written request received from the Offeror prior to the time set
+for opening of Proposals, but not thereafter.
+63. WAIVER
+The City reserves the right to waive any Instruction to Offerors, General or Special Provisions,
+General of Special Conditions, or specifications deviation if deemed to be in the best interest of
+the City.
+64. RESPONSE PERIOD
+All responses shall be good for a minimum period of ninety (90) calendar days.
+65. CONTRACT TERMS
+The initial term of the Agreement shall be for one year. The City reserves the right to extend the
+Agreement if the City determines the extension is in its best interest; said extension will be on an
+annual basis and shall not exceed four (4) additional one (1) year periods.
+33
+Cut along the outer border and affix this label to your sealed bid
+envelope to identify it as a “Sealed Bid”. Be sure to include the
+name of the company submitting the bid where requested.
+SEALED BID  DO NOT OPEN
+SEALED BID NO.: 24-P028R
+BID TITLE: Comprehensive Data Analytics System
+DUE DATE/TIME: November 5, 2024 @ 1:00 p.m. E S T
+SUBMITTED BY:
+(Name of Company)
+DELIVER TO: City of Charleston
+Procurement Division
+75 Calhoun Street, Ste. 3500
+Charleston, SC 29401
+34
+Submittal Checklist
+_____ Responses shall be mailed/delivered in a sealed envelope to the City’s Procurement Division no
+later than and time as shown in this solicitation.
+https://www.charleston-sc.gov/Bids.aspx?CatID=17
+______ Did an authorized company representative sign:
+ The front page of this solicitation?
+ The Certificate of Familiarity?
+ The WMBE Compliance Provisions form?
+ The applicable WMBE Affidavit (and had notarized)?
+ The bottom portion of this page?
+______ Did an authorized company representative sign the Certificate of Familiarity?
+______ Did you include references if required?
+______ Did you provide a copy of your Certificate of Insurance, if required?
+______ Did you check the City’s website for any addenda and include a signed copy of each with your
+response?
+______ Did you complete and include pricing sheets, if included?
+______ Did you double check to make sure you have included everything requested in this solicitation?
+Payment Terms: NET 30 Federal ID/SS: ______________________ Unique Entity ID: ________________________
+A/R Point of Contact (Name, Phone & Email): ___________________________________________________________
+_________________________________________________________________________________________________
+Company Legal Name & DBA: _______________________________________________________________________
+Remit to Address: __________________________________________________________________________________
+Person Authorized to Sign: ___________________________________________ Date: __________________________
+Printed Name: _________________________________________ Phone: _____________________________________
+Fax: ___________________________ Email Address: ____________________________________________________
+If you have any concerns, please do not wait until after opening to raise them. At that point, it is too
+late. If this solicitation includes a pre-bid conference or a question & answer period, raise your
+questions during this time. Please read the bid carefully.
+This checklist is included only as a reminder to help Bidders avoid common mistakes. Responsiveness will be
+evaluated against the solicitation, not against this checklist. You do not need to return this checklist with your
+response.
+35

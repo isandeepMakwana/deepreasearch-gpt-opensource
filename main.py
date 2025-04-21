@@ -1,4 +1,3 @@
-
 import os
 import json
 import asyncio
@@ -6,8 +5,9 @@ import logging
 from typing import Dict, List, Optional, Union, Any
 
 # LangChain imports
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 from langchain.chains import LLMChain
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
@@ -15,6 +15,9 @@ from pydantic import BaseModel, Field
 # For deep research integration
 from dotenv import load_dotenv
 load_dotenv()
+
+# Import perplexity module
+from perplexity import answer_query_with_perplexity
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, 
@@ -32,7 +35,7 @@ class ResearchPlan(BaseModel):
     description: str = Field(description="Brief description of the research objectives")
     queries: List[ResearchQuery] = Field(description="Structured research queries")
     
-def generate_rfp_queries(rfp_text: str, model_name: str = "gpt-4o-mini", temperature: float = 0.7) -> dict:
+def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature: float = 1) -> dict:
     """
     Generate structured research queries from an RFP document.
     
@@ -116,12 +119,11 @@ def generate_rfp_queries(rfp_text: str, model_name: str = "gpt-4o-mini", tempera
     Provide your response as a JSON structure with research categories, subcategories, and specific questions.
     Use the following structure:
     
-    ```json
-    {
+    {{
       "title": "Research Plan for [RFP Title/Client Name]",
       "description": "Strategic research questions for responding to [Client]'s RFP for [Project/Service]",
       "queries": [
-        {
+        {{
           "heading": "Category Name",
           "subheading": "Subcategory Name",
           "questions": [
@@ -129,25 +131,23 @@ def generate_rfp_queries(rfp_text: str, model_name: str = "gpt-4o-mini", tempera
             "Specific question 2?",
             "Specific question 3?"
           ]
-        },
-        // Additional categories...
+        }}
       ]
-    }
+    }}
     """
 
     try:
         # Initialize the language model with the specified parameters
         llm = ChatOpenAI(model_name=model_name, temperature=temperature)
         
-        # Create a prompt template
-        prompt_template = PromptTemplate(
-            input_variables=["rfp_content"],
-            template=query_generation_prompt
-        )
+        # Create the prompt template
+        prompt = PromptTemplate.from_template(query_generation_prompt)
         
-        # Create and run the chain
-        chain = LLMChain(llm=llm, prompt=prompt_template)
-        raw_response = chain.run(rfp_content=rfp_text)
+        # Create the chain using the modern approach
+        chain = prompt | llm | StrOutputParser()
+        
+        # Run the chain with the input
+        raw_response = chain.invoke({"rfp_content": rfp_text})
         
         # Extract JSON from response (handle cases where the model might add explanatory text)
         json_str = extract_json_from_text(raw_response)
@@ -197,7 +197,7 @@ async def send_queries_to_deep_research(queries: List[str], backend: str = "open
     
     Args:
         queries: List of query strings to research
-        backend: Which backend to use ("open-deepresearch" or "perplexity")
+        backend: Which backend to use ("open-deepresearch", "perplexity", or "standalone")
         
     Returns:
         List of research results, one per query
@@ -257,73 +257,47 @@ async def send_queries_to_deep_research(queries: List[str], backend: str = "open
                     
                 except Exception as e:
                     logger.error(f"Error processing query '{query}' with open-deepresearch: {str(e)}")
-                    results.append({
-                        "query": query,
-                        "error": str(e),
-                        "status": "failed",
-                        "backend": "open-deepresearch"
-                    })
+                    logger.info(f"Falling back to standalone research for query: {query}")
+                    # Fall back to standalone research
+                    standalone_result = await standalone_research(query)
+                    results.append(standalone_result)
                     
         except ImportError as e:
             logger.error(f"Failed to import open-deepresearch modules: {str(e)}")
-            for query in queries:
-                results.append({
-                    "query": query,
-                    "error": "open-deepresearch backend not available",
-                    "status": "failed",
-                    "backend": "open-deepresearch"
-                })
+            logger.info("Falling back to standalone or perplexity research")
+            if os.getenv("PERPLEXITY_API_KEY"):
+                logger.info("PERPLEXITY_API_KEY found, using perplexity backend as fallback")
+                return await send_queries_to_deep_research(queries, backend="perplexity")
+            else:
+                logger.info("Using standalone research as fallback")
+                return await send_queries_to_deep_research(queries, backend="standalone")
     
     elif backend == "perplexity":
-        # Use Perplexity API for deep research
-        import requests
-        
-        perplexity_api_key = os.getenv("PERPLEXITY_API_KEY")
-        if not perplexity_api_key:
-            logger.error("PERPLEXITY_API_KEY not found in environment variables")
-            for query in queries:
-                results.append({
-                    "query": query,
-                    "error": "PERPLEXITY_API_KEY not configured",
-                    "status": "failed",
-                    "backend": "perplexity"
-                })
-            return results
-        
+        # Use perplexity for in-depth web research
+        logger.info(f"Sending {len(queries)} queries to perplexity backend")
         for query in queries:
             try:
-                url = "https://api.perplexity.ai/chat/completions"
-                payload = {
-                    "model": "sonar-deep-research",
-                    "messages": [
-                        {"role": "user", "content": query}
-                    ],
-                    "max_tokens": 4000
-                }
-                headers = {
-                    "Authorization": f"Bearer {perplexity_api_key}",
-                    "Content-Type": "application/json"
-                }
-                
-                response = requests.post(url, json=payload, headers=headers)
-                response.raise_for_status()
-                response_data = response.json()
-                
+                # Use the new perplexity module
+                perplexity_result = await answer_query_with_perplexity(query)
                 results.append({
                     "query": query,
-                    "report": response_data.get("choices", [{}])[0].get("message", {}).get("content", ""),
+                    "report": perplexity_result["result"],
                     "status": "success",
-                    "backend": "perplexity"
+                    "backend": "perplexity",
+                    "sources": perplexity_result.get("sources", [])
                 })
                 
             except Exception as e:
                 logger.error(f"Error processing query '{query}' with Perplexity: {str(e)}")
-                results.append({
-                    "query": query, 
-                    "error": str(e),
-                    "status": "failed", 
-                    "backend": "perplexity"
-                })
+                logger.info(f"Falling back to standalone research for query: {query}")
+                standalone_result = await standalone_research(query)
+                results.append(standalone_result)
+    
+    elif backend == "standalone":
+        # Use a standalone approach with LangChain for research
+        for query in queries:
+            standalone_result = await standalone_research(query)
+            results.append(standalone_result)
     
     else:
         logger.error(f"Unknown backend: {backend}")
@@ -336,6 +310,72 @@ async def send_queries_to_deep_research(queries: List[str], backend: str = "open
             })
     
     return results
+
+async def standalone_research(query: str) -> Dict[str, Any]:
+    """
+    Perform standalone research using LangChain and OpenAI.
+    This is a fallback when other backends are not available.
+    
+    Args:
+        query: The research query
+        
+    Returns:
+        Dictionary with research results
+    """
+    logger.info(f"Performing standalone research for query: {query}")
+    
+    try:
+        from langchain_openai import ChatOpenAI
+        from langchain_core.prompts import PromptTemplate
+        from langchain_core.output_parsers import StrOutputParser
+        
+        research_prompt = """
+        You are a world-class research assistant with exceptional skills in finding accurate, 
+        detailed, and nuanced information. I need you to conduct deep research on the following query:
+        
+        QUERY: {query}
+        
+        Please follow these research guidelines:
+        1. Thoroughly analyze the query to understand all its dimensions and implications
+        2. Consider historical context, current developments, and future implications
+        3. Identify key stakeholders, their motivations, and perspectives
+        4. Examine potential challenges, limitations, and trade-offs
+        5. Present balanced viewpoints, including competing theories or approaches
+        6. Provide concrete examples, case studies, or precedents when relevant
+        7. Consider industry-specific nuances and domain knowledge
+        8. Cite specific sources and data where possible (organizations, reports, studies)
+        
+        FORMAT YOUR RESPONSE AS FOLLOWS:
+        1. KEY FINDINGS: 3-5 bullet points summarizing the most important insights
+        2. DETAILED ANALYSIS: A comprehensive exploration of the topic organized by relevant subtopics
+        3. IMPLICATIONS: What these findings mean for stakeholders and decision-makers
+        4. RECOMMENDATIONS: Actionable next steps or considerations based on the research
+        
+        Your research should be comprehensive, nuanced, and actionable. Avoid overgeneralizations
+        and aim for specific, concrete information that would genuinely help someone understand this topic deeply.
+        """
+        
+        llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.7)
+        prompt = PromptTemplate.from_template(research_prompt)
+        chain = prompt | llm | StrOutputParser()
+        
+        research_report = await asyncio.to_thread(chain.invoke, {"query": query})
+        
+        return {
+            "query": query,
+            "report": research_report,
+            "status": "success",
+            "backend": "standalone"
+        }
+        
+    except Exception as e:
+        logger.error(f"Error in standalone research: {str(e)}")
+        return {
+            "query": query,
+            "error": str(e),
+            "status": "failed",
+            "backend": "standalone"
+        }
 
 async def process_rfp_with_deep_research(rfp_text: str, backend: str = "open-deepresearch") -> Dict[str, Any]:
     """
@@ -419,81 +459,52 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='RFP Deep Research Agent')
     parser.add_argument('--rfp', type=str, help='Path to RFP text file')
     parser.add_argument('--backend', type=str, default='open-deepresearch', 
-                        choices=['open-deepresearch', 'perplexity'],
+                        choices=['open-deepresearch', 'perplexity', 'standalone'],
                         help='Deep research backend to use')
     parser.add_argument('--output', type=str, help='Path to save output JSON')
+    parser.add_argument('--sample', action='store_true', help='Use sample RFP text')
     args = parser.parse_args()
     
-    # If no arguments provided, use the sample RFP text
-    if not args.rfp:
-        print("===== AGENT #1: Generating Queries from Sample RFP =====")
-        rfp_text = """ The City of Charleston
-Procurement Division
-75 Calhoun Street, Suite 3500
-Charleston, South Carolina 29401
-P) 843-724-7312 F) 843-720-3872
-www.charleston-sc.gov
-Proposal Number: 24-P028R Proposals will be received until: November 5, 2024 @ 1:00pm
-Proposal Title: Comprehensive Data Analytics System
-Mailing Date: October 3, 2024 Direct Inquiries to: Robin B. Robinson
-Vendor Name: FEIN/SS#:
-Vendor Address:
-City – State – Zip:
-Telephone Number: Fax Number:
-Minority or Women Owned Business:
-Are you a certified Minority or Women-Owned business in the State of South Carolina? If so, please provide a copy of your certificate with your response.
- Yes  No
-Authorized Signature: _____________________________ Title: __________________________
-Date: _________________________
-I certify that this bid is made without prior understanding, agreement, or connection with any corporation, firm, or person submitting a bid
-for the same materials, supplies, equipment or services and is in all respects fair and without collusion or fraud. I agree to abide by all
-conditions of this bid and certify that I am authorized to sign this bid for the bidder. This signed page must be included with bid
-submission.
-1. 2. IMPORTANT
-This solicitation seeks proposals responding to the Scope of Work for Comprehensive Data
-Analytics System. This solicitation does not commit the City of Charleston to award a
-contract, to pay any costs incurred in the preparation of applications submitted, or to procure
-or contract for the services. The City reserves the right to accept or reject any, all or any part
-of any proposal received as a result of this Solicitation, or to cancel in part or in its entirety
-this Solicitation if it is in the best interest of the City to do so. The City shall be the sole
-judge as to whether proposals submitted meet all requirements contained in this solicitation.
-The City of Charleston, South Carolina has received funds from the Bureau of Justice
-Assistance, and are bidding these items utilizing the 2023 Smart Policing Initiative."""
-    else:
-        print(f"===== AGENT #1: Generating Queries from RFP file: {args.rfp} =====")
-        with open(args.rfp, 'r') as f:
+    # Check if the input file exists or use default
+    if os.path.exists('input/rfp.txt'):
+        print("===== AGENT #1: Generating Queries from default RFP file =====")
+        with open('input/rfp.txt', 'r') as f:
             rfp_text = f.read()
     
     # Generate queries and send to deep research
     async def main():
-        results = await process_rfp_with_deep_research(rfp_text, backend=args.backend)
-        
-        # Output results
-        if args.output:
-            with open(args.output, 'w') as f:
-                json.dump(results, f, indent=2)
-            print(f"Results saved to {args.output}")
-        else:
-            print("\n===== GENERATED RESEARCH PLAN =====")
-            print(f"Title: {results['title']}")
-            print(f"Description: {results['description']}")
-            print(f"Categories: {len(results['categories'])}")
-            print(f"Total queries: {results['meta']['query_count']}")
-            print(f"Successful queries: {results['meta']['success_count']}")
+        try:
+            results = await process_rfp_with_deep_research(rfp_text, backend=args.backend)
             
-            print("\n===== SAMPLE FINDINGS =====")
-            if results['categories']:
-                first_category = results['categories'][0]
-                print(f"Category: {first_category['heading']}")
-                if first_category.get('subheading'):
-                    print(f"Subheading: {first_category['subheading']}")
-                    
-                if first_category['findings']:
-                    first_finding = first_category['findings'][0]
-                    print(f"\nQuestion: {first_finding['question']}")
-                    print(f"Answer (preview): {first_finding['answer'][:500]}...")
-            
-            print("\nTo see full results, use the --output option to save to a file.")
+            # Output results
+            if args.output:
+                with open(args.output, 'w') as f:
+                    json.dump(results, f, indent=2)
+                print(f"Results saved to {args.output}")
+            else:
+                print("\n===== GENERATED RESEARCH PLAN =====")
+                print(f"Title: {results['title']}")
+                print(f"Description: {results['description']}")
+                print(f"Categories: {len(results['categories'])}")
+                print(f"Total queries: {results['meta']['query_count']}")
+                print(f"Successful queries: {results['meta']['success_count']}")
+                
+                print("\n===== SAMPLE FINDINGS =====")
+                if results['categories']:
+                    first_category = results['categories'][0]
+                    print(f"Category: {first_category['heading']}")
+                    if first_category.get('subheading'):
+                        print(f"Subheading: {first_category['subheading']}")
+                        
+                    if first_category['findings']:
+                        first_finding = first_category['findings'][0]
+                        print(f"\nQuestion: {first_finding['question']}")
+                        print(f"Answer (preview): {first_finding['answer'][:500]}...")
+                
+                print("\nTo see full results, use the --output option to save to a file.")
+        except Exception as e:
+            logger.error(f"Error in main execution: {str(e)}")
+            print(f"\nError: {str(e)}")
     
     # Run the async main function
     asyncio.run(main())
