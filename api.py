@@ -23,9 +23,9 @@ logger = logging.getLogger(__name__)
 
 # Create FastAPI app
 app = FastAPI(
-    title="DeepResearch API",
-    description="API for processing RFPs with deep research capabilities",
-    version="1.0.0",
+    title="Advanced Research API",
+    description="API for advanced RFP processing and research capabilities",
+    version="2.0.0",
 )
 
 # Add CORS middleware
@@ -67,7 +67,7 @@ class ResearchPlanModel(BaseModel):
     queries: List[ResearchQueryModel] = Field(description="Structured research queries")
 
 # Routes
-@app.post("/generate-queries/")
+@app.post("/deepresearch/generate-queries/")
 async def api_generate_queries(input_data: RFPInput):
     """
     Generate structured research queries from an RFP document.
@@ -83,7 +83,7 @@ async def api_generate_queries(input_data: RFPInput):
         logger.error(f"Error generating queries: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/single-query/")
+@app.post("/deepresearch/single-query/")
 async def api_single_query(input_data: QueryInput):
     """
     Run deep research on a single query.
@@ -100,7 +100,7 @@ async def api_single_query(input_data: QueryInput):
         logger.error(f"Error processing query: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/batch-queries/")
+@app.post("/deepresearch/batch-queries/")
 async def api_batch_queries(input_data: QueriesInput):
     """
     Run deep research on multiple queries in batch.
@@ -118,7 +118,7 @@ async def api_batch_queries(input_data: QueriesInput):
         logger.error(f"Error processing batch queries: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/process-complete-rfp/")
+@app.post("/deepresearch/process-complete-rfp/")
 async def process_complete_rfp(input_data: RFPInput):
     """
     Process an RFP document with deep research and return the complete final result.
@@ -148,7 +148,7 @@ async def process_complete_rfp(input_data: RFPInput):
         logger.error(f"Error in complete RFP processing: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/upload-and-process-rfp/")
+@app.post("/deepresearch/upload-and-process-rfp/")
 async def upload_and_process_rfp(
     file: Optional[UploadFile] = File(None),
     rfp_text: Optional[str] = Form(None),
