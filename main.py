@@ -192,13 +192,22 @@ def extract_json_from_text(text: str) -> str:
     # If all else fails, return the original text
     return text
 
-async def send_queries_to_deep_research(queries: List[str], backend: str = "open-deepresearch") -> List[Dict[str, Any]]:
+async def send_queries_to_deep_research(
+    queries: List[str], 
+    backend: str = "open-deepresearch",
+    planner_model: str = "gpt-4o-mini",
+    writer_model: str = "gpt-4o-mini",
+    max_search_depth: int = 2
+) -> List[Dict[str, Any]]:
     """
     Send the generated queries to a deep research backend and return the results.
     
     Args:
         queries: List of query strings to research
         backend: Which backend to use ("open-deepresearch", "perplexity", or "standalone")
+        planner_model: Model to use for planning (when using open-deepresearch)
+        writer_model: Model to use for writing (when using open-deepresearch)
+        max_search_depth: Maximum search depth for researching
         
     Returns:
         List of research results, one per query
@@ -228,10 +237,10 @@ async def send_queries_to_deep_research(queries: List[str], backend: str = "open
                             "thread_id": thread_id,
                             "search_api": "tavily",
                             "planner_provider": "openai",
-                            "planner_model": "gpt-4o-mini",
+                            "planner_model": planner_model,
                             "writer_provider": "openai",
-                            "writer_model": "gpt-4o-mini",
-                            "max_search_depth": 2,
+                            "writer_model": writer_model,
+                            "max_search_depth": max_search_depth,
                             "report_structure": "Comprehensive analysis with key findings, details, and implications"
                         }
                     }
@@ -312,18 +321,24 @@ async def send_queries_to_deep_research(queries: List[str], backend: str = "open
     
     return results
 
-async def standalone_research(query: str) -> Dict[str, Any]:
+async def standalone_research(
+    query: str,
+    model_name: str = "gpt-4o-mini",
+    temperature: float = 0.7
+) -> Dict[str, Any]:
     """
     Perform standalone research using LangChain and OpenAI.
     This is a fallback when other backends are not available.
     
     Args:
         query: The research query
+        model_name: The model to use for research
+        temperature: Temperature setting for the model
         
     Returns:
         Dictionary with research results
     """
-    logger.info(f"Performing standalone research for query: {query}")
+    logger.info(f"Performing standalone research for query: {query} using model {model_name}")
     
     try:
         from langchain_openai import ChatOpenAI
@@ -356,7 +371,7 @@ async def standalone_research(query: str) -> Dict[str, Any]:
         and aim for specific, concrete information that would genuinely help someone understand this topic deeply.
         """
         
-        llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.7)
+        llm = ChatOpenAI(model_name=model_name, temperature=temperature)
         prompt = PromptTemplate.from_template(research_prompt)
         chain = prompt | llm | StrOutputParser()
         
@@ -378,7 +393,14 @@ async def standalone_research(query: str) -> Dict[str, Any]:
             "backend": "standalone"
         }
 
-async def process_rfp_with_deep_research(rfp_text: str, backend: str = "open-deepresearch") -> Dict[str, Any]:
+async def process_rfp_with_deep_research(
+    rfp_text: str, 
+    backend: str = "open-deepresearch",
+    model_name: str = "o3-mini",
+    temperature: float = 1.0,
+    planner_model: str = "gpt-4o-mini",
+    writer_model: str = "gpt-4o-mini"
+) -> Dict[str, Any]:
     """
     Process an RFP document with deep research:
     1. Generate structured queries from the RFP
@@ -388,12 +410,16 @@ async def process_rfp_with_deep_research(rfp_text: str, backend: str = "open-dee
     Args:
         rfp_text: The text content of the RFP
         backend: Which backend to use for deep research
+        model_name: The model to use for query generation
+        temperature: Temperature setting for query generation
+        planner_model: Model to use for planning (when using open-deepresearch)
+        writer_model: Model to use for writing (when using open-deepresearch)
         
     Returns:
         Dict with the full research results
     """
     # Step 1: Generate structured queries
-    query_plan = generate_rfp_queries(rfp_text)
+    query_plan = generate_rfp_queries(rfp_text, model_name=model_name, temperature=temperature)
     
     # Step 2: Extract individual queries for research
     all_queries = []
@@ -405,7 +431,12 @@ async def process_rfp_with_deep_research(rfp_text: str, backend: str = "open-dee
             all_queries.append(f"[{context}] {question}")
     
     # Step 3: Send queries to deep research
-    research_results = await send_queries_to_deep_research(all_queries, backend=backend)
+    research_results = await send_queries_to_deep_research(
+        all_queries, 
+        backend=backend,
+        planner_model=planner_model,
+        writer_model=writer_model
+    )
     
     # Step 4: Compile the results
     compiled_results = {
