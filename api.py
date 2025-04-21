@@ -41,14 +41,20 @@ app.add_middleware(
 class RFPInput(BaseModel):
     rfp_text: str
     backend: str = "open-deepresearch"
+    model_name: str = "o3-mini"
+    temperature: float = 1.0
 
 class QueryInput(BaseModel):
     query: str
     backend: str = "open-deepresearch"
+    model_name: str = "gpt-4o-mini"
+    temperature: float = 0.7
 
 class QueriesInput(BaseModel):
     queries: List[str]
     backend: str = "open-deepresearch"
+    planner_model: str = "gpt-4o-mini"
+    writer_model: str = "gpt-4o-mini"
 
 class ResearchQueryModel(BaseModel):
     heading: str = Field(description="The heading or category of the query")
@@ -67,7 +73,11 @@ async def api_generate_queries(input_data: RFPInput):
     Generate structured research queries from an RFP document.
     """
     try:
-        result = generate_rfp_queries(input_data.rfp_text)
+        result = generate_rfp_queries(
+            rfp_text=input_data.rfp_text,
+            model_name=input_data.model_name,
+            temperature=input_data.temperature
+        )
         return result
     except Exception as e:
         logger.error(f"Error generating queries: {str(e)}")
@@ -79,7 +89,12 @@ async def api_single_query(input_data: QueryInput):
     Run deep research on a single query.
     """
     try:
-        result = await standalone_research(input_data.query)
+        # Modify standalone_research to support model parameters
+        result = await standalone_research(
+            query=input_data.query,
+            model_name=input_data.model_name,
+            temperature=input_data.temperature
+        )
         return result
     except Exception as e:
         logger.error(f"Error processing query: {str(e)}")
@@ -91,7 +106,13 @@ async def api_batch_queries(input_data: QueriesInput):
     Run deep research on multiple queries in batch.
     """
     try:
-        results = await send_queries_to_deep_research(input_data.queries, input_data.backend)
+        # Pass the model parameters to the underlying function
+        results = await send_queries_to_deep_research(
+            queries=input_data.queries, 
+            backend=input_data.backend,
+            planner_model=input_data.planner_model,
+            writer_model=input_data.writer_model
+        )
         return results
     except Exception as e:
         logger.error(f"Error processing batch queries: {str(e)}")
@@ -107,8 +128,13 @@ async def process_complete_rfp(input_data: RFPInput):
     """
     try:
         logger.info("Starting complete RFP processing")
-        # Process the RFP with deep research
-        results = await process_rfp_with_deep_research(input_data.rfp_text, input_data.backend)
+        # Process the RFP with deep research, now with model parameters
+        results = await process_rfp_with_deep_research(
+            rfp_text=input_data.rfp_text, 
+            backend=input_data.backend,
+            model_name=input_data.model_name,
+            temperature=input_data.temperature
+        )
         
         # Return the complete results
         return {
@@ -126,7 +152,11 @@ async def process_complete_rfp(input_data: RFPInput):
 async def upload_and_process_rfp(
     file: Optional[UploadFile] = File(None),
     rfp_text: Optional[str] = Form(None),
-    backend: str = Form("open-deepresearch")
+    backend: str = Form("open-deepresearch"),
+    model_name: str = Form("o3-mini"),
+    temperature: float = Form(1.0),
+    planner_model: str = Form("gpt-4o-mini"),
+    writer_model: str = Form("gpt-4o-mini")
 ):
     """
     Process an RFP document from either an uploaded file or direct text input.
@@ -150,8 +180,15 @@ async def upload_and_process_rfp(
                 detail="Either a file upload or RFP text must be provided"
             )
         
-        # Process the RFP with deep research
-        results = await process_rfp_with_deep_research(rfp_content, backend)
+        # Process the RFP with deep research, including model parameters
+        results = await process_rfp_with_deep_research(
+            rfp_text=rfp_content, 
+            backend=backend,
+            model_name=model_name,
+            temperature=temperature,
+            planner_model=planner_model,
+            writer_model=writer_model
+        )
         
         # Return the complete results
         return {
