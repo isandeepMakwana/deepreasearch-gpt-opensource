@@ -1,6 +1,6 @@
 # DeepResearch API
 
-A FastAPI-based service for deep research on RFP documents and queries using AI capabilities.
+An advanced FastAPI-based service for deep research on RFP documents and queries using AI capabilities.
 
 ## Features
 
@@ -9,19 +9,20 @@ A FastAPI-based service for deep research on RFP documents and queries using AI 
 - **Structured Query Generation**: Generates detailed research questions from RFP documents
 - **Batch Processing**: Process multiple research queries in parallel
 - **File Upload Support**: Upload RFP documents directly for processing
+- **Model Selection**: Choose AI models for different parts of the research process
 
 ## API Endpoints
 
 ### Core Endpoints
 
-- **`/generate-queries/`**: Generate structured research queries from an RFP document
-- **`/single-query/`**: Run deep research on a single query
-- **`/batch-queries/`**: Process multiple research queries in batch
+- **`/deepresearch/generate-queries/`**: Generate structured research queries from an RFP document
+- **`/deepresearch/single-query/`**: Run deep research on a single query
+- **`/deepresearch/batch-queries/`**: Process multiple research queries in batch
 
 ### Complete Processing Endpoints
 
-- **`/process-complete-rfp/`**: Takes RFP text and returns complete results after deep research
-- **`/upload-and-process-rfp/`**: Accepts either a file upload or direct RFP text and returns complete results
+- **`/deepresearch/process-complete-rfp/`**: Takes RFP text and returns complete results after deep research
+- **`/deepresearch/upload-and-process-rfp/`**: Accepts either a file upload or direct RFP text and returns complete results
 
 ## Installation
 
@@ -52,12 +53,6 @@ Start the FastAPI server with:
 uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Or use the provided script:
-
-```bash
-./run_api.sh
-```
-
 The API documentation will be available at: http://localhost:8000/docs
 
 ## API Usage Examples
@@ -68,10 +63,12 @@ The API documentation will be available at: http://localhost:8000/docs
 import requests
 import json
 
-url = "http://localhost:8000/generate-queries/"
+url = "http://localhost:8000/deepresearch/generate-queries/"
 data = {
     "rfp_text": "Your RFP text here...",
-    "backend": "open-deepresearch"  # or "perplexity" or "standalone"
+    "backend": "open-deepresearch",
+    "model_name": "o3-mini",
+    "temperature": 1.0
 }
 
 response = requests.post(url, json=data)
@@ -84,9 +81,11 @@ print(json.dumps(result, indent=2))
 ```python
 import requests
 
-url = "http://localhost:8000/single-query/"
+url = "http://localhost:8000/deepresearch/single-query/"
 data = {
-    "query": "What are the latest developments in quantum computing?"
+    "query": "What are the latest developments in quantum computing?",
+    "model_name": "gpt-4o-mini",
+    "temperature": 0.7
 }
 
 response = requests.post(url, json=data)
@@ -99,10 +98,12 @@ print(result["report"])
 ```python
 import requests
 
-url = "http://localhost:8000/process-complete-rfp/"
+url = "http://localhost:8000/deepresearch/process-complete-rfp/"
 data = {
     "rfp_text": "Your RFP text here...",
-    "backend": "open-deepresearch"
+    "backend": "open-deepresearch",
+    "model_name": "o3-mini",
+    "temperature": 1.0
 }
 
 response = requests.post(url, json=data)
@@ -114,9 +115,15 @@ result = response.json()
 ```python
 import requests
 
-url = "http://localhost:8000/upload-and-process-rfp/"
+url = "http://localhost:8000/deepresearch/upload-and-process-rfp/"
 files = {"file": open("your_rfp.txt", "rb")}
-data = {"backend": "open-deepresearch"}
+data = {
+    "backend": "open-deepresearch",
+    "model_name": "o3-mini",
+    "temperature": 1.0,
+    "planner_model": "gpt-4o-mini",
+    "writer_model": "gpt-4o-mini"
+}
 
 response = requests.post(url, files=files, data=data)
 result = response.json()
@@ -126,8 +133,10 @@ result = response.json()
 
 - Built with FastAPI for async request handling
 - Utilizes LangChain for AI capabilities
+- Supports multiple AI model selection
 - Uses OpenAI models by default
 - Optional integration with Perplexity API for enhanced research
+- Includes Tavily search integration
 
 ## Requirements
 
@@ -137,3 +146,4 @@ result = response.json()
 - LangChain
 - OpenAI API credentials
 - Perplexity API credentials (optional)
+- Tavily API credentials (optional)
