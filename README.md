@@ -147,3 +147,109 @@ result = response.json()
 - OpenAI API credentials
 - Perplexity API credentials (optional)
 - Tavily API credentials (optional)
+
+## System Architecture
+
+The DeepResearch API follows a modular architecture designed for extensibility, concurrent processing, and robust research capabilities:
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                        DeepResearch API                          │
+└──────────────────────────────┬───────────────────────────────────┘
+                               │
+                               ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                       FastAPI Application                        │
+│                                                                  │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐   │
+│  │  API Endpoints  │  │ Request Models  │  │  Error Handling │   │
+│  └────────┬────────┘  └────────┬────────┘  └────────┬────────┘   │
+│           │                    │                    │            │
+└───────────┼────────────────────┼────────────────────┼────────────┘
+            │                    │                    │
+            ▼                    ▼                    ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                       Core Processing Logic                      │
+│                                                                  │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐   │
+│  │ Query Generator │  │ Research Engine │  │ Results Compiler│   │
+│  └────────┬────────┘  └────────┬────────┘  └────────┬────────┘   │
+│           │                    │                    │            │
+└───────────┼────────────────────┼────────────────────┼────────────┘
+            │                    │                    │
+            ▼                    ▼                    ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                        Research Backends                         │
+│                                                                  │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐   │
+│  │Open-DeepResearch│  │    Perplexity   │  │   Standalone    │   │
+│  └────────┬────────┘  └────────┬────────┘  └────────┬────────┘   │
+│           │                    │                    │            │
+└───────────┼────────────────────┼────────────────────┼────────────┘
+            │                    │                    │
+            ▼                    ▼                    ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                        External Services                         │
+│                                                                  │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐   │
+│  │   OpenAI API    │  │ Perplexity API  │  │   Tavily API    │   │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘   │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+### Component Descriptions
+
+1. **API Layer (FastAPI Application)**
+   - **API Endpoints**: RESTful endpoints exposed for clients to interact with the system
+   - **Request Models**: Pydantic models for data validation and serialization
+   - **Error Handling**: Centralized error handling and logging
+
+2. **Core Processing Logic**
+   - **Query Generator**: Analyzes RFP documents and generates structured research queries
+   - **Research Engine**: Processes research queries through selected backends
+   - **Results Compiler**: Aggregates and formats research results into comprehensive reports
+
+3. **Research Backends**
+   - **Open-DeepResearch**: Primary backend using LangGraph for advanced research capabilities
+   - **Perplexity**: Alternative backend leveraging Perplexity API for web-based research
+   - **Standalone**: Fallback backend using direct LLM calls for research
+
+4. **External Services**
+   - **OpenAI API**: Provides language model capabilities for query generation and research
+   - **Perplexity API**: Specialized research API for comprehensive web-based information retrieval
+   - **Tavily API**: Search API for sourcing relevant information
+
+### Data Flow
+
+1. **RFP Processing Flow**:
+   ```
+   RFP Document → Query Generation → Research Queries → Research Engine → 
+   Multiple Backend Processing → Results Aggregation → Final Report
+   ```
+
+2. **Single Query Flow**:
+   ```
+   Research Query → Research Engine → Backend Selection → 
+   External API Calls → Results Formatting → Response
+   ```
+
+3. **Batch Query Flow**:
+   ```
+   Multiple Queries → Concurrent Processing → Individual Research → 
+   Results Collection → Consolidated Response
+   ```
+
+### Async Implementation
+
+The system leverages FastAPI's async capabilities to:
+1. Handle multiple concurrent user requests
+2. Process batch queries in parallel
+3. Maintain responsiveness during long-running research operations
+
+### Failover Mechanism
+
+The backend selection follows a priority order with automatic failover:
+1. Attempts to use Open-DeepResearch first
+2. Falls back to Perplexity if available and Open-DeepResearch fails
+3. Uses standalone research as a final fallback
