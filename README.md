@@ -16,6 +16,7 @@ An advanced FastAPI-based service for deep research on RFP documents and queries
 ### Core Endpoints
 
 - **`/deepresearch/generate-queries/`**: Generate structured research queries from an RFP document
+- **`/deepresearch/display-queries/`**: Generate and display queries with additional metadata
 - **`/deepresearch/single-query/`**: Run deep research on a single query
 - **`/deepresearch/batch-queries/`**: Process multiple research queries in batch
 
@@ -64,6 +65,25 @@ import requests
 import json
 
 url = "http://localhost:8000/deepresearch/generate-queries/"
+data = {
+    "rfp_text": "Your RFP text here...",
+    "backend": "open-deepresearch",
+    "model_name": "o3-mini",
+    "temperature": 1.0
+}
+
+response = requests.post(url, json=data)
+result = response.json()
+print(json.dumps(result, indent=2))
+```
+
+### Display Generated Queries with Metadata
+
+```python
+import requests
+import json
+
+url = "http://localhost:8000/deepresearch/display-queries/"
 data = {
     "rfp_text": "Your RFP text here...",
     "backend": "open-deepresearch",

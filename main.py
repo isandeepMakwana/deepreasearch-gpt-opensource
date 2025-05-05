@@ -62,6 +62,7 @@ def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature
     3. The client's context, challenges, and strategic objectives
     4. The competitive landscape
     5. Financial and technical insights relevant to this opportunity
+    6.Include the agency name [RFP Client Name(full name) from RFP EXCERPT] in each question to facilitate more effective searches.
     
     RFP EXCERPT:
     {rfp_content}

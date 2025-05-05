@@ -83,6 +83,37 @@ async def api_generate_queries(input_data: RFPInput):
         logger.error(f"Error generating queries: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.post("/deepresearch/display-queries/")
+async def display_generated_queries(input_data: RFPInput):
+    """
+    Generate and display structured research queries from an RFP document without running the full research process.
+    
+    This endpoint is similar to generate-queries but is specifically designed for displaying the generated queries
+    in a more user-friendly format with additional metadata.
+    """
+    try:
+        logger.info("Generating queries for display")
+        # Use the existing function to generate queries
+        result = generate_rfp_queries(
+            rfp_text=input_data.rfp_text,
+            model_name=input_data.model_name,
+            temperature=input_data.temperature
+        )
+        # Add additional metadata for display purposes
+        enhanced_result = { # Simple hash for demo purposes
+            "title": result.get("title", "Research Plan"),
+            "description": result.get("description", "Generated research queries"),
+            "queries": result.get("queries", []),
+            "status": "completed",
+            "rfp_length": len(input_data.rfp_text),
+            "model_used": input_data.model_name
+        }
+        
+        return enhanced_result
+    except Exception as e:
+        logger.error(f"Error displaying generated queries: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.post("/deepresearch/single-query/")
 async def api_single_query(input_data: QueryInput):
     """
