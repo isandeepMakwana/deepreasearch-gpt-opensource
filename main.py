@@ -200,7 +200,7 @@ async def send_queries_to_deep_research(
             graph = builder.compile(checkpointer=memory)
             
             # Process each query
-            for query in tqdm(queries[3:8], desc="Processing queries"):
+            for query in tqdm(queries, desc="Processing queries"):
                 try:
                     # Create a unique thread for this query
                     thread_id = str(uuid.uuid4())
