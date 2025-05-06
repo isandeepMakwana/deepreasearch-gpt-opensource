@@ -42,13 +42,17 @@ class RFPInput(BaseModel):
     rfp_text: str
     backend: str = "open-deepresearch"
     model_name: str = "o3-mini"
+    planner_model: Optional[str] = "o4-mini"
+    writer_model: Optional[str] = "o3-mini"
     temperature: float = 1.0
+    report_structure: Optional[str] = None
+
 
 class QueryInput(BaseModel):
     query: str
     backend: str = "open-deepresearch"
     model_name: str = "gpt-4o-mini"
-    temperature: float = 0.7
+    temperature: float = 1.0
 
 class QueriesInput(BaseModel):
     queries: List[str]
@@ -159,12 +163,32 @@ async def process_complete_rfp(input_data: RFPInput):
     """
     try:
         logger.info("Starting complete RFP processing")
+        REPORT_STRUCTURE = """
+            1. Topic Overview
+            • What is the topic?
+            • Why is it important?
+
+            2. Key Insights (grouped by sub-topic)
+            • Sub-topic 1:
+                - Key Point A
+                - Key Point B
+            • Sub-topic 2:
+                - Key Point A
+                - Key Point B
+            • Sub-topic 3 (if needed):
+                - Key Point A
+                - Key Point B
+        """
         # Process the RFP with deep research, now with model parameters
         results = await process_rfp_with_deep_research(
             rfp_text=input_data.rfp_text, 
             backend=input_data.backend,
             model_name=input_data.model_name,
-            temperature=input_data.temperature
+            temperature=input_data.temperature,
+            planner_model=input_data.planner_model,
+            writer_model=input_data.writer_model,
+            report_structure=REPORT_STRUCTURE if not input_data.report_structure else input_data.report_structure
+
         )
         
         # Return the complete results
