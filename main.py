@@ -3,6 +3,7 @@ import json
 import asyncio
 import logging
 import re
+import re
 from typing import Dict, List, Optional, Union, Any
 
 # LangChain imports
@@ -12,6 +13,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain.chains import LLMChain
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
+from tqdm import tqdm
 
 # For deep research integration
 from dotenv import load_dotenv
@@ -61,7 +63,8 @@ def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature
     2. The implicit needs behind those requirements
     3. The client's context, challenges, and strategic objectives
     4. The competitive landscape
-    5. Financial and technical insights relevant to this opportunity
+    5. Technical insights relevant to this opportunity
+    6. Include the agency name [RFP Client Name(full name) from RFP EXCERPT] in each question to facilitate more effective searches.
     
     RFP EXCERPT:
     {rfp_content}
@@ -70,47 +73,19 @@ def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature
     1. Agency Background & Strategic Alignment
        A. Agency Mission & Vision
        B. Current Initiatives & Priorities
-       C. Organizational Structure & Decision-Making Process
-    
-    2. Incumbent Analysis
-       A. Incumbent Vendor (if any)
-       B. Incumbent Performance
-       C. Differentiation Strategy
-       D. Contract History & Transition Points
-    
-    3. Business Drivers & Problem Statement
+ 
+    2. Business Drivers & Problem Statement
        A. Overarching Pain Points
        B. Critical Events Leading to the RFP
-       C. Stated Goals vs. Implied Needs
-       D. Expected Outcomes & Success Metrics
-    
-    4. Financial Research
-       A. Budget Allocated for the Project
-       B. Agency's Spending History
-       C. Propensity to Spend
-       D. Comparable Budget Research
-       E. Total Cost of Ownership Considerations
-    
-    5. Technical Research
+       C. Expected Outcomes & Success Metrics
+
+    3. Technical Research
        A. Requirements Coverage
-       B. Current Tools/Technologies in Use
-       C. Integration Points & Ecosystem
-       D. Technical Constraints & Legacy Systems
     
-    6. Competitive Intelligence
-       A. Who Else Might Bid
-       B. Previous Bids or Awards
-       C. Competitor Strengths & Weaknesses
-       D. Your Unique Value Proposition
-    
-    7. Procurement Process & Decision Criteria
-       A. Evaluation Methodology
-       B. Key Decision Makers
-       C. Timing Considerations
-       D. Compliance Requirements
     
     INSTRUCTIONS:
-    - For each category and subcategory, generate 3-5 specific, detailed research questions
+    - For each category and subcategory, generate 1-2 specific, detailed research questions(but in simple language).
+    - Make sure that the generated question can be used later while drafting an award winning proposal.
     - Prioritize questions that require deep research beyond the RFP text
     - Focus on questions that would provide strategic advantage if answered
     - Include questions about hidden requirements, unstated needs, and context
@@ -121,16 +96,13 @@ def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature
     Use the following structure:
     
     {{
-      "title": "Research Plan for [RFP Title/Client Name]",
-      "description": "Strategic research questions for responding to [Client]'s RFP for [Project/Service]",
       "queries": [
         {{
           "heading": "Category Name",
           "subheading": "Subcategory Name",
           "questions": [
             "Specific question 1?",
-            "Specific question 2?",
-            "Specific question 3?"
+            "Specific question 2?"
           ]
         }}
       ]
@@ -197,7 +169,8 @@ async def send_queries_to_deep_research(
     backend: str = "open-deepresearch",
     planner_model: str = "gpt-4o-mini",
     writer_model: str = "gpt-4o-mini",
-    max_search_depth: int = 2
+    max_search_depth: int = 2,
+    report_structure: str = "Comprehensive analysis with key findings, details, and implications"
 ) -> List[Dict[str, Any]]:
     """
     Send the generated queries to a deep research backend and return the results.
@@ -228,7 +201,7 @@ async def send_queries_to_deep_research(
             graph = builder.compile(checkpointer=memory)
             
             # Process each query
-            for query in queries:
+            for query in tqdm(queries, desc="Processing queries"):
                 try:
                     # Create a unique thread for this query
                     thread_id = str(uuid.uuid4())
@@ -241,7 +214,9 @@ async def send_queries_to_deep_research(
                             "writer_provider": "openai",
                             "writer_model": writer_model,
                             "max_search_depth": max_search_depth,
-                            "report_structure": "Comprehensive analysis with key findings, details, and implications"
+                            "report_structure": report_structure,
+                            # "researcher_model" : "openai:o4-mini",
+                            # "eval_model": "openai:o3-mini"
                         }
                     }
                     
@@ -269,8 +244,8 @@ async def send_queries_to_deep_research(
                     logger.error(f"Error processing query '{query}' with open-deepresearch: {str(e)}")
                     logger.info(f"Falling back to standalone research for query: {query}")
                     # Fall back to standalone research
-                    standalone_result = await standalone_research(query)
-                    results.append(standalone_result)
+                    # standalone_result = await standalone_research(query)
+                    # results.append(standalone_result)
                     
         except ImportError as e:
             logger.error(f"Failed to import open-deepresearch modules: {str(e)}")
@@ -399,7 +374,8 @@ async def process_rfp_with_deep_research(
     model_name: str = "o3-mini",
     temperature: float = 1.0,
     planner_model: str = "gpt-4o-mini",
-    writer_model: str = "gpt-4o-mini"
+    writer_model: str = "gpt-4o-mini",
+    report_structure: str = "concised Report contaning key finding in bullet points"
 ) -> Dict[str, Any]:
     """
     Process an RFP document with deep research:
@@ -419,7 +395,7 @@ async def process_rfp_with_deep_research(
         Dict with the full research results
     """
     # Step 1: Generate structured queries
-    query_plan = generate_rfp_queries(rfp_text, model_name=model_name, temperature=temperature)
+    query_plan = generate_rfp_queries(rfp_text, model_name=planner_model, temperature=temperature)
     
     # Step 2: Extract individual queries for research
     all_queries = []
@@ -435,7 +411,8 @@ async def process_rfp_with_deep_research(
         all_queries, 
         backend=backend,
         planner_model=planner_model,
-        writer_model=writer_model
+        writer_model=writer_model,
+        report_structure = report_structure
     )
     
     # Step 4: Compile the results
