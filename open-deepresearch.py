@@ -1,10 +1,10 @@
-from langgraph.types import Command
-from langgraph.checkpoint.memory import MemorySaver
-from open_deep_research.graph import builder
-import asyncio
-import re, uuid, json
-import sys, os
+import uuid
+
 from dotenv import load_dotenv
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.types import Command
+from open_deep_research.graph import builder
+
 load_dotenv()
 
 memory = MemorySaver()
@@ -25,6 +25,7 @@ thread_template = {
     }
 }
 
+
 async def answer_query_with_deep_research(query: str) -> str:
     """
     Runs the 'graph' with a single query as the topic.
@@ -37,18 +38,21 @@ async def answer_query_with_deep_research(query: str) -> str:
     local_thread["configurable"]["thread_id"] = str(uuid.uuid4())
 
     # 1. Start the deep research
-    async for event in graph.astream({"topic": query}, local_thread, stream_mode="updates"):
-        if '__interrupt__' in event:
-            interrupt_value = event['__interrupt__'][0].value
+    async for event in graph.astream(
+        {"topic": query}, local_thread, stream_mode="updates"
+    ):
+        if "__interrupt__" in event:
+            interrupt_value = event["__interrupt__"][0].value
             print(f"INTERRUPT (Query: {query}): {interrupt_value}")
 
     # 2. (Optional) You could refine or add more instructions with Command(resume="...")
 
     # 3. Finalize the report
-    async for event in graph.astream(Command(resume=True), local_thread, stream_mode="updates"):
+    async for event in graph.astream(
+        Command(resume=True), local_thread, stream_mode="updates"
+    ):
         pass  # We won't print stream updates here, but you could if desired
 
     final_state = graph.get_state(local_thread)
     final_report = final_state.values.get("final_report", "")
     return final_report
-
