@@ -7,10 +7,9 @@ import requests
 from dotenv import load_dotenv
 
 # Set up logging
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-logger = logging.getLogger(__name__)
+from logger_config import setup_logger
+
+logger = setup_logger(__name__)
 
 # Load environment variables
 load_dotenv()
