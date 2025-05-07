@@ -15,15 +15,13 @@ An advanced FastAPI-based service for deep research on RFP documents and queries
 
 ### Core Endpoints
 
-- **`/deepresearch/generate-queries/`**: Generate structured research queries from an RFP document
-- **`/deepresearch/display-queries/`**: Generate and display queries with additional metadata
+- **`/deepresearch/generate-queries/`**: Generate structured research queries from an RFP document with additional metadata for display
 - **`/deepresearch/single-query/`**: Run deep research on a single query
 - **`/deepresearch/batch-queries/`**: Process multiple research queries in batch
 
 ### Complete Processing Endpoints
 
 - **`/deepresearch/process-complete-rfp/`**: Takes RFP text and returns complete results after deep research
-- **`/deepresearch/upload-and-process-rfp/`**: Accepts either a file upload or direct RFP text and returns complete results
 
 ## Installation
 
@@ -67,26 +65,6 @@ import json
 url = "http://localhost:8000/deepresearch/generate-queries/"
 data = {
     "rfp_text": "Your RFP text here...",
-    "backend": "open-deepresearch",
-    "model_name": "o3-mini",
-    "temperature": 1.0
-}
-
-response = requests.post(url, json=data)
-result = response.json()
-print(json.dumps(result, indent=2))
-```
-
-### Display Generated Queries with Metadata
-
-```python
-import requests
-import json
-
-url = "http://localhost:8000/deepresearch/display-queries/"
-data = {
-    "rfp_text": "Your RFP text here...",
-    "backend": "open-deepresearch",
     "model_name": "o3-mini",
     "temperature": 1.0
 }
@@ -104,13 +82,37 @@ import requests
 url = "http://localhost:8000/deepresearch/single-query/"
 data = {
     "query": "What are the latest developments in quantum computing?",
-    "model_name": "gpt-4o-mini",
-    "temperature": 0.7
+    "backend": "open-deepresearch",
+    "planner_model": "gpt-4o-mini",
+    "writer_model": "gpt-4o-mini",
+    "report_structure": "1. Overview\n2. Key Developments\n3. Future Directions"
 }
 
 response = requests.post(url, json=data)
 result = response.json()
-print(result["report"])
+print(result)
+```
+
+### Process Multiple Queries in Batch
+
+```python
+import requests
+
+url = "http://localhost:8000/deepresearch/batch-queries/"
+data = {
+    "queries": [
+        "What are the latest developments in quantum computing?",
+        "How is AI being used in healthcare?"
+    ],
+    "backend": "open-deepresearch",
+    "planner_model": "gpt-4o-mini",
+    "writer_model": "gpt-4o-mini",
+    "report_structure": "1. Overview\n2. Key Points\n3. Conclusion"
+}
+
+response = requests.post(url, json=data)
+result = response.json()
+print(result)
 ```
 
 ### Process Complete RFP
@@ -123,30 +125,15 @@ data = {
     "rfp_text": "Your RFP text here...",
     "backend": "open-deepresearch",
     "model_name": "o3-mini",
-    "temperature": 1.0
+    "temperature": 1.0,
+    "planner_model": "gpt-4o-mini",
+    "writer_model": "gpt-4o-mini",
+    "report_structure": "1. Topic Overview\n2. Key Insights\n3. Recommendations"
 }
 
 response = requests.post(url, json=data)
 result = response.json()
-```
-
-### Upload and Process RFP File
-
-```python
-import requests
-
-url = "http://localhost:8000/deepresearch/upload-and-process-rfp/"
-files = {"file": open("your_rfp.txt", "rb")}
-data = {
-    "backend": "open-deepresearch",
-    "model_name": "o3-mini",
-    "temperature": 1.0,
-    "planner_model": "gpt-4o-mini",
-    "writer_model": "gpt-4o-mini"
-}
-
-response = requests.post(url, files=files, data=data)
-result = response.json()
+print(result)
 ```
 
 ## Technical Details
@@ -157,6 +144,7 @@ result = response.json()
 - Uses OpenAI models by default
 - Optional integration with Perplexity API for enhanced research
 - Includes Tavily search integration
+- Comprehensive logging system with rotation policies
 
 ## Requirements
 
@@ -167,6 +155,20 @@ result = response.json()
 - OpenAI API credentials
 - Perplexity API credentials (optional)
 - Tavily API credentials (optional)
+
+## Logging System
+
+The DeepResearch API includes a comprehensive logging system that captures important events and errors:
+
+- **Log Location**: Logs are stored in the `logs/deepresearch.log` file within the project directory
+- **Log Rotation**: Automatic log rotation is implemented to prevent excessive file sizes
+  - Maximum log file size: 10MB
+  - Backup count: 5 files
+- **Log Format**: `timestamp - module_name - log_level - message`
+- **Output Destinations**: All logs are sent to both console and log file
+- **Log Levels**: The system uses standard Python logging levels (INFO, WARNING, ERROR, etc.)
+
+The logging system helps with debugging, monitoring API performance, and tracking errors during operation.
 
 ## System Architecture
 
@@ -223,7 +225,7 @@ The DeepResearch API follows a modular architecture designed for extensibility, 
 1. **API Layer (FastAPI Application)**
    - **API Endpoints**: RESTful endpoints exposed for clients to interact with the system
    - **Request Models**: Pydantic models for data validation and serialization
-   - **Error Handling**: Centralized error handling and logging
+   - **Error Handling**: Centralized error handling and logging system with file rotation
 
 2. **Core Processing Logic**
    - **Query Generator**: Analyzes RFP documents and generates structured research queries
