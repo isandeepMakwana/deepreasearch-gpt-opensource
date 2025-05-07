@@ -2,3 +2,4 @@
 2025-05-07 10:50:03,159 - api - INFO - Generating queries for display
 2025-05-07 10:50:03,162 - main - INFO - Generating research queries using gpt-4o-mini
 2025-05-07 10:50:13,190 - main - INFO - Successfully generated 7 research query categories
+2025-05-07 11:41:12,281 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
