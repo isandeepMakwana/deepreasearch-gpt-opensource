@@ -9,10 +9,9 @@ from main import (
 from schema import QueriesSchema, QuerySchema, RFPSchema, QuaryGenreatorSchema
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-logger = logging.getLogger(__name__)
+from logger_config import setup_logger
+
+logger = setup_logger(__name__)
 
 # Create FastAPI app
 app = FastAPI(
