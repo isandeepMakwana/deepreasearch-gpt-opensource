@@ -42,8 +42,8 @@ An advanced FastAPI-based service for deep research on RFP documents and queries
    Create a `.env` file in the project root with the following contents:
    ```
    OPENAI_API_KEY=your_openai_api_key
-   PERPLEXITY_API_KEY=your_perplexity_api_key 
-   TAVILY_API_KEY=your_tavily_api_key 
+   PERPLEXITY_API_KEY=your_perplexity_api_key
+   TAVILY_API_KEY=your_tavily_api_key
    ```
 
 ## Running the API Server
@@ -244,19 +244,19 @@ The DeepResearch API follows a modular architecture designed for extensibility, 
 
 1. **RFP Processing Flow**:
    ```
-   RFP Document → Query Generation → Research Queries → Research Engine → 
+   RFP Document → Query Generation → Research Queries → Research Engine →
    Multiple Backend Processing → Results Aggregation → Final Report
    ```
 
 2. **Single Query Flow**:
    ```
-   Research Query → Research Engine → Backend Selection → 
+   Research Query → Research Engine → Backend Selection →
    External API Calls → Results Formatting → Response
    ```
 
 3. **Batch Query Flow**:
    ```
-   Multiple Queries → Concurrent Processing → Individual Research → 
+   Multiple Queries → Concurrent Processing → Individual Research →
    Results Collection → Consolidated Response
    ```
 
