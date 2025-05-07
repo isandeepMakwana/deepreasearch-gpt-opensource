@@ -1,17 +1,12 @@
 import logging
-from typing import Optional
-
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-
-# Import existing functions from main.py
 from main import (
     generate_rfp_queries,
     process_rfp_with_deep_research,
     send_queries_to_deep_research,
-    standalone_research,
 )
-from models import QueriesInput, QueryInput, RFPInput
+from schema import QueriesSchema, QuerySchema, RFPSchema, QuaryGenreatorSchema
 
 # Configure logging
 logging.basicConfig(
@@ -38,26 +33,9 @@ app.add_middleware(
 
 # Routes
 @app.post("/deepresearch/generate-queries/")
-async def api_generate_queries(input_data: RFPInput):
+async def display_generated_queries(input_data: QuaryGenreatorSchema):
     """
-    Generate structured research queries from an RFP document.
-    """
-    try:
-        result = generate_rfp_queries(
-            rfp_text=input_data.rfp_text,
-            model_name=input_data.model_name,
-            temperature=input_data.temperature,
-        )
-        return result
-    except Exception as e:
-        logger.error(f"Error generating queries: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.post("/deepresearch/display-queries/")
-async def display_generated_queries(input_data: RFPInput):
-    """
-    Generate and display structured research queries from an RFP document without running the full research process.
+    Generate structured research queries from an RFP document without running the full research process.
 
     This endpoint is similar to generate-queries but is specifically designed for displaying the generated queries
     in a more user-friendly format with additional metadata.
@@ -87,25 +65,26 @@ async def display_generated_queries(input_data: RFPInput):
 
 
 @app.post("/deepresearch/single-query/")
-async def api_single_query(input_data: QueryInput):
+async def api_single_query(input_data: QuerySchema):
     """
     Run deep research on a single query.
     """
     try:
-        # Modify standalone_research to support model parameters
-        result = await standalone_research(
-            query=input_data.query,
-            model_name=input_data.model_name,
-            temperature=input_data.temperature,
+        results = await send_queries_to_deep_research(
+            queries=[input_data.query],
+            backend=input_data.backend,
+            planner_model=input_data.planner_model,
+            writer_model=input_data.writer_model,
+            report_structure=input_data.report_structure,
         )
-        return result
+        return results
     except Exception as e:
         logger.error(f"Error processing query: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.post("/deepresearch/batch-queries/")
-async def api_batch_queries(input_data: QueriesInput):
+async def api_batch_queries(input_data: QueriesSchema):
     """
     Run deep research on multiple queries in batch.
     """
@@ -116,6 +95,7 @@ async def api_batch_queries(input_data: QueriesInput):
             backend=input_data.backend,
             planner_model=input_data.planner_model,
             writer_model=input_data.writer_model,
+            report_structure=input_data.report_structure,
         )
         return results
     except Exception as e:
@@ -124,7 +104,7 @@ async def api_batch_queries(input_data: QueriesInput):
 
 
 @app.post("/deepresearch/process-complete-rfp/")
-async def process_complete_rfp(input_data: RFPInput):
+async def process_complete_rfp(input_data: RFPSchema):
     """
     Process an RFP document with deep research and return the complete final result.
 
@@ -159,7 +139,9 @@ async def process_complete_rfp(input_data: RFPInput):
             writer_model=input_data.writer_model,
             report_structure=(
                 REPORT_STRUCTURE
-                if not input_data.report_structure
+                if (
+                    not input_data.report_structure or input_data.report_structure == ""
+                )
                 else input_data.report_structure
             ),
         )
@@ -174,61 +156,6 @@ async def process_complete_rfp(input_data: RFPInput):
         }
     except Exception as e:
         logger.error(f"Error in complete RFP processing: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.post("/deepresearch/upload-and-process-rfp/")
-async def upload_and_process_rfp(
-    file: Optional[UploadFile] = File(None),
-    rfp_text: Optional[str] = Form(None),
-    backend: str = Form("open-deepresearch"),
-    model_name: str = Form("o3-mini"),
-    temperature: float = Form(1.0),
-    planner_model: str = Form("gpt-4o-mini"),
-    writer_model: str = Form("gpt-4o-mini"),
-):
-    """
-    Process an RFP document from either an uploaded file or direct text input.
-    Returns the complete results after deep research is done.
-    """
-    try:
-        # Determine the RFP text source
-        if file is not None:
-            # Read the file content
-            contents = await file.read()
-            rfp_content = contents.decode("utf-8")
-            logger.info(f"Processing RFP from uploaded file: {file.filename}")
-        elif rfp_text is not None:
-            # Use the provided text directly
-            rfp_content = rfp_text
-            logger.info("Processing RFP from text input")
-        else:
-            # No input provided
-            raise HTTPException(
-                status_code=400,
-                detail="Either a file upload or RFP text must be provided",
-            )
-
-        # Process the RFP with deep research, including model parameters
-        results = await process_rfp_with_deep_research(
-            rfp_text=rfp_content,
-            backend=backend,
-            model_name=model_name,
-            temperature=temperature,
-            planner_model=planner_model,
-            writer_model=writer_model,
-        )
-
-        # Return the complete results
-        return {
-            "status": "success",
-            "title": results.get("title", "Research Report"),
-            "description": results.get("description", "Deep research analysis"),
-            "categories": results.get("categories", []),
-            "meta": results.get("meta", {}),
-        }
-    except Exception as e:
-        logger.error(f"Error processing RFP: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
