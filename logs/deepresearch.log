@@ -3,3 +3,64 @@
 2025-05-07 10:50:03,162 - main - INFO - Generating research queries using gpt-4o-mini
 2025-05-07 10:50:13,190 - main - INFO - Successfully generated 7 research query categories
 2025-05-07 11:41:12,281 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:47:47,993 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:47:48,936 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:48:04,226 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:48:04,764 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:49:17,622 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:49:18,156 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:49:27,642 - api - INFO - Starting complete RFP processing
+2025-05-07 15:49:27,643 - main - INFO - Generating research queries using o4-mini
+2025-05-07 15:55:02,548 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:55:03,086 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:55:06,297 - api - INFO - Starting complete RFP processing
+2025-05-07 15:55:06,297 - main - INFO - Generating research queries using o4-mini
+2025-05-07 15:55:19,538 - main - INFO - Successfully generated 6 research query categories
+2025-05-07 15:55:19,539 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-07 15:56:25,072 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:57:01,223 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:57:01,802 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 15:57:08,725 - api - INFO - Starting complete RFP processing
+2025-05-07 15:57:08,725 - main - INFO - Generating research queries using o4-mini
+2025-05-07 15:57:27,741 - main - INFO - Successfully generated 6 research query categories
+2025-05-07 15:57:27,742 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-07 16:05:30,608 - api - INFO - Starting complete RFP processing
+2025-05-07 16:05:30,610 - main - INFO - Generating research queries using o4-mini
+2025-05-07 16:05:45,593 - main - INFO - Successfully generated 6 research query categories
+2025-05-07 16:05:45,594 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-07 16:07:27,316 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:07:27,867 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:12:09,388 - api - INFO - Starting complete RFP processing
+2025-05-07 16:12:09,390 - main - INFO - Generating research queries using o4-mini
+2025-05-07 16:12:30,736 - main - INFO - Successfully generated 6 research query categories
+2025-05-07 16:12:30,737 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-07 16:37:55,026 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:38:11,462 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:38:15,879 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:38:16,456 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:38:41,614 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:38:43,421 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:38:57,421 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:38:58,664 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:39:07,115 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:39:31,426 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:39:55,147 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:40:01,775 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:40:21,748 - api - INFO - Starting complete RFP processing
+2025-05-07 16:40:21,749 - main - INFO - Generating research queries using o4-mini
+2025-05-07 16:40:44,360 - main - INFO - Successfully generated 6 research query categories
+2025-05-07 16:40:44,360 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-07 16:41:14,442 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:41:14,962 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-07 16:41:18,999 - api - INFO - Starting complete RFP processing
+2025-05-07 16:41:19,000 - main - INFO - Generating research queries using o4-mini
+2025-05-07 16:41:35,250 - main - INFO - Successfully generated 6 research query categories
+2025-05-07 16:41:35,251 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-08 13:38:38,572 - api - INFO - Starting complete RFP processing
+2025-05-08 13:38:38,580 - main - INFO - Generating research queries using o4-mini
+2025-05-08 13:39:02,538 - main - INFO - Successfully generated 6 research query categories
+2025-05-08 13:39:02,539 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-08 14:21:03,421 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-08 14:21:36,678 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-08 14:22:04,345 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-08 14:36:32,822 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables

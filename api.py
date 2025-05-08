@@ -29,6 +29,36 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def process_json(input_json):
+    if (
+        not input_json
+        or "categories" not in input_json
+        or not isinstance(input_json["categories"], list)
+    ):
+        return []
+
+    result = []
+
+    for category in input_json["categories"]:
+        if (
+            "subheading" in category
+            and "findings" in category
+            and isinstance(category["findings"], list)
+        ):
+            findings_content = []
+            for finding in category["findings"]:
+                if "question" in finding and "answer" in finding:
+                    findings_content.append(
+                        f"{finding['question']}\n{finding['answer']}"
+                    )
+
+            content_str = "\n\n".join(findings_content)
+
+            output_obj = {"heading": category["subheading"], "content": content_str}
+
+            result.append(output_obj)
+
+    return result
 
 # Routes
 @app.post("/deepresearch/generate-queries/")
@@ -104,12 +134,6 @@ async def api_batch_queries(input_data: QueriesSchema):
 
 @app.post("/deepresearch/process-complete-rfp/")
 async def process_complete_rfp(input_data: RFPSchema):
-    """
-    Process an RFP document with deep research and return the complete final result.
-
-    This endpoint takes an RFP text, generates queries, runs deep research, and returns
-    the compiled final result with all findings.
-    """
     try:
         logger.info("Starting complete RFP processing")
         REPORT_STRUCTURE = """
@@ -144,15 +168,16 @@ async def process_complete_rfp(input_data: RFPSchema):
                 else input_data.report_structure
             ),
         )
+        
 
         # Return the complete results
-        return {
+        return process_json({
             "status": "success",
             "title": results.get("title", "Research Report"),
             "description": results.get("description", "Deep research analysis"),
             "categories": results.get("categories", []),
             "meta": results.get("meta", {}),
-        }
+        })
     except Exception as e:
         logger.error(f"Error in complete RFP processing: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -161,4 +186,4 @@ async def process_complete_rfp(input_data: RFPSchema):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("api:app", host="0.0.0.0", port=8001, reload=True)

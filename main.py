@@ -141,6 +141,15 @@ def generate_rfp_queries(
         raise
 
 
+import asyncio
+import uuid
+from typing import List, Dict, Any
+from tqdm.asyncio import tqdm_asyncio
+import os
+import logging
+
+logger = logging.getLogger(__name__)
+
 async def send_queries_to_deep_research(
     queries: List[str],
     backend: str = "open-deepresearch",
@@ -149,32 +158,15 @@ async def send_queries_to_deep_research(
     max_search_depth: int = 2,
     report_structure: str = "Comprehensive analysis with key findings, details, and implications",
 ) -> List[Dict[str, Any]]:
-    """
-    Send the generated queries to a deep research backend and return the results.
-
-    Args:
-        queries: List of query strings to research
-        backend: Which backend to use ("open-deepresearch", "perplexity", or "standalone")
-        planner_model: Model to use for planning (when using open-deepresearch)
-        writer_model: Model to use for writing (when using open-deepresearch)
-        max_search_depth: Maximum search depth for researching
-
-    Returns:
-        List of research results, one per query
-    """
+    
     logger.info(f"Sending {len(queries)} queries to {backend} backend")
-
     results = []
-    if report_structure == "" or report_structure is None:
-        report_structure = (
-            "Comprehensive analysis with key findings, details, and implications"
-        )
+
+    if report_structure in ("", None):
+        report_structure = "Comprehensive analysis with key findings, details, and implications"
 
     if backend == "open-deepresearch":
-        # Import here to avoid circular imports
         try:
-            import uuid
-
             from langgraph.checkpoint.memory import MemorySaver
             from langgraph.types import Command
             from open_deep_research.graph import builder
@@ -182,10 +174,8 @@ async def send_queries_to_deep_research(
             memory = MemorySaver()
             graph = builder.compile(checkpointer=memory)
 
-            # Process each query
-            for query in tqdm(queries, desc="Processing queries"):
+            async def process_query(query: str) -> Dict[str, Any]:
                 try:
-                    # Create a unique thread for this query
                     thread_id = str(uuid.uuid4())
                     thread_config = {
                         "configurable": {
@@ -197,108 +187,60 @@ async def send_queries_to_deep_research(
                             "writer_model": writer_model,
                             "max_search_depth": max_search_depth,
                             "report_structure": report_structure,
-                            # "researcher_model" : "openai:o4-mini",
-                            # "eval_model": "openai:o3-mini"
                         }
                     }
 
-                    # Start the deep research
-                    async for event in graph.astream(
-                        {"topic": query}, thread_config, stream_mode="updates"
-                    ):
+                    async for event in graph.astream({"topic": query}, thread_config, stream_mode="updates"):
                         if "__interrupt__" in event:
-                            interrupt_value = event["__interrupt__"][0].value
-                            logger.debug(
-                                f"INTERRUPT (Query: {query}): {interrupt_value}"
-                            )
+                            logger.debug(f"INTERRUPT (Query: {query}): {event['__interrupt__'][0].value}")
 
-                    # Finalize the report
-                    async for event in graph.astream(
-                        Command(resume=True), thread_config, stream_mode="updates"
-                    ):
+                    async for event in graph.astream(Command(resume=True), thread_config, stream_mode="updates"):
                         pass
 
                     final_state = graph.get_state(thread_config)
                     final_report = final_state.values.get("final_report", "")
 
-                    results.append(
-                        {
-                            "query": query,
-                            "report": final_report,
-                            "status": "success",
-                            "backend": "open-deepresearch",
-                        }
-                    )
+                    return {
+                        "query": query,
+                        "report": final_report,
+                        "status": "success",
+                        "backend": "open-deepresearch",
+                    }
 
                 except Exception as e:
-                    logger.error(
-                        f"Error processing query '{query}' with open-deepresearch: {str(e)}"
-                    )
-                    logger.info(
-                        f"Falling back to standalone research for query: {query}"
-                    )
-                    # Fall back to standalone research
-                    # standalone_result = await standalone_research(query)
-                    # results.append(standalone_result)
+                    logger.error(f"Error processing query '{query}': {str(e)}")
+                    logger.info(f"Falling back to standalone research for query: {query}")
+                    # You can plug in your standalone fallback here
+                    return {
+                        "query": query,
+                        "report": None,
+                        "status": "error",
+                        "error": str(e),
+                        "backend": "open-deepresearch",
+                    }
+
+            # Run all queries concurrently
+            results = await tqdm_asyncio.gather(*(process_query(q) for q in queries))
 
         except ImportError as e:
             logger.error(f"Failed to import open-deepresearch modules: {str(e)}")
             logger.info("Falling back to standalone or perplexity research")
             if os.getenv("PERPLEXITY_API_KEY"):
-                logger.info(
-                    "PERPLEXITY_API_KEY found, using perplexity backend as fallback"
-                )
-                return await send_queries_to_deep_research(
-                    queries, backend="perplexity"
-                )
+                return await send_queries_to_deep_research(queries, backend="perplexity")
             else:
-                logger.info("Using standalone research as fallback")
-                return await send_queries_to_deep_research(
-                    queries, backend="standalone"
-                )
-
-    elif backend == "perplexity":
-        # Use perplexity for in-depth web research
-        logger.info(f"Sending {len(queries)} queries to perplexity backend")
-        for query in queries:
-            try:
-                # Use the new perplexity module
-                perplexity_result = await answer_query_with_perplexity(query)
-                results.append(
-                    {
-                        "query": query,
-                        "report": perplexity_result["result"],
-                        "status": "success",
-                        "backend": "perplexity",
-                        "sources": perplexity_result.get("sources", []),
-                    }
-                )
-
-            except Exception as e:
-                logger.error(
-                    f"Error processing query '{query}' with Perplexity: {str(e)}"
-                )
-                logger.info(f"Falling back to standalone research for query: {query}")
-                standalone_result = await standalone_research(query)
-                results.append(standalone_result)
-
-    elif backend == "standalone":
-        # Use a standalone approach with LangChain for research
-        for query in queries:
-            standalone_result = await standalone_research(query)
-            results.append(standalone_result)
+                return await send_queries_to_deep_research(queries, backend="standalone")
 
     else:
         logger.error(f"Unknown backend: {backend}")
-        for query in queries:
-            results.append(
-                {
-                    "query": query,
-                    "error": f"Unknown backend: {backend}",
-                    "status": "failed",
-                    "backend": backend,
-                }
-            )
+        results = [
+            {
+                "query": query,
+                "error": f"Unknown backend: {backend}",
+                "status": "failed",
+                "backend": backend,
+            }
+            for query in queries
+        ]
 
     return results
 
