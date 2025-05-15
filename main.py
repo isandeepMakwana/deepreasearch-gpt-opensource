@@ -150,6 +150,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 async def send_queries_to_deep_research(
     queries: List[str],
     backend: str = "open-deepresearch",
@@ -158,12 +159,14 @@ async def send_queries_to_deep_research(
     max_search_depth: int = 2,
     report_structure: str = "Comprehensive analysis with key findings, details, and implications",
 ) -> List[Dict[str, Any]]:
-    
+
     logger.info(f"Sending {len(queries)} queries to {backend} backend")
     results = []
 
     if report_structure in ("", None):
-        report_structure = "Comprehensive analysis with key findings, details, and implications"
+        report_structure = (
+            "Comprehensive analysis with key findings, details, and implications"
+        )
 
     if backend == "open-deepresearch":
         try:
@@ -190,11 +193,17 @@ async def send_queries_to_deep_research(
                         }
                     }
 
-                    async for event in graph.astream({"topic": query}, thread_config, stream_mode="updates"):
+                    async for event in graph.astream(
+                        {"topic": query}, thread_config, stream_mode="updates"
+                    ):
                         if "__interrupt__" in event:
-                            logger.debug(f"INTERRUPT (Query: {query}): {event['__interrupt__'][0].value}")
+                            logger.debug(
+                                f"INTERRUPT (Query: {query}): {event['__interrupt__'][0].value}"
+                            )
 
-                    async for event in graph.astream(Command(resume=True), thread_config, stream_mode="updates"):
+                    async for event in graph.astream(
+                        Command(resume=True), thread_config, stream_mode="updates"
+                    ):
                         pass
 
                     final_state = graph.get_state(thread_config)
@@ -209,7 +218,9 @@ async def send_queries_to_deep_research(
 
                 except Exception as e:
                     logger.error(f"Error processing query '{query}': {str(e)}")
-                    logger.info(f"Falling back to standalone research for query: {query}")
+                    logger.info(
+                        f"Falling back to standalone research for query: {query}"
+                    )
                     # You can plug in your standalone fallback here
                     return {
                         "query": query,
@@ -226,9 +237,13 @@ async def send_queries_to_deep_research(
             logger.error(f"Failed to import open-deepresearch modules: {str(e)}")
             logger.info("Falling back to standalone or perplexity research")
             if os.getenv("PERPLEXITY_API_KEY"):
-                return await send_queries_to_deep_research(queries, backend="perplexity")
+                return await send_queries_to_deep_research(
+                    queries, backend="perplexity"
+                )
             else:
-                return await send_queries_to_deep_research(queries, backend="standalone")
+                return await send_queries_to_deep_research(
+                    queries, backend="standalone"
+                )
 
     else:
         logger.error(f"Unknown backend: {backend}")
@@ -253,6 +268,7 @@ async def process_rfp_with_deep_research(
     planner_model: str = "gpt-4o-mini",
     writer_model: str = "gpt-4o-mini",
     report_structure: str = "concised Report contaning key finding in bullet points",
+    stage_callback=None,
 ) -> Dict[str, Any]:
     """
     Process an RFP document with deep research:
@@ -272,9 +288,21 @@ async def process_rfp_with_deep_research(
         Dict with the full research results
     """
     # Step 1: Generate structured queries
+    if stage_callback:
+        stage_callback(1, {"status": "Planning research queries"})
+
     query_plan = generate_rfp_queries(
         rfp_text, model_name=planner_model, temperature=temperature
     )
+
+    if stage_callback:
+        stage_callback(
+            1,
+            {
+                "status": "Completed query planning",
+                "query_count": len(query_plan.get("queries", [])),
+            },
+        )
 
     # Step 2: Extract individual queries for research
     all_queries = []
@@ -286,6 +314,12 @@ async def process_rfp_with_deep_research(
             all_queries.append(f"[{context}] {question}")
 
     # Step 3: Send queries to deep research
+    if stage_callback:
+        stage_callback(
+            2,
+            {"status": "Executing research queries", "total_queries": len(all_queries)},
+        )
+
     research_results = await send_queries_to_deep_research(
         all_queries,
         backend=backend,
@@ -293,6 +327,17 @@ async def process_rfp_with_deep_research(
         writer_model=writer_model,
         report_structure=report_structure,
     )
+
+    if stage_callback:
+        success_count = sum(1 for r in research_results if r.get("status") == "success")
+        stage_callback(
+            2,
+            {
+                "status": "Completed research queries",
+                "success_count": success_count,
+                "total_queries": len(all_queries),
+            },
+        )
 
     # Step 4: Compile the results
     compiled_results = {

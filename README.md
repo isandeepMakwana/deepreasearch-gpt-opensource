@@ -21,7 +21,8 @@ An advanced FastAPI-based service for deep research on RFP documents and queries
 
 ### Complete Processing Endpoints
 
-- **`/deepresearch/process-complete-rfp/`**: Takes RFP text and returns complete results after deep research
+- **`/deepresearch/process-complete-rfp/`**: Takes RFP text and initiates asynchronous deep research, returning a task ID
+- **`/deepresearch/status/{task_id}`**: Checks the status of an asynchronous task and returns results when complete
 
 ## Installation
 
@@ -268,6 +269,44 @@ The system leverages FastAPI's async capabilities to:
 1. Handle multiple concurrent user requests
 2. Process batch queries in parallel
 3. Maintain responsiveness during long-running research operations
+4. Execute long-running tasks in the background while immediately returning a task ID
+
+#### Asynchronous Task Processing
+
+All API endpoints that perform research operations now work asynchronously:
+
+1. When a request is received, a unique task ID is generated and returned immediately
+2. The actual processing happens in the background using FastAPI's BackgroundTasks
+3. Clients can poll the `/deepresearch/status/{task_id}` endpoint to check task status
+4. Once processing is complete, the full results are available through the status endpoint
+
+#### Example Usage
+
+```python
+# Start a research task
+response = requests.post(
+    "http://localhost:8001/deepresearch/process-complete-rfp/",
+    json={"rfp_text": "Your RFP document here", "backend": "open-deepresearch"}
+)
+task_id = response.json()["task_id"]
+
+# Check status until complete
+while True:
+    status_response = requests.get(f"http://localhost:8001/deepresearch/status/{task_id}")
+    status_data = status_response.json()
+
+    if status_data["status"] == "COMPLETED":
+        # Process the results
+        results = status_data["result"]
+        break
+    elif status_data["status"] == "FAILED":
+        # Handle error
+        print(f"Task failed: {status_data.get('result', {}).get('error')}")
+        break
+
+    # Wait before polling again
+    time.sleep(5)
+```
 
 ### Failover Mechanism
 

@@ -64,3 +64,344 @@
 2025-05-08 14:21:36,678 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
 2025-05-08 14:22:04,345 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
 2025-05-08 14:36:32,822 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:04:00,577 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:31:14,050 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:31:14,543 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:32:07,777 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:32:08,300 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:32:56,664 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:32:57,182 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:33:00,523 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:34:48,240 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:35:46,823 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:36:42,382 - api - INFO - Starting complete RFP processing
+2025-05-14 10:37:09,144 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:37:20,506 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:37:58,326 - api - INFO - Starting complete RFP processing
+2025-05-14 10:37:58,328 - main - INFO - Generating research queries using o4-mini
+2025-05-14 10:38:19,719 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 10:38:19,720 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 10:38:19,720 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 10:38:19,720 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 10:38:19,720 - main - INFO - Sending 12 queries to standalone backend
+2025-05-14 10:38:19,720 - main - ERROR - Unknown backend: standalone
+2025-05-14 10:38:24,749 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 10:38:24,750 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 10:38:24,750 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 10:38:24,750 - main - INFO - Sending 1 queries to standalone backend
+2025-05-14 10:38:24,750 - main - ERROR - Unknown backend: standalone
+2025-05-14 10:39:26,666 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:39:35,852 - api - INFO - Starting complete RFP processing
+2025-05-14 10:39:35,853 - main - INFO - Generating research queries using o4-mini
+2025-05-14 10:39:53,618 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 10:39:53,619 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 10:39:53,621 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 10:39:53,621 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 10:39:53,621 - main - INFO - Sending 12 queries to standalone backend
+2025-05-14 10:39:53,621 - main - ERROR - Unknown backend: standalone
+2025-05-14 10:39:58,669 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 10:39:58,670 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 10:39:58,670 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 10:39:58,670 - main - INFO - Sending 1 queries to standalone backend
+2025-05-14 10:39:58,670 - main - ERROR - Unknown backend: standalone
+2025-05-14 10:41:05,034 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:41:08,594 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:42:47,392 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:42:48,516 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:44:38,178 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:45:41,538 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:45:42,842 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:48:47,434 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 10:48:47,435 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 10:48:47,436 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 10:48:47,436 - main - INFO - Sending 1 queries to standalone backend
+2025-05-14 10:48:47,436 - main - ERROR - Unknown backend: standalone
+2025-05-14 10:48:50,458 - main - INFO - Sending 2 queries to open-deepresearch backend
+2025-05-14 10:48:50,459 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 10:48:50,461 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 10:48:50,461 - main - INFO - Sending 2 queries to standalone backend
+2025-05-14 10:48:50,461 - main - ERROR - Unknown backend: standalone
+2025-05-14 10:48:53,474 - api - INFO - Starting complete RFP processing
+2025-05-14 10:48:53,474 - main - INFO - Generating research queries using o4-mini
+2025-05-14 10:49:02,798 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 10:49:02,799 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 10:49:02,799 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 10:49:02,799 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 10:49:02,799 - main - INFO - Sending 12 queries to standalone backend
+2025-05-14 10:49:02,799 - main - ERROR - Unknown backend: standalone
+2025-05-14 10:49:51,362 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:54:36,375 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:54:42,257 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 10:55:26,189 - api - INFO - Generating queries for display
+2025-05-14 10:55:26,191 - main - INFO - Generating research queries using o3-mini
+2025-05-14 10:55:38,313 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 10:56:39,093 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:01:40,892 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:01:57,460 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:02:03,868 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:02:03,869 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 11:02:03,869 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 11:02:03,870 - main - INFO - Sending 1 queries to standalone backend
+2025-05-14 11:02:03,870 - main - ERROR - Unknown backend: standalone
+2025-05-14 11:02:06,878 - main - INFO - Sending 2 queries to open-deepresearch backend
+2025-05-14 11:02:06,879 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 11:02:06,879 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 11:02:06,879 - main - INFO - Sending 2 queries to standalone backend
+2025-05-14 11:02:06,879 - main - ERROR - Unknown backend: standalone
+2025-05-14 11:02:09,894 - api - INFO - Starting complete RFP processing
+2025-05-14 11:02:09,895 - main - INFO - Generating research queries using o4-mini
+2025-05-14 11:02:22,353 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 11:02:22,354 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 11:02:22,355 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 11:02:22,355 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 11:02:22,355 - main - INFO - Sending 12 queries to standalone backend
+2025-05-14 11:02:22,355 - main - ERROR - Unknown backend: standalone
+2025-05-14 11:02:36,081 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:02:36,083 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 11:02:36,084 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 11:02:36,084 - main - INFO - Sending 1 queries to standalone backend
+2025-05-14 11:02:36,084 - main - ERROR - Unknown backend: standalone
+2025-05-14 11:02:38,096 - api - INFO - Starting complete RFP processing
+2025-05-14 11:02:38,096 - main - INFO - Generating research queries using o4-mini
+2025-05-14 11:02:50,410 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 11:02:50,412 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 11:02:50,412 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 11:02:50,412 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 11:02:50,412 - main - INFO - Sending 12 queries to standalone backend
+2025-05-14 11:02:50,412 - main - ERROR - Unknown backend: standalone
+2025-05-14 11:03:17,420 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:03:17,421 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 11:03:17,421 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 11:03:17,421 - main - INFO - Sending 1 queries to standalone backend
+2025-05-14 11:03:17,421 - main - ERROR - Unknown backend: standalone
+2025-05-14 11:03:19,429 - api - INFO - Starting complete RFP processing
+2025-05-14 11:03:19,430 - main - INFO - Generating research queries using o4-mini
+2025-05-14 11:03:23,376 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:03:28,144 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:03:36,927 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 11:03:36,928 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 11:03:36,929 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 11:03:36,929 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 11:03:36,929 - main - INFO - Sending 12 queries to standalone backend
+2025-05-14 11:03:36,929 - main - ERROR - Unknown backend: standalone
+2025-05-14 11:05:02,543 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:05:07,982 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:05:12,603 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:06:05,534 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:06:10,967 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:08:26,238 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:08:28,270 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:08:33,105 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:10:36,708 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:10:40,711 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:10:43,085 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:12:00,825 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:12:56,881 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:13:45,997 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:13:49,520 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:13:52,556 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 11:15:44,353 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:16:43,465 - main - INFO - Sending 3 queries to open-deepresearch backend
+2025-05-14 11:17:14,295 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:17:19,344 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:17:24,721 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:17:27,129 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 11:17:30,528 - main - INFO - Sending 3 queries to open-deepresearch backend
+2025-05-14 12:30:27,228 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:31:49,871 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:32:09,705 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:32:20,644 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:32:30,508 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:32:39,337 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 12:32:39,339 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 12:32:39,339 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 12:32:39,340 - main - INFO - Sending 1 queries to standalone backend
+2025-05-14 12:32:39,340 - main - ERROR - Unknown backend: standalone
+2025-05-14 12:32:42,362 - main - INFO - Sending 2 queries to open-deepresearch backend
+2025-05-14 12:32:42,364 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 12:32:42,364 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 12:32:42,364 - main - INFO - Sending 2 queries to standalone backend
+2025-05-14 12:32:42,364 - main - ERROR - Unknown backend: standalone
+2025-05-14 12:32:45,373 - api - INFO - Starting complete RFP processing
+2025-05-14 12:32:45,373 - main - INFO - Generating research queries using o4-mini
+2025-05-14 12:33:06,260 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 12:33:06,260 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 12:33:06,260 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 12:33:06,260 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 12:33:06,261 - main - INFO - Sending 12 queries to standalone backend
+2025-05-14 12:33:06,261 - main - ERROR - Unknown backend: standalone
+2025-05-14 12:36:33,044 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 12:36:33,048 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 12:36:33,048 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 12:36:33,048 - main - INFO - Sending 1 queries to standalone backend
+2025-05-14 12:36:33,048 - main - ERROR - Unknown backend: standalone
+2025-05-14 12:36:35,084 - api - INFO - Starting complete RFP processing
+2025-05-14 12:36:35,086 - main - INFO - Generating research queries using o4-mini
+2025-05-14 12:36:53,279 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 12:36:53,280 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 12:36:53,283 - main - ERROR - Failed to import open-deepresearch modules: No module named 'langgraph'
+2025-05-14 12:36:53,283 - main - INFO - Falling back to standalone or perplexity research
+2025-05-14 12:36:53,283 - main - INFO - Sending 12 queries to standalone backend
+2025-05-14 12:36:53,283 - main - ERROR - Unknown backend: standalone
+2025-05-14 12:37:04,545 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:37:52,635 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:37:58,412 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:38:05,254 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:41:50,123 - api - INFO - Starting complete RFP processing
+2025-05-14 12:41:50,143 - main - INFO - Generating research queries using gpt-40-mini
+2025-05-14 12:41:50,620 - main - ERROR - Error generating queries: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-14 12:43:17,210 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:43:23,524 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:43:43,180 - api - INFO - Starting complete RFP processing
+2025-05-14 12:43:43,186 - main - INFO - Generating research queries using gpt-40-mini
+2025-05-14 12:43:43,597 - main - ERROR - Error generating queries: Error code: 404 - {'error': {'message': 'The model `gpt-40-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-14 12:44:45,713 - api - INFO - Starting complete RFP processing
+2025-05-14 12:44:45,717 - main - INFO - Generating research queries using gpt-4o-mini
+2025-05-14 12:44:59,944 - main - INFO - Successfully generated 7 research query categories
+2025-05-14 12:44:59,947 - main - INFO - Sending 14 queries to open-deepresearch backend
+2025-05-14 12:45:21,503 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:45:24,491 - api - INFO - Starting complete RFP processing
+2025-05-14 12:45:24,493 - main - INFO - Generating research queries using gpt-4o-mini
+2025-05-14 12:45:38,444 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 12:45:38,445 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 12:45:55,271 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Current Initiatives & Priorities] What challenges does MCWD face in streamlining its workflows, and how might these affect the implementation of the new IT systems?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,271 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Current Initiatives & Priorities] What challenges does MCWD face in streamlining its workflows, and how might these affect the implementation of the new IT systems?
+2025-05-14 12:45:55,283 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] What technical capabilities and integrations with existing systems will be essential for ensuring seamless operations and data sharing across MCWD's various departments?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,283 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] What technical capabilities and integrations with existing systems will be essential for ensuring seamless operations and data sharing across MCWD's various departments?
+2025-05-14 12:45:55,289 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Current Initiatives & Priorities] What other ongoing or future projects at MCWD may impact the success of the IT managed services, and how can we integrate our solutions to align with these priorities?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,290 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Current Initiatives & Priorities] What other ongoing or future projects at MCWD may impact the success of the IT managed services, and how can we integrate our solutions to align with these priorities?
+2025-05-14 12:45:55,290 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Overarching Pain Points] What are the anticipated risks or challenges MCWD faces in achieving a seamless integration of data and technology across its various workflows?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,290 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Overarching Pain Points] What are the anticipated risks or challenges MCWD faces in achieving a seamless integration of data and technology across its various workflows?
+2025-05-14 12:45:55,296 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Overarching Pain Points] What specific inefficiencies or frustrations have MCWD staff experienced with the current IT setup, and how might addressing these lead to improved operational efficiency?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,296 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Overarching Pain Points] What specific inefficiencies or frustrations have MCWD staff experienced with the current IT setup, and how might addressing these lead to improved operational efficiency?
+2025-05-14 12:45:55,302 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] What specific security challenges and regulations, including those from the Data Practices Act, must MCWD's IT managed services comply with, and how should these inform our proposal?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,302 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] What specific security challenges and regulations, including those from the Data Practices Act, must MCWD's IT managed services comply with, and how should these inform our proposal?
+2025-05-14 12:45:55,309 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] How will MCWD determine if the new IT solutions have successfully aligned with its vision of becoming a data-driven organization?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,309 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] How will MCWD determine if the new IT solutions have successfully aligned with its vision of becoming a data-driven organization?
+2025-05-14 12:45:55,309 - main - ERROR - Error processing query '[Technical Research > Infrastructure Considerations] What are the current and future capacity needs for the IT infrastructure at MCWD, especially considering its planned updates and growth in data management?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,309 - main - INFO - Falling back to standalone research for query: [Technical Research > Infrastructure Considerations] What are the current and future capacity needs for the IT infrastructure at MCWD, especially considering its planned updates and growth in data management?
+2025-05-14 12:45:55,310 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Agency Mission & Vision] What are the strategic goals of the Minnehaha Creek Watershed District (MCWD) that align with their mission to manage water resources, and how can IT managed services enhance these goals?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,310 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Agency Mission & Vision] What are the strategic goals of the Minnehaha Creek Watershed District (MCWD) that align with their mission to manage water resources, and how can IT managed services enhance these goals?
+2025-05-14 12:45:55,311 - main - ERROR - Error processing query '[Technical Research > Infrastructure Considerations] How can the proposed IT managed services provider address potential compatibility issues with MCWD's existing hardware and software systems?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,311 - main - INFO - Falling back to standalone research for query: [Technical Research > Infrastructure Considerations] How can the proposed IT managed services provider address potential compatibility issues with MCWD's existing hardware and software systems?
+2025-05-14 12:45:55,315 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] What key performance indicators (KPIs) does MCWD consider most important for measuring the success of the new IT managed services?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,315 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] What key performance indicators (KPIs) does MCWD consider most important for measuring the success of the new IT managed services?
+2025-05-14 12:45:55,332 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Agency Mission & Vision] How does MCWD envision using data to support its mission, and what specific technology tools or platforms are considered critical to achieving this vision?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:45:55,332 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Agency Mission & Vision] How does MCWD envision using data to support its mission, and what specific technology tools or platforms are considered critical to achieving this vision?
+2025-05-14 12:47:38,628 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:47:41,045 - api - INFO - Starting complete RFP processing
+2025-05-14 12:47:41,047 - main - INFO - Generating research queries using gpt-4o-mini
+2025-05-14 12:47:51,614 - main - INFO - Successfully generated 7 research query categories
+2025-05-14 12:47:51,615 - main - INFO - Sending 14 queries to open-deepresearch backend
+2025-05-14 12:48:11,419 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Overarching Pain Points] What are the key pain points currently affecting MCWD's IT infrastructure, and how do these impact its ability to achieve operational efficiency?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,420 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Overarching Pain Points] What are the key pain points currently affecting MCWD's IT infrastructure, and how do these impact its ability to achieve operational efficiency?
+2025-05-14 12:48:11,456 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Current Initiatives & Priorities] In which ways can the chosen IT managed services provider help MCWD enhance collaboration with external software vendors during the IT systems update?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,466 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Current Initiatives & Priorities] In which ways can the chosen IT managed services provider help MCWD enhance collaboration with external software vendors during the IT systems update?
+2025-05-14 12:48:11,527 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] How does the current hardware and software setup of MCWD align with future technological developments, and what gaps exist?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,527 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] How does the current hardware and software setup of MCWD align with future technological developments, and what gaps exist?
+2025-05-14 12:48:11,530 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] What industry best practices should MCWD be aware of when updating its IT systems to ensure they are future-proof?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,530 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] What industry best practices should MCWD be aware of when updating its IT systems to ensure they are future-proof?
+2025-05-14 12:48:11,530 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] What specific metrics will MCWD use to evaluate the success of the IT managed services provider's performance once engaged?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,530 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] What specific metrics will MCWD use to evaluate the success of the IT managed services provider's performance once engaged?
+2025-05-14 12:48:11,530 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Agency Mission & Vision] How does MCWD's vision of becoming a data-driven organization align with current technological trends in water resource management?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,530 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Agency Mission & Vision] How does MCWD's vision of becoming a data-driven organization align with current technological trends in water resource management?
+2025-05-14 12:48:11,530 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Current Initiatives & Priorities] What specific challenges does MCWD face in integrating data across various organizational workflows, and how can managed IT services address these challenges best?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,530 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Current Initiatives & Priorities] What specific challenges does MCWD face in integrating data across various organizational workflows, and how can managed IT services address these challenges best?
+2025-05-14 12:48:11,530 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] How does MCWD define 'actionable insights' generated from data, and what outcomes does it expect to achieve through these insights?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,530 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] How does MCWD define 'actionable insights' generated from data, and what outcomes does it expect to achieve through these insights?
+2025-05-14 12:48:11,531 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] What are the current cybersecurity threats facing government agencies like MCWD, and how should the managed service provider address these risks?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,532 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] What are the current cybersecurity threats facing government agencies like MCWD, and how should the managed service provider address these risks?
+2025-05-14 12:48:11,532 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Agency Mission & Vision] What are the long-term sustainability goals of the Minnehaha Creek Watershed District (MCWD), and how does IT managed services support these objectives?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,532 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Agency Mission & Vision] What are the long-term sustainability goals of the Minnehaha Creek Watershed District (MCWD), and how does IT managed services support these objectives?
+2025-05-14 12:48:11,533 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Overarching Pain Points] What specific examples of technology silos has MCWD encountered in the past, and how have these hindered decision-making processes?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,533 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Overarching Pain Points] What specific examples of technology silos has MCWD encountered in the past, and how have these hindered decision-making processes?
+2025-05-14 12:48:11,533 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Critical Events Leading to the RFP] What internal assessments or external pressures prompted MCWD to seek an IT managed services provider at this time?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,533 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Critical Events Leading to the RFP] What internal assessments or external pressures prompted MCWD to seek an IT managed services provider at this time?
+2025-05-14 12:48:11,535 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] What types of training might MCWD staff require to effectively utilize the new IT platforms, and how can the managed services provider facilitate this training?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,535 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] What types of training might MCWD staff require to effectively utilize the new IT platforms, and how can the managed services provider facilitate this training?
+2025-05-14 12:48:11,535 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Critical Events Leading to the RFP] How has the reliance on a managed service provider previously shaped MCWD's IT operations, and what lessons have been learned from these experiences?': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:48:11,544 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Critical Events Leading to the RFP] How has the reliance on a managed service provider previously shaped MCWD's IT operations, and what lessons have been learned from these experiences?
+2025-05-14 12:51:06,410 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:51:12,999 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:51:16,478 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 12:51:19,246 - main - ERROR - Error processing query 'what is dev': This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com
+2025-05-14 12:51:19,246 - main - INFO - Falling back to standalone research for query: what is dev
+2025-05-14 12:51:20,200 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:51:30,802 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:53:06,429 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 12:58:04,658 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 13:06:07,183 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 13:07:06,133 - api - INFO - Starting complete RFP processing
+2025-05-14 13:07:06,141 - main - INFO - Generating research queries using gpt-4o-mini
+2025-05-14 13:07:17,073 - main - INFO - Successfully generated 7 research query categories
+2025-05-14 13:07:17,073 - main - INFO - Sending 14 queries to open-deepresearch backend
+2025-05-14 13:07:34,415 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] Which current industry standards should MCWD's new IT systems adhere to for compliance and effective data management?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,416 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] Which current industry standards should MCWD's new IT systems adhere to for compliance and effective data management?
+2025-05-14 13:07:34,437 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Critical Events Leading to the RFP] How has MCWD's evolving role in water resource management over the past decade contributed to its current IT needs?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,438 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Critical Events Leading to the RFP] How has MCWD's evolving role in water resource management over the past decade contributed to its current IT needs?
+2025-05-14 13:07:34,439 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Critical Events Leading to the RFP] What external pressures or changes in regulations are influencing the MCWD's decision to pursue an enhanced IT managed services contract?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,439 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Critical Events Leading to the RFP] What external pressures or changes in regulations are influencing the MCWD's decision to pursue an enhanced IT managed services contract?
+2025-05-14 13:07:34,439 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] What advanced technologies or methodologies could MCWD consider to improve data visualization and analysis capabilities in its IT infrastructure?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,439 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] What advanced technologies or methodologies could MCWD consider to improve data visualization and analysis capabilities in its IT infrastructure?
+2025-05-14 13:07:34,440 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Overarching Pain Points] What specific limitations has MCWD faced in its current IT infrastructure that hinder its operational efficiency and decision-making capabilities?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,440 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Overarching Pain Points] What specific limitations has MCWD faced in its current IT infrastructure that hinder its operational efficiency and decision-making capabilities?
+2025-05-14 13:07:34,440 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Overarching Pain Points] How does MCWD perceive its past experiences with IT services, and what lessons can be drawn to improve future vendor partnerships?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,440 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Overarching Pain Points] How does MCWD perceive its past experiences with IT services, and what lessons can be drawn to improve future vendor partnerships?
+2025-05-14 13:07:34,441 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] How will MCWD assess the effectiveness of the service delivery by the IT managed services provider during the initial contract term?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,441 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] How will MCWD assess the effectiveness of the service delivery by the IT managed services provider during the initial contract term?
+2025-05-14 13:07:34,452 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] How can the IT managed services provider ensure scalability in the proposed solutions to accommodate future technology needs for MCWD?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,453 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] How can the IT managed services provider ensure scalability in the proposed solutions to accommodate future technology needs for MCWD?
+2025-05-14 13:07:34,453 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] What specific success metrics does MCWD expect IT providers to meet in ensuring operational efficiency and data-driven decision-making?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,453 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] What specific success metrics does MCWD expect IT providers to meet in ensuring operational efficiency and data-driven decision-making?
+2025-05-14 13:07:34,457 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Current Initiatives & Priorities] How does the MCWD's current IT upgrade initiative align with the broader environmental and community goals the District is pursuing in the next two years?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,457 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Current Initiatives & Priorities] How does the MCWD's current IT upgrade initiative align with the broader environmental and community goals the District is pursuing in the next two years?
+2025-05-14 13:07:34,469 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Agency Mission & Vision] What specific outcomes does the Minnehaha Creek Watershed District (MCWD) envision from its data-driven initiatives, and how can IT managed services align with those outcomes?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,469 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Agency Mission & Vision] What specific outcomes does the Minnehaha Creek Watershed District (MCWD) envision from its data-driven initiatives, and how can IT managed services align with those outcomes?
+2025-05-14 13:07:34,469 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] What best practices from similar organizations can be integrated into MCWD's IT managed services to enhance cybersecurity measures?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,469 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] What best practices from similar organizations can be integrated into MCWD's IT managed services to enhance cybersecurity measures?
+2025-05-14 13:07:34,470 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Current Initiatives & Priorities] In what ways can IT managed services support MCWD in eliminating technology silos and improving data accessibility for stakeholders?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,470 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Current Initiatives & Priorities] In what ways can IT managed services support MCWD in eliminating technology silos and improving data accessibility for stakeholders?
+2025-05-14 13:07:34,470 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Agency Mission & Vision] What are the key performance indicators that MCWD uses to measure the effectiveness of its IT systems in supporting its mission of managing water resources?': Unauthorized: missing or invalid API key.
+2025-05-14 13:07:34,470 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Agency Mission & Vision] What are the key performance indicators that MCWD uses to measure the effectiveness of its IT systems in supporting its mission of managing water resources?
+2025-05-14 13:09:10,879 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 13:09:18,057 - api - INFO - Starting complete RFP processing
+2025-05-14 13:09:18,058 - main - INFO - Generating research queries using gpt-4o-mini
+2025-05-14 13:09:27,147 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 13:09:27,148 - main - INFO - Sending 12 queries to open-deepresearch backend
+2025-05-14 13:09:44,122 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Critical Events Leading to the RFP] How have recent changes in technology or data management practices within government entities influenced Minnehaha Creek Watershed District's decision to seek IT managed services?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,122 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Critical Events Leading to the RFP] How have recent changes in technology or data management practices within government entities influenced Minnehaha Creek Watershed District's decision to seek IT managed services?
+2025-05-14 13:09:44,122 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] What specific performance indicators does Minnehaha Creek Watershed District plan to use to measure the success of the IT managed services over the proposed period?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,122 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] What specific performance indicators does Minnehaha Creek Watershed District plan to use to measure the success of the IT managed services over the proposed period?
+2025-05-14 13:09:44,124 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Overarching Pain Points] What are the current major pain points that Minnehaha Creek Watershed District faces regarding its IT infrastructure and data management?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,124 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Overarching Pain Points] What are the current major pain points that Minnehaha Creek Watershed District faces regarding its IT infrastructure and data management?
+2025-05-14 13:09:44,124 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Agency Mission & Vision] What measures has Minnehaha Creek Watershed District taken to promote a data-driven decision-making culture, and how can a managed IT service provider support that?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,124 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Agency Mission & Vision] What measures has Minnehaha Creek Watershed District taken to promote a data-driven decision-making culture, and how can a managed IT service provider support that?
+2025-05-14 13:09:44,124 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] How can we tailor our proposal to meet Minnehaha Creek Watershed District's expectations for improved workflow efficiency and data integration?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,124 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Expected Outcomes & Success Metrics] How can we tailor our proposal to meet Minnehaha Creek Watershed District's expectations for improved workflow efficiency and data integration?
+2025-05-14 13:09:44,124 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] How can Minnehaha Creek Watershed District ensure that any new platforms implemented during the IT update seamlessly integrate with existing data management practices?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,124 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] How can Minnehaha Creek Watershed District ensure that any new platforms implemented during the IT update seamlessly integrate with existing data management practices?
+2025-05-14 13:09:44,131 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Overarching Pain Points] How does Minnehaha Creek Watershed District envision overcoming the challenges posed by the lack of a dedicated IT professional on staff?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,131 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Overarching Pain Points] How does Minnehaha Creek Watershed District envision overcoming the challenges posed by the lack of a dedicated IT professional on staff?
+2025-05-14 13:09:44,133 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Agency Mission & Vision] How does the mission and vision of Minnehaha Creek Watershed District align with leveraging IT managed services to enhance operational efficiency?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,133 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Agency Mission & Vision] How does the mission and vision of Minnehaha Creek Watershed District align with leveraging IT managed services to enhance operational efficiency?
+2025-05-14 13:09:44,138 - main - ERROR - Error processing query '[Technical Research > Requirements Coverage] What additional security and compliance requirements should Minnehaha Creek Watershed District consider in its current IT infrastructure and future IT managed services?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,138 - main - INFO - Falling back to standalone research for query: [Technical Research > Requirements Coverage] What additional security and compliance requirements should Minnehaha Creek Watershed District consider in its current IT infrastructure and future IT managed services?
+2025-05-14 13:09:44,141 - main - ERROR - Error processing query '[Business Drivers & Problem Statement > Critical Events Leading to the RFP] What key events or incidents prompted Minnehaha Creek Watershed District to initiate this RFP for IT managed services?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,141 - main - INFO - Falling back to standalone research for query: [Business Drivers & Problem Statement > Critical Events Leading to the RFP] What key events or incidents prompted Minnehaha Creek Watershed District to initiate this RFP for IT managed services?
+2025-05-14 13:09:44,144 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Current Initiatives & Priorities] What specific outcomes does Minnehaha Creek Watershed District expect from its IT systems update, and how can those align with the proposed managed IT services?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,144 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Current Initiatives & Priorities] What specific outcomes does Minnehaha Creek Watershed District expect from its IT systems update, and how can those align with the proposed managed IT services?
+2025-05-14 13:09:44,146 - main - ERROR - Error processing query '[Agency Background & Strategic Alignment > Current Initiatives & Priorities] Are there ongoing projects or initiatives within the Minnehaha Creek Watershed District that may affect the implementation of new IT solutions?': Unauthorized: missing or invalid API key.
+2025-05-14 13:09:44,146 - main - INFO - Falling back to standalone research for query: [Agency Background & Strategic Alignment > Current Initiatives & Priorities] Are there ongoing projects or initiatives within the Minnehaha Creek Watershed District that may affect the implementation of new IT solutions?
+2025-05-14 13:10:46,752 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 13:10:57,496 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 13:11:00,251 - main - ERROR - Error processing query 'what is dev': Unauthorized: missing or invalid API key.
+2025-05-14 13:11:00,251 - main - INFO - Falling back to standalone research for query: what is dev
+2025-05-14 13:11:42,690 - perplexity - WARNING - PERPLEXITY_API_KEY not found in environment variables
+2025-05-14 13:11:52,913 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 13:12:06,728 - main - ERROR - Error processing query 'what is dev': [Errno 8] nodename nor servname provided, or not known
+2025-05-14 13:12:06,728 - main - INFO - Falling back to standalone research for query: what is dev
+2025-05-14 13:13:27,957 - main - INFO - Sending 1 queries to open-deepresearch backend
+2025-05-14 13:14:29,250 - api - INFO - Starting complete RFP processing
+2025-05-14 13:14:29,255 - main - INFO - Generating research queries using gpt-4o-mini
+2025-05-14 13:14:38,827 - main - INFO - Successfully generated 6 research query categories
+2025-05-14 13:14:38,829 - main - INFO - Sending 12 queries to open-deepresearch backend
