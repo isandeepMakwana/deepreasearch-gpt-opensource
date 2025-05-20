@@ -1,7 +1,6 @@
 import re
 import json
 
-
 def extract_json_from_text(text: str) -> str:
     """
     Extract JSON content from text that might contain additional markdown or explanations.
