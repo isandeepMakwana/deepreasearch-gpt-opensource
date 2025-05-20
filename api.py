@@ -128,6 +128,7 @@ async def process_complete_rfp(input_data: RFPSchema):
                 - Key Point A
                 - Key Point B
         """
+        
         # Process the RFP with deep research, now with model parameters
         results = await process_rfp_with_deep_research(
             rfp_text=input_data.rfp_text,
