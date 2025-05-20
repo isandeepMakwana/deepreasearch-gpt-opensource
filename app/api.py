@@ -22,11 +22,12 @@ app = FastAPI(
 # Add CORS if needed
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @app.post("/deepresearch/process-complete-rfp/")
 def process_complete_rfp(input_data: RFPInput):
@@ -44,13 +45,11 @@ def process_complete_rfp(input_data: RFPInput):
         planner_model=input_data.planner_model,
         writer_model=input_data.writer_model,
         temperature=input_data.temperature,
-        report_structure=input_data.report_structure or "concised Report contaning key finding in bullet points",
+        report_structure=input_data.report_structure
+        or "concised Report contaning key finding in bullet points",
     )
 
-    return {
-        "status": "submitted",
-        "task_id": task_result.id
-    }
+    return {"status": "submitted", "task_id": task_result.id}
 
 
 @app.get("/tasks/status/{task_id}")
@@ -66,14 +65,11 @@ def get_task_status(task_id: str):
         meta = result.info or {}
         return {"status": "PROGRESS", "progress": meta.get("progress", 0)}
     elif result.state == "SUCCESS":
-        return {
-            "status": "SUCCESS",
-            "result": result.result
-        }
+        return {"status": "SUCCESS", "result": result.result}
     elif result.state == "FAILURE":
         return {
             "status": "FAILURE",
-            "error": str(result.info),  
+            "error": str(result.info),
         }
     else:
         # RETRY, REVOKED, etc.

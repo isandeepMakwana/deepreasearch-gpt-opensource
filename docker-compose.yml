@@ -1,20 +1,6 @@
 version: "3.8"
 
 services:
-  rabbitmq:
-    image: rabbitmq:3.9-management
-    container_name: "my_rabbitmq"
-    ports:
-      - "5672:5672"      # AMQP protocol port
-      - "15672:15672"    # RabbitMQ management UI
-    environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-    networks:
-      - my_network
-
   redis:
     image: redis:7.0-alpine
     container_name: "my_redis"
@@ -30,5 +16,4 @@ networks:
     driver: bridge
 
 volumes:
-  rabbitmq_data:
   redis_data:

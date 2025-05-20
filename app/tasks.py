@@ -17,7 +17,10 @@ from .open_deep_research import answer_query_with_deep_research
 
 logger = setup_logger(__name__)
 
-def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature: float = 1) -> dict:
+
+def generate_rfp_queries(
+    rfp_text: str, model_name: str = "o3-mini", temperature: float = 1
+) -> dict:
     """
     Generate structured research queries from an RFP document.
     """
@@ -71,7 +74,7 @@ def process_rfp_with_deep_research_task(
     planner_model: str,
     writer_model: str,
     temperature: float,
-    report_structure: str
+    report_structure: str,
 ):
     """
     A Celery task that:
@@ -90,7 +93,7 @@ def process_rfp_with_deep_research_task(
         return {
             "status": "failed",
             "message": "No queries generated.",
-            "details": query_plan
+            "details": query_plan,
         }
 
     # Build a list of queries (strings)
@@ -108,10 +111,7 @@ def process_rfp_with_deep_research_task(
     logger.info(f"Using asyncio.gather() for {total_count} queries in parallel...")
 
     # Optional: Update state at 0% just to show "progress" is started
-    self.update_state(
-        state="PROGRESS",
-        meta={"progress": 25}
-    )
+    self.update_state(state="PROGRESS", meta={"progress": 25})
 
     # Step 2: Define an async function that calls 'answer_query_with_deep_research' for each query in parallel
     async def run_all_in_parallel(queries):
@@ -129,34 +129,37 @@ def process_rfp_with_deep_research_task(
         res = results[i]
         if isinstance(res, Exception):
             logger.error(f"Query {q} failed: {res}")
-            research_results.append({
-                "query": q,
-                "report": f"Error: {str(res)}",
-                "status": "failed",
-                "backend": backend,
-            })
+            research_results.append(
+                {
+                    "query": q,
+                    "report": f"Error: {str(res)}",
+                    "status": "failed",
+                    "backend": backend,
+                }
+            )
         else:
-            research_results.append({
-                "query": q,
-                "report": res,
-                "status": "success",
-                "backend": backend,
-            })
+            research_results.append(
+                {
+                    "query": q,
+                    "report": res,
+                    "status": "success",
+                    "backend": backend,
+                }
+            )
 
     # Step 5: Compile final structure
     compiled = compile_final_results(query_plan, research_results, backend)
 
     # Optional: Mark final progress at 100%
-    self.update_state(
-        state="PROGRESS",
-        meta={"progress": 100.0}
-    )
+    self.update_state(state="PROGRESS", meta={"progress": 100.0})
 
     # Return the final result
     return compiled
 
 
-def compile_final_results(query_plan: dict, research_results: list, backend: str) -> dict:
+def compile_final_results(
+    query_plan: dict, research_results: list, backend: str
+) -> dict:
     """
     Reconstruct 'categories' etc. from query_plan + the final results,
     BUT return categories as a list of:
@@ -176,8 +179,12 @@ def compile_final_results(query_plan: dict, research_results: list, backend: str
         "meta": {
             "backend": backend,
             "query_count": len(research_results),
-            "success_count": sum(1 for r in research_results if r["status"] == "success"),
-            "failure_count": sum(1 for r in research_results if r["status"] == "failed"),
+            "success_count": sum(
+                1 for r in research_results if r["status"] == "success"
+            ),
+            "failure_count": sum(
+                1 for r in research_results if r["status"] == "failed"
+            ),
         },
     }
 
@@ -216,10 +223,9 @@ def compile_final_results(query_plan: dict, research_results: list, backend: str
                     answer_text = "Error occurred"
 
                 # Append this Q/A to the list for this heading
-                category_map[heading_str].append({
-                    "question": question_text,
-                    "answer": answer_text
-                })
+                category_map[heading_str].append(
+                    {"question": question_text, "answer": answer_text}
+                )
 
                 result_index += 1
 
@@ -237,10 +243,7 @@ def compile_final_results(query_plan: dict, research_results: list, backend: str
         # Join them with blank lines or some delimiter
         content_str = "\n\n".join(content_parts)
 
-        final_categories.append({
-            "heading": heading_str,
-            "content": content_str
-        })
+        final_categories.append({"heading": heading_str, "content": content_str})
 
     # Attach final_categories to compiled
     compiled["categories"] = final_categories

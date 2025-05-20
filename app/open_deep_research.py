@@ -15,7 +15,7 @@ REPORT_STRUCTURE = "give me the sections and subsections of the report, and the 
 
 thread_template = {
     "configurable": {
-        "thread_id": None,  
+        "thread_id": None,
         "search_api": "tavily",
         "planner_provider": "openai",
         "planner_model": "gpt-4o-mini",
@@ -25,6 +25,7 @@ thread_template = {
         "report_structure": REPORT_STRUCTURE,
     }
 }
+
 
 async def answer_query_with_deep_research(query: str) -> str:
     """
@@ -37,13 +38,17 @@ async def answer_query_with_deep_research(query: str) -> str:
     local_thread["configurable"]["thread_id"] = str(uuid.uuid4())
 
     # 1. Start the deep research
-    async for event in graph.astream({"topic": query}, local_thread, stream_mode="updates"):
+    async for event in graph.astream(
+        {"topic": query}, local_thread, stream_mode="updates"
+    ):
         if "__interrupt__" in event:
             interrupt_value = event["__interrupt__"][0].value
             print(f"INTERRUPT (Query: {query}): {interrupt_value}")
 
-    # 2. Optionally refine with Command(resume=...) 
-    async for event in graph.astream(Command(resume=True), local_thread, stream_mode="updates"):
+    # 2. Optionally refine with Command(resume=...)
+    async for event in graph.astream(
+        Command(resume=True), local_thread, stream_mode="updates"
+    ):
         pass
 
     final_state = graph.get_state(local_thread)
