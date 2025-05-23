@@ -21,7 +21,7 @@ thread_template = {
         "planner_model": "gpt-4o-mini",
         "writer_provider": "openai",
         "writer_model": "gpt-4o-mini",
-        "max_search_depth": 1,
+        "max_search_depth": 2,
         "report_structure": REPORT_STRUCTURE,
     }
 }
