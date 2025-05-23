@@ -30,21 +30,16 @@ app.add_middleware(
 
 @app.post("/deepresearch/process-complete-rfp/")
 def process_complete_rfp(input_data: RFPInput):
-    """
-    Submits a long-running 'deep research' task to Celery.
-    Returns a task_id that can be used to check status.
-    """
     logger.info("Received RFP for processing...")
-
-    # Launch Celery task (returns AsyncResult object)
+    
     task_result = process_rfp_with_deep_research_task.delay(
         rfp_text=input_data.rfp_text,
         backend=input_data.backend,
-        model_name=input_data.model_name,
+        planner_model_provider=input_data.planner_model_provider,
         planner_model=input_data.planner_model,
+        writer_model_provider=input_data.writer_model_provider,
         writer_model=input_data.writer_model,
         temperature=input_data.temperature,
-        report_structure=input_data.report_structure or "concised Report contaning key finding in bullet points",
     )
 
     return {

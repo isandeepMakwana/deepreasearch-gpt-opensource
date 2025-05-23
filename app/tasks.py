@@ -18,9 +18,6 @@ from .open_deep_research import answer_query_with_deep_research
 logger = setup_logger(__name__)
 
 def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature: float = 1) -> dict:
-    """
-    Generate structured research queries from an RFP document.
-    """
     logger.info(f"Generating research queries using {model_name}")
 
     query_generation_prompt = """
@@ -45,6 +42,7 @@ def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature
         ]
     }}
     """
+    
     try:
         llm = ChatOpenAI(model_name=model_name, temperature=temperature)
         prompt = PromptTemplate.from_template(query_generation_prompt)
@@ -67,24 +65,18 @@ def process_rfp_with_deep_research_task(
     self,
     rfp_text: str,
     backend: str,
-    model_name: str,
+    planner_model_provider: str,
     planner_model: str,
+    writer_model_provider: str,
     writer_model: str,
     temperature: float,
-    report_structure: str
 ):
-    """
-    A Celery task that:
-    1) Generates queries from RFP
-    2) Runs them CONCURRENTLY against open_deep_research via asyncio.gather
-    3) Returns a final compiled result (no per-query partial updates)
-    """
 
     logger.info("Started background RFP deep research...")
 
     # Step 1: Generate queries
     query_plan = generate_rfp_queries(
-        rfp_text=rfp_text, model_name=planner_model, temperature=temperature
+        rfp_text=rfp_text
     )
     if "queries" not in query_plan:
         return {
@@ -111,14 +103,18 @@ def process_rfp_with_deep_research_task(
     self.update_state(
         state="PROGRESS",
         meta={"progress": 25}
-    )
+    )  
+    
 
     # Step 2: Define an async function that calls 'answer_query_with_deep_research' for each query in parallel
     async def run_all_in_parallel(queries):
-        coros = [answer_query_with_deep_research(q) for q in queries]
+        coros = [answer_query_with_deep_research(
+            q,
+            planner_model_provider, planner_model,
+            writer_model_provider, writer_model
+        ) for q in queries]
         results = await asyncio.gather(*coros, return_exceptions=True)
         return results
-
     # Step 3: Actually run them in concurrency
     # Because this is a Celery task, we'll do an asyncio run in a synchronous context
     results = asyncio.run(run_all_in_parallel(all_queries))
@@ -153,20 +149,11 @@ def process_rfp_with_deep_research_task(
     )
 
     # Return the final result
+    print(compiled)
     return compiled
 
 
 def compile_final_results(query_plan: dict, research_results: list, backend: str) -> dict:
-    """
-    Reconstruct 'categories' etc. from query_plan + the final results,
-    BUT return categories as a list of:
-    [
-      {
-         "heading": "<heading or heading-subheading>",
-         "content": "<all questions and answers in one string>"
-      }
-    ]
-    """
     compiled = {
         "status": "success",
         "title": query_plan.get("title", "Research Report"),

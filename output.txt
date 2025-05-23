@@ -1,3 +1,36 @@
-[2025-05-19 16:27:55,520] INFO in api: Received RFP for processing...
-INFO:     127.0.0.1:64059 - "POST /deepresearch/process-complete-rfp/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64066 - "GET /tasks/status/288c9a59-89e8-442d-b28e-f276af0fa0e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "OPTIONS /deepresearch/process-complete-rfp/ HTTP/1.1" 200 OK
+[2025-05-23 19:20:19,249] INFO in api: Received RFP for processing...
+INFO:     127.0.0.1:50750 - "POST /deepresearch/process-complete-rfp/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "OPTIONS /tasks/status/0a657ded-cbe0-4cf1-a4ca-6b253a37e0ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50752 - "OPTIONS /tasks/status/0a657ded-cbe0-4cf1-a4ca-6b253a37e0ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "GET /tasks/status/0a657ded-cbe0-4cf1-a4ca-6b253a37e0ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "GET /tasks/status/0a657ded-cbe0-4cf1-a4ca-6b253a37e0ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50920 - "GET /tasks/status/0a657ded-cbe0-4cf1-a4ca-6b253a37e0ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50920 - "GET /tasks/status/0a657ded-cbe0-4cf1-a4ca-6b253a37e0ae HTTP/1.1" 200 OK
+[2025-05-23 19:21:58,170] INFO in api: Received RFP for processing...
+INFO:     127.0.0.1:51240 - "POST /deepresearch/process-complete-rfp/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51240 - "OPTIONS /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51242 - "OPTIONS /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51240 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51240 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51372 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51372 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51657 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51972 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52313 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52590 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52862 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53133 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53414 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53684 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53957 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54239 - "OPTIONS /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54239 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55386 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55627 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55892 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56156 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56423 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56709 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56980 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57251 - "GET /tasks/status/93d70857-22dd-49cd-83fd-2b78ea8217ac HTTP/1.1" 200 OK

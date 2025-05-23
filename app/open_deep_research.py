@@ -13,24 +13,21 @@ graph = builder.compile(checkpointer=memory)
 
 REPORT_STRUCTURE = "give me the sections and subsections of the report, and the key points for each questions."
 
-thread_template = {
-    "configurable": {
-        "thread_id": None,  
-        "search_api": "tavily",
-        "planner_provider": "openai",
-        "planner_model": "gpt-4o-mini",
-        "writer_provider": "openai",
-        "writer_model": "gpt-4o-mini",
-        "max_search_depth": 2,
-        "report_structure": REPORT_STRUCTURE,
-    }
-}
 
-async def answer_query_with_deep_research(query: str) -> str:
-    """
-    Runs the 'graph' with a single query as the topic.
-    Returns the final report (the detailed answer) as a string.
-    """
+
+async def answer_query_with_deep_research(query: str, planner_model_provider, planner_model, writer_model_provider, writer_model) -> str:
+    thread_template = {
+        "configurable": {
+            "thread_id": None,  
+            "search_api": "tavily",
+            "planner_provider": planner_model_provider,
+            "planner_model": planner_model,
+            "writer_provider": writer_model_provider,
+            "writer_model": writer_model,
+            "max_search_depth": 2,
+            "report_structure": REPORT_STRUCTURE,
+        }
+    }
 
     local_thread = dict(thread_template)
     local_thread["configurable"] = dict(thread_template["configurable"])
