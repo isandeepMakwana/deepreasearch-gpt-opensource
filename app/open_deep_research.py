@@ -15,7 +15,7 @@ REPORT_STRUCTURE = "give me the sections and subsections of the report, and the 
 
 
 
-async def answer_query_with_deep_research(query: str, planner_model_provider, planner_model, writer_model_provider, writer_model) -> str:
+async def answer_query_with_deep_research(query: str, planner_model_provider, planner_model, writer_model_provider, writer_model, max_depth) -> str:
     thread_template = {
         "configurable": {
             "thread_id": None,  
@@ -24,7 +24,7 @@ async def answer_query_with_deep_research(query: str, planner_model_provider, pl
             "planner_model": planner_model,
             "writer_provider": writer_model_provider,
             "writer_model": writer_model,
-            "max_search_depth": 2,
+            "max_search_depth": max_depth,
             "report_structure": REPORT_STRUCTURE,
         }
     }

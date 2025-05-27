@@ -35,10 +35,12 @@ def process_complete_rfp(input_data: RFPInput):
     task_result = process_rfp_with_deep_research_task.delay(
         rfp_text=input_data.rfp_text,
         backend=input_data.backend,
+        query_generation_model=input_data.query_generation_model,
         planner_model_provider=input_data.planner_model_provider,
         planner_model=input_data.planner_model,
         writer_model_provider=input_data.writer_model_provider,
         writer_model=input_data.writer_model,
+        max_depth=input_data.max_depth,
         temperature=input_data.temperature,
     )
 

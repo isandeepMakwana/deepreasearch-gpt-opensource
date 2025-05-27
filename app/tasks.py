@@ -17,19 +17,52 @@ from .open_deep_research import answer_query_with_deep_research
 
 logger = setup_logger(__name__)
 
-def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature: float = 1) -> dict:
-    logger.info(f"Generating research queries using {model_name}")
+def generate_rfp_queries(rfp_text: str, query_generation_model: str, temperature: float) -> dict:
+    logger.info(f"Generating research queries using {query_generation_model}")
 
     query_generation_prompt = """
-    You are an expert AI research assistant specializing in RFP analysis and strategic consulting.
-    Below is an excerpt from an RFP document. Your task is to analyze this document thoroughly
-    and generate deep, insightful research queries...
+        You are an expert AI research assistant specializing in RFP analysis and strategic consulting.
 
-    RFP EXCERPT:
-    {rfp_content}
+        Below is an excerpt from an RFP document. Your task is to analyze this document thoroughly
+        and generate deep, insightful research queries that will help the proposal team understand:
 
-    OUTPUT FORMAT:
-    {{
+        1. The explicit requirements
+        2. The implicit needs behind those requirements
+        3. The client's context, challenges, and strategic objectives
+        4. The competitive landscape
+        5. Technical insights relevant to this opportunity
+        6. Include the agency name [RFP Client Name(full name) from RFP EXCERPT] in each question to facilitate more effective searches.
+
+        RFP EXCERPT:
+        {rfp_content}
+
+        RESEARCH CATEGORIES:
+        1. Agency Background & Strategic Alignment
+        A. Agency Mission & Vision
+        B. Current Initiatives & Priorities
+
+        2. Business Drivers & Problem Statement
+        A. Overarching Pain Points
+        B. Critical Events Leading to the RFP
+        C. Expected Outcomes & Success Metrics
+
+        3. Technical Research
+        A. Requirements Coverage
+
+
+        INSTRUCTIONS:
+        - For each category and subcategory, generate 1-2 specific, detailed research questions(but in simple language).
+        - Make sure that the generated question can be used later while drafting an award winning proposal.
+        - Prioritize questions that require deep research beyond the RFP text
+        - Focus on questions that would provide strategic advantage if answered
+        - Include questions about hidden requirements, unstated needs, and context
+        - Make questions specific and actionable, not general
+
+        OUTPUT FORMAT:
+        Provide your response as a JSON structure with research categories, subcategories, and specific questions.
+        Use the following structure:
+
+        {{
         "queries": [
             {{
             "heading": "Category Name",
@@ -40,11 +73,11 @@ def generate_rfp_queries(rfp_text: str, model_name: str = "o3-mini", temperature
             ]
             }}
         ]
-    }}
+        }}
     """
     
     try:
-        llm = ChatOpenAI(model_name=model_name, temperature=temperature)
+        llm = ChatOpenAI(model_name=query_generation_model, temperature=temperature)
         prompt = PromptTemplate.from_template(query_generation_prompt)
         chain = prompt | llm | StrOutputParser()
         raw_response = chain.invoke({"rfp_content": rfp_text})
@@ -65,19 +98,19 @@ def process_rfp_with_deep_research_task(
     self,
     rfp_text: str,
     backend: str,
+    query_generation_model: str,
     planner_model_provider: str,
     planner_model: str,
     writer_model_provider: str,
     writer_model: str,
+    max_depth: int,
     temperature: float,
 ):
 
     logger.info("Started background RFP deep research...")
 
     # Step 1: Generate queries
-    query_plan = generate_rfp_queries(
-        rfp_text=rfp_text
-    )
+    query_plan = generate_rfp_queries(rfp_text=rfp_text,query_generation_model=query_generation_model, temperature=temperature)
     if "queries" not in query_plan:
         return {
             "status": "failed",
@@ -111,7 +144,8 @@ def process_rfp_with_deep_research_task(
         coros = [answer_query_with_deep_research(
             q,
             planner_model_provider, planner_model,
-            writer_model_provider, writer_model
+            writer_model_provider, writer_model,
+            max_depth
         ) for q in queries]
         results = await asyncio.gather(*coros, return_exceptions=True)
         return results
