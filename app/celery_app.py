@@ -27,14 +27,25 @@ celery_app = Celery(
     backend=REDIS_URL,
 )
 
-# Configure Celery to use SQS
+# Configure Celery to use SQS with optimized settings
 celery_app.conf.update(
     task_track_started=True,
     result_expires=3600,  # 1 hour
+    task_compression='gzip',  # Enable gzip compression
+    task_serializer='json',  # Use JSON serializer
+    accept_content=['json'],  # Accept JSON content
+    result_serializer='json',  # Use JSON for results
+    result_backend_transport_options={
+        'retry_policy': {
+            'timeout': 5.0
+        }
+    },
     broker_transport_options={
         "region": AWS_REGION,
         "queue_name_prefix": "",
         "visibility_timeout": 3600,  # 1 hour
+        "max_retries": 3,  # Number of retries for failed tasks
+        "compression_level": 9,  # Maximum compression level
     },
 )
 

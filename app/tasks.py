@@ -17,7 +17,10 @@ from .open_deep_research import answer_query_with_deep_research
 
 logger = setup_logger(__name__)
 
-def generate_rfp_queries(rfp_text: str, query_generation_model: str, temperature: float) -> dict:
+
+def generate_rfp_queries(
+    rfp_text: str, query_generation_model: str, temperature: float
+) -> dict:
     logger.info(f"Generating research queries using {query_generation_model}")
 
     query_generation_prompt = """
@@ -75,7 +78,7 @@ def generate_rfp_queries(rfp_text: str, query_generation_model: str, temperature
         ]
         }}
     """
-    
+
     try:
         llm = ChatOpenAI(model_name=query_generation_model, temperature=temperature)
         prompt = PromptTemplate.from_template(query_generation_prompt)
@@ -106,16 +109,20 @@ def process_rfp_with_deep_research_task(
     max_depth: int,
     temperature: float,
 ):
-
     logger.info("Started background RFP deep research...")
 
     # Step 1: Generate queries
-    query_plan = generate_rfp_queries(rfp_text=rfp_text,query_generation_model=query_generation_model, temperature=temperature)
+    query_plan = generate_rfp_queries(
+        rfp_text=rfp_text,
+        query_generation_model=query_generation_model,
+        temperature=temperature,
+    )
+    
     if "queries" not in query_plan:
         return {
             "status": "failed",
             "message": "No queries generated.",
-            "details": query_plan
+            "details": query_plan,
         }
 
     # Build a list of queries (strings)
@@ -133,24 +140,25 @@ def process_rfp_with_deep_research_task(
     logger.info(f"Using asyncio.gather() for {total_count} queries in parallel...")
 
     # Optional: Update state at 0% just to show "progress" is started
-    self.update_state(
-        state="PROGRESS",
-        meta={"progress": 25}
-    )  
-    
+    self.update_state(state="PROGRESS", meta={"progress": 25})
 
     # Step 2: Define an async function that calls 'answer_query_with_deep_research' for each query in parallel
     async def run_all_in_parallel(queries):
-        coros = [answer_query_with_deep_research(
-            q,
-            planner_model_provider, planner_model,
-            writer_model_provider, writer_model,
-            max_depth
-        ) for q in queries]
+        coros = [
+            answer_query_with_deep_research(
+                q,
+                planner_model_provider,
+                planner_model,
+                writer_model_provider,
+                writer_model,
+                max_depth,
+            )
+            for q in queries
+        ]
         results = await asyncio.gather(*coros, return_exceptions=True)
         return results
+
     # Step 3: Actually run them in concurrency
-    # Because this is a Celery task, we'll do an asyncio run in a synchronous context
     results = asyncio.run(run_all_in_parallel(all_queries))
 
     # Step 4: Build a "research_results" list that has status + query + report
@@ -159,35 +167,37 @@ def process_rfp_with_deep_research_task(
         res = results[i]
         if isinstance(res, Exception):
             logger.error(f"Query {q} failed: {res}")
-            research_results.append({
-                "query": q,
-                "report": f"Error: {str(res)}",
-                "status": "failed",
-                "backend": backend,
-            })
+            research_results.append(
+                {
+                    "query": q,
+                    "report": f"Error: {str(res)}",
+                    "status": "failed",
+                    "backend": backend,
+                }
+            )
         else:
-            research_results.append({
-                "query": q,
-                "report": res,
-                "status": "success",
-                "backend": backend,
-            })
+            research_results.append(
+                {
+                    "query": q,
+                    "report": res,
+                    "status": "success",
+                    "backend": backend,
+                }
+            )
 
     # Step 5: Compile final structure
     compiled = compile_final_results(query_plan, research_results, backend)
 
     # Optional: Mark final progress at 100%
-    self.update_state(
-        state="PROGRESS",
-        meta={"progress": 100.0}
-    )
+    self.update_state(state="PROGRESS", meta={"progress": 100.0})
 
     # Return the final result
-    print(compiled)
     return compiled
 
 
-def compile_final_results(query_plan: dict, research_results: list, backend: str) -> dict:
+def compile_final_results(
+    query_plan: dict, research_results: list, backend: str
+) -> dict:
     compiled = {
         "status": "success",
         "title": query_plan.get("title", "Research Report"),
@@ -197,8 +207,12 @@ def compile_final_results(query_plan: dict, research_results: list, backend: str
         "meta": {
             "backend": backend,
             "query_count": len(research_results),
-            "success_count": sum(1 for r in research_results if r["status"] == "success"),
-            "failure_count": sum(1 for r in research_results if r["status"] == "failed"),
+            "success_count": sum(
+                1 for r in research_results if r["status"] == "success"
+            ),
+            "failure_count": sum(
+                1 for r in research_results if r["status"] == "failed"
+            ),
         },
     }
 
@@ -237,14 +251,13 @@ def compile_final_results(query_plan: dict, research_results: list, backend: str
                     answer_text = "Error occurred"
 
                 # Append this Q/A to the list for this heading
-                category_map[heading_str].append({
-                    "question": question_text,
-                    "answer": answer_text
-                })
+                category_map[heading_str].append(
+                    {"question": question_text, "answer": answer_text}
+                )
 
                 result_index += 1
 
-    # Now transform each heading’s Q/A list into the new format
+    # Now transform each heading's Q/A list into the new format
     final_categories = []
     for heading_str, findings in category_map.items():
         # Combine question + answer pairs into a single content string
@@ -258,10 +271,7 @@ def compile_final_results(query_plan: dict, research_results: list, backend: str
         # Join them with blank lines or some delimiter
         content_str = "\n\n".join(content_parts)
 
-        final_categories.append({
-            "heading": heading_str,
-            "content": content_str
-        })
+        final_categories.append({"heading": heading_str, "content": content_str})
 
     # Attach final_categories to compiled
     compiled["categories"] = final_categories

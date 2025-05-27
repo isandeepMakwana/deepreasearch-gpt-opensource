@@ -22,16 +22,17 @@ app = FastAPI(
 # Add CORS if needed
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+
 @app.post("/deepresearch/process-complete-rfp/")
 def process_complete_rfp(input_data: RFPInput):
     logger.info("Received RFP for processing...")
-    
+
     task_result = process_rfp_with_deep_research_task.delay(
         rfp_text=input_data.rfp_text,
         backend=input_data.backend,
@@ -44,10 +45,7 @@ def process_complete_rfp(input_data: RFPInput):
         temperature=input_data.temperature,
     )
 
-    return {
-        "status": "submitted",
-        "task_id": task_result.id
-    }
+    return {"status": "submitted", "task_id": task_result.id}
 
 
 @app.get("/tasks/status/{task_id}")
@@ -63,14 +61,11 @@ def get_task_status(task_id: str):
         meta = result.info or {}
         return {"status": "PROGRESS", "progress": meta.get("progress", 0)}
     elif result.state == "SUCCESS":
-        return {
-            "status": "SUCCESS",
-            "result": result.result
-        }
+        return {"status": "SUCCESS", "result": result.result}
     elif result.state == "FAILURE":
         return {
             "status": "FAILURE",
-            "error": str(result.info),  
+            "error": str(result.info),
         }
     else:
         # RETRY, REVOKED, etc.
