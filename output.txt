@@ -1,3 +1,0 @@
-[2025-05-19 16:27:55,520] INFO in api: Received RFP for processing...
-INFO:     127.0.0.1:64059 - "POST /deepresearch/process-complete-rfp/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64066 - "GET /tasks/status/288c9a59-89e8-442d-b28e-f276af0fa0e HTTP/1.1" 200 OK
