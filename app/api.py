@@ -22,34 +22,32 @@ app = FastAPI(
 # Add CORS if needed
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
 @app.post("/deepresearch/process-complete-rfp/")
 def process_complete_rfp(input_data: RFPInput):
-    """
-    Submits a long-running 'deep research' task to Celery.
-    Returns a task_id that can be used to check status.
-    """
     logger.info("Received RFP for processing...")
-
-    # Launch Celery task (returns AsyncResult object)
+    
     task_result = process_rfp_with_deep_research_task.delay(
         rfp_text=input_data.rfp_text,
         backend=input_data.backend,
-        model_name=input_data.model_name,
+        query_generation_model=input_data.query_generation_model,
+        planner_model_provider=input_data.planner_model_provider,
         planner_model=input_data.planner_model,
+        writer_model_provider=input_data.writer_model_provider,
         writer_model=input_data.writer_model,
+        max_depth=input_data.max_depth,
         temperature=input_data.temperature,
-        report_structure=input_data.report_structure
-        or "concised Report contaning key finding in bullet points",
     )
 
-    return {"status": "submitted", "task_id": task_result.id}
+    return {
+        "status": "submitted",
+        "task_id": task_result.id
+    }
 
 
 @app.get("/tasks/status/{task_id}")
@@ -65,11 +63,14 @@ def get_task_status(task_id: str):
         meta = result.info or {}
         return {"status": "PROGRESS", "progress": meta.get("progress", 0)}
     elif result.state == "SUCCESS":
-        return {"status": "SUCCESS", "result": result.result}
+        return {
+            "status": "SUCCESS",
+            "result": result.result
+        }
     elif result.state == "FAILURE":
         return {
             "status": "FAILURE",
-            "error": str(result.info),
+            "error": str(result.info),  
         }
     else:
         # RETRY, REVOKED, etc.
